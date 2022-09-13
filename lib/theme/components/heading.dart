@@ -1,22 +1,14 @@
-import 'package:nativebase_flutter/nativebase_flutter.dart';
+import '../base/typography.dart';
 
 Map<String, dynamic> sizes = <String, dynamic>{
-  '4xl': {
-    'fontSize': {'base': fontSizes.i6xl, 'md': fontSizes.i7xl},
-    'letterSpacing': baseLetterSpacings.xl
-  },
-  '3xl': {
-    'fontSize': {'base': fontSizes.i5xl, 'md': fontSizes.i6xl},
-    'letterSpacing': baseLetterSpacings.xl
-  },
-  '2xl': {
-    'fontSize': {'base': fontSizes.i4xl, 'md': fontSizes.i5xl},
-  },
+  '4xl': {'fontSize': fontSizes.i6xl, 'letterSpacing': baseLetterSpacings.xl},
+  '3xl': {'fontSize': fontSizes.i5xl, 'letterSpacing': baseLetterSpacings.xl},
+  '2xl': {'fontSize': fontSizes.i4xl},
   'xl': {
-    'fontSize': {'base': fontSizes.i3xl, 'md': fontSizes.i4xl},
+    'fontSize': fontSizes.i3xl,
   },
   'lg': {
-    'fontSize': {'base': fontSizes.i2xl, 'md': fontSizes.i3xl},
+    'fontSize': fontSizes.i2xl,
   },
   'md': {
     'fontSize': fontSizes.xl,
@@ -28,7 +20,3 @@ Map<String, dynamic> sizes = <String, dynamic>{
     'fontSize': fontSizes.sm,
   }
 };
-
-Map<String, dynamic> defaultSize = <String, dynamic>{'size': sizes['lg']};
-
-abstract class Sizes {}
