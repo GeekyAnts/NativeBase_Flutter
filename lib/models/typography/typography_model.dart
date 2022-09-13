@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/theme/base/typography.dart';
 
-class FontSizes {
+class NBFontSizes {
   double? _i2xs;
   double? _xs;
   double? _sm;
@@ -17,7 +17,7 @@ class FontSizes {
   double? _i8xl;
   double? _i9xl;
 
-  FontSizes(
+  NBFontSizes(
       {double? i2xs,
       double? xs,
       double? sm,
@@ -63,7 +63,7 @@ class FontSizes {
   double? get i8xl => _i8xl;
   double? get i9xl => _i9xl;
 
-  FontSizes.fromJson(Map<String, dynamic> json) {
+  NBFontSizes.fromJson(Map<String, dynamic> json) {
     _i2xs = json['2xs'];
     _xs = json['xs'];
     _sm = json['sm'];
@@ -100,7 +100,7 @@ class FontSizes {
   }
 }
 
-class LetterSpacings {
+class NBLetterSpacings {
   double? _xs;
   double? _sm;
   double? _md;
@@ -108,7 +108,7 @@ class LetterSpacings {
   double? _xl;
   double? _d2xl;
 
-  LetterSpacings({
+  NBLetterSpacings({
     double? xs,
     double? sm,
     double? md,
@@ -150,7 +150,7 @@ class LetterSpacings {
 
   double? get d2xl => _d2xl;
 
-  LetterSpacings.fromJson(Map<String, dynamic> json) {
+  NBLetterSpacings.fromJson(Map<String, dynamic> json) {
     _xs = json['xs'];
     _sm = json['sm'];
     _md = json['md'];
@@ -280,7 +280,7 @@ class NBFontWeights {
   }
 }
 
-class LineHeights {
+class NBLineHeights {
   double? _i2xs;
   double? _xs;
   double? _sm;
@@ -292,7 +292,7 @@ class LineHeights {
   double? _i4xl;
   double? _i5xl;
 
-  factory LineHeights(
+  factory NBLineHeights(
       {double? i2xs,
       double? xs,
       double? sm,
@@ -303,7 +303,7 @@ class LineHeights {
       double? i3xl,
       double? i4xl,
       double? i5xl}) {
-    return LineHeights._raw(
+    return NBLineHeights._raw(
       i2xs: i2xs ?? baseLineHeights.i2xs!,
       xs: xs ?? baseLineHeights.xs!,
       sm: sm ?? baseLineHeights.sm!,
@@ -328,7 +328,7 @@ class LineHeights {
   double? get i4xl => _i4xl;
   double? get i5xl => _i5xl;
 
-  LineHeights._raw({
+  NBLineHeights._raw({
     required double i2xs,
     required double xs,
     required double sm,
@@ -349,7 +349,7 @@ class LineHeights {
         _i4xl = i4xl,
         _i5xl = i5xl;
 
-  LineHeights.fromJson(Map<String, dynamic> json) {
+  NBLineHeights.fromJson(Map<String, dynamic> json) {
     _i2xs = json['2xs'];
     _xs = json['xs'];
     _sm = json['sm'];

@@ -4,18 +4,18 @@ import 'components_model.dart';
 import 'typography/typography_model.dart';
 
 class NativeBaseTheme {
-  FontSizes fontSize;
-  LetterSpacings letterSpacings;
+  NBFontSizes fontSize;
+  NBLetterSpacings letterSpacings;
   NBFontWeights fontWeights;
-  LineHeights lineHeights;
-  Component components;
+  NBLineHeights lineHeights;
+  NBComponent components;
 
   NativeBaseTheme({
-    FontSizes? fontSize,
-    LetterSpacings? letterSpacings,
+    NBFontSizes? fontSize,
+    NBLetterSpacings? letterSpacings,
     NBFontWeights? fontWeights,
-    LineHeights? lineHeights,
-    Component? components,
+    NBLineHeights? lineHeights,
+    NBComponent? components,
   })  : fontSize = fontSize ?? fontSizes,
         letterSpacings = letterSpacings ?? baseLetterSpacings,
         fontWeights = fontWeights ?? baseNBFontWeights,

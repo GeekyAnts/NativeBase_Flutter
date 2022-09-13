@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:nativebase_flutter/models/typography/typography_model.dart';
 
-/// change to samll f
-FontSizes fontSizes = FontSizes(
+NBFontSizes fontSizes = NBFontSizes(
   i2xs: 10.0,
   xs: 12.0,
   sm: 14.0,
@@ -20,7 +19,7 @@ FontSizes fontSizes = FontSizes(
   i9xl: 128.0,
 );
 
-LetterSpacings baseLetterSpacings = LetterSpacings(
+NBLetterSpacings baseLetterSpacings = NBLetterSpacings(
   xs: -0.8,
   sm: -0.4,
   md: 0,
@@ -42,7 +41,7 @@ NBFontWeights baseNBFontWeights = NBFontWeights(
   extraBlack: FontWeight.w900,
 );
 
-LineHeights baseLineHeights = LineHeights(
+NBLineHeights baseLineHeights = NBLineHeights(
   i2xs: 16.0,
   xs: 18.0,
   sm: 20.0,

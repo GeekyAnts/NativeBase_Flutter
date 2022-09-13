@@ -3,11 +3,12 @@ import 'base/typography.dart';
 import '../theme/components/index.dart';
 
 NativeBaseTheme appTheme = NativeBaseTheme(
-    fontSize: fontSizes,
-    letterSpacings: baseLetterSpacings,
-    fontWeights: baseNBFontWeights,
-    lineHeights: baseLineHeights,
-    components: baseComponents);
+  fontSize: fontSizes,
+  letterSpacings: baseLetterSpacings,
+  fontWeights: baseNBFontWeights,
+  lineHeights: baseLineHeights,
+  components: baseComponents,
+);
 
 //  borderWidths,
 // breakpoints,
