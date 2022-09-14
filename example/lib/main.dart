@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/nativebase_flutter.dart';
 
@@ -33,10 +31,7 @@ class NativeBaseExample extends StatefulWidget {
 class _NativeBaseExampleState extends State<NativeBaseExample> {
   @override
   Widget build(BuildContext context) {
-    log(
-      NativeBaseProvider.of(context).fontSize.i2xl.toString(),
-      time: DateTime(DateTime.now().year),
-    );
+    print(NativeBaseProvider.of(context).components.heading.f2xl.fontSize);
     return Scaffold(
       body: Center(
         child: Column(
@@ -44,8 +39,8 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
             Heading(
-              "Hello From NativeBase Heading Widget",
-              size: 'sm',
+              "Hello From NativeBase Heading Widget Test test",
+              fs: '2xl',
             )
           ],
         ),

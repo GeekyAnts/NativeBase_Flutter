@@ -1,12 +1,36 @@
 import 'package:flutter/material.dart';
 
-import '../../nativebase_provider.dart';
-
-TextStyle getTextStyle(BuildContext context, {String? size}) {
+getTextStyle(BuildContext context, Map<String, dynamic> styles) {
+  // {ba}
+  // {lineHeight: "", fontSize: ""}
+  // loop her
+  print(styles);
   return TextStyle(
-    fontSize: NativeBaseProvider.of(context).components.heading.sizes[size]
-        ["fontSize"],
-    letterSpacing: NativeBaseProvider.of(context).components.heading.sizes[size]
-        ["letterSpacing"],
+    color: styles["color"],
+    debugLabel: styles["debugLabel"],
+    fontFamily: styles["fontFamily"],
+    fontStyle: styles["fontStyle"],
+    background: styles["background"],
+    decoration: styles["decoration"],
+    decorationColor: styles["decorationColor"],
+    decorationStyle: styles["decorationStyle"],
+    decorationThickness: styles["decorationThickness"],
+    fontFamilyFallback: styles["fontFamilyFallback"],
+    fontFeatures: styles["fontFeatures"],
+    fontVariations: styles["fontVariations"],
+    fontWeight: styles["fontWeight"],
+    foreground: styles["foreground"],
+    height: styles["height"],
+    inherit: styles["inherit"] ?? true,
+    leadingDistribution: styles["leadingDistribution"],
+    locale: styles["locale"],
+    overflow: styles["overflow"],
+    package: styles["package"],
+    shadows: styles["package"],
+    textBaseline: styles["textBaseline"],
+    wordSpacing: styles["wordSpacing"],
+    backgroundColor: styles["bg"],
+    fontSize: styles["fontSize"],
+    letterSpacing: styles["letterSpacing"],
   );
 }
