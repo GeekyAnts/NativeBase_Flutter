@@ -1,8 +1,7 @@
 import 'package:nativebase_flutter/models/heading_model.dart';
-
 import '../base/typography.dart';
 
-NBHeading heading = NBHeading(
+NBHeading sizes = NBHeading(
   s4xl: Sizes(
     fontSize: nbFontSizes.i6xl,
     letterSpacing: baseLetterSpacings.xl,

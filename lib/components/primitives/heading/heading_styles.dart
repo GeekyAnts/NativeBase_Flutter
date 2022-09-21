@@ -4,7 +4,7 @@ getTextStyle(BuildContext context, Map<String, dynamic> styles) {
   // {ba}
   // {lineHeight: "", fontSize: ""}
   // loop her
-  print(styles);
+
   return TextStyle(
     color: styles["color"],
     debugLabel: styles["debugLabel"],

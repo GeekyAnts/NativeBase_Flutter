@@ -1,3 +1,1 @@
-enum Components {
-  heading;
-}
+enum Component { heading, box }

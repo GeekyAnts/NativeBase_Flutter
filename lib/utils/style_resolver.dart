@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nativebase_flutter/components/primitives/box/box_styles.dart';
 import '../components/nativebase_provider.dart';
 import '../components/primitives/heading/heading_styles.dart';
 import 'components_enum.dart';
@@ -6,35 +7,52 @@ import '../theme/styled_system.dart';
 
 class FactoryStyle {
   static resolver(
-    BuildContext context,
-    Map<String, dynamic> styles,
-    Components components,
-  ) {
+      BuildContext context, Map<String, dynamic> styles, Component components,
+      {Widget? child}) {
     switch (components) {
-      case Components.heading:
+      case Component.heading:
         Map<String, dynamic> resolvedStyle =
-            filterAndMapStyles(styles, context);
+            _filterAndMapStyles(styles, context, components);
         return getTextStyle(context, resolvedStyle);
+      case Component.box:
+        return containerStyle(styles, child!);
+
       default:
-        return;
+        throw Exception();
     }
   }
 
-  static Map<String, dynamic> filterAndMapStyles(
-      Map<String, dynamic> styles, BuildContext context) {
-    styles.removeWhere((key, value) => value == null || key == "text");
+  static Map<String, dynamic> _filterAndMapStyles(
+      Map<String, dynamic> styles, BuildContext context, Component components) {
+    styles.removeWhere((key, value) => value == null);
     Map<String, dynamic> resolvedStyle = {};
+    for (String key in styles.keys) {
+      if (key == 'size') {
+        // resolve component level props
+        resolvedStyle.addAll(NativeBaseProvider.of(context)
+            .component
+            .toJson()[components.name]
+            .toJson()[styles[key]]
+            .toJson());
+        continue;
+      }
 
-    styles.forEach((key, value) {
-      var stylesSystem = typography[key];
+      //resolve other props
+      var stylesSystem = propConfig[key];
+
+      /// resolving spaces [margin] and [padding]
+
       resolvedStyle.addAll(
         {
           stylesSystem["property"]: NativeBaseProvider.of(context)
               .toJson()[stylesSystem["scale"]]
-              .toJson()[value]
+              .toJson()[styles[key]]
         },
       );
-    });
+    }
+
+    // Converting to a type specific;
+
     return resolvedStyle;
   }
 }

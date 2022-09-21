@@ -43,9 +43,9 @@ class NBHeading {
 
   Map<String, dynamic> toJson() {
     return {
-      "f4xl": f4xl,
-      "f3xl": f3xl,
-      "f2xl": f2xl,
+      "4xl": f4xl,
+      "3xl": f3xl,
+      "2xl": f2xl,
       "xl": xl,
       "lg": lg,
       "md": md,
@@ -76,7 +76,7 @@ class Sizes extends _SizesType {
   double get fontSize => _fontSize!;
 
   @override
-  double get letterSpacing => _letterSpacing!;
+  double? get letterSpacing => _letterSpacing;
 
   @override
   Map<String, dynamic> toJson() {

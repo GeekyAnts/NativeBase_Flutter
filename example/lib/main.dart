@@ -31,16 +31,21 @@ class NativeBaseExample extends StatefulWidget {
 class _NativeBaseExampleState extends State<NativeBaseExample> {
   @override
   Widget build(BuildContext context) {
-    print(NativeBaseProvider.of(context).components.heading.f2xl.fontSize);
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
-            Heading(
-              "Hello From NativeBase Heading Widget Test test",
-              fs: '2xl',
+            Box(
+              color: Colors.amber,
+              h: '500',
+              w: '1300',
+              maxW: '200',
+              alignment: 'left',
+              borderWidth: '3',
+              borderBottom: '8',
+              borderColor: Colors.red,
+              borderStyle: 'solid',
+              child: Heading("Hello From Native Base Heading Widget"),
             )
           ],
         ),
