@@ -12,6 +12,7 @@ Widget containerStyle(
       minHeight: styles["minH"] ?? styles["minHeight"] ?? 0,
     ),
     decoration: BoxDecoration(
+      borderRadius: styles["borderRadius"],
       border: styles["border"],
       color: styles["color"],
     ),

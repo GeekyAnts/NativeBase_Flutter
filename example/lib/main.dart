@@ -39,13 +39,11 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
               color: Colors.amber,
               h: '500',
               w: '1300',
-              maxW: '200',
-              alignment: 'left',
-              borderWidth: '3',
-              borderBottom: '8',
-              borderColor: Colors.red,
-              borderStyle: 'solid',
-              child: Heading("Hello From Native Base Heading Widget"),
+              alignment: 'center',
+              borderRadius: '10',
+              child: Heading(
+                "Hello From Native Base Heading Widget",
+              ),
             )
           ],
         ),

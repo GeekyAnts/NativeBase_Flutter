@@ -5,17 +5,21 @@ import '../../theme/styled_system.dart';
 import '../components_enum.dart';
 
 extension ResolveToken on String {
-  dynamic resolve(BuildContext context, String value) {
+  dynamic resolve(
+      {required BuildContext context,
+      required String value,
+      Component? component}) {
     if (this != "size") {
       return NativeBaseProvider.of(context)
               .toJson()[propConfig[this]["scale"]]
               .toJson()[value] ??
           double.tryParse(value);
     } else {
-      print(NativeBaseProvider.of(context)
+      return NativeBaseProvider.of(context)
           .component
-          .toJson()[Component.heading.name]
-          .toJson());
+          .toJson()[component?.name]
+          .toJson()[value]
+          .toJson();
     }
   }
 }

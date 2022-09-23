@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/components/primitives/box/box_styles.dart';
 import '../components/nativebase_provider.dart';
-import '../components/primitives/heading/heading_styles.dart';
+
+import '../components/primitives/text/text_style.dart';
 import 'components_enum.dart';
 import '../theme/styled_system.dart';
 
 class FactoryStyle {
   static resolver(
       BuildContext context, Map<String, dynamic> styles, Component components,
-      {Widget? child}) {
+      {dynamic child}) {
     switch (components) {
       case Component.heading:
-        Map<String, dynamic> resolvedStyle =
-            _filterAndMapStyles(styles, context, components);
-        return getTextStyle(context, resolvedStyle);
+        // Step 3
+        return getTextStyle(styles, child);
       case Component.box:
+        // Step 3
         return containerStyle(styles, child!);
 
       default:

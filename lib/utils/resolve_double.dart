@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
+
 import 'extension/resolver.dart';
 
-dynamic getDirectResolvedValue(prop, context, value) {
+dynamic getDirectResolvedValue(String prop, BuildContext context, value) {
   if (value != null) {
-    return ResolveToken("$prop").resolve(context, value);
+    return prop.resolve(context: context, value: value);
   }
 }

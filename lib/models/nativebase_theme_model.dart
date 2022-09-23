@@ -1,7 +1,9 @@
 import 'package:nativebase_flutter/models/borders_model.dart';
+import 'package:nativebase_flutter/models/radius_model.dart';
 import 'package:nativebase_flutter/models/sizes_model.dart';
 
 import '../theme/base/border.dart';
+import '../theme/base/radius.dart';
 import '../theme/base/sizes.dart';
 import '/models/spaces_model.dart';
 import '/theme/base/spaces.dart';
@@ -19,24 +21,27 @@ class NativeBaseTheme {
   NBSpaces spaces;
   NBSizes sizes;
   NBBorders borders;
+  NBRadius radiuses;
 
-  NativeBaseTheme({
-    NBFontSizes? fontSize,
-    NBLetterSpacings? letterSpacing,
-    NBFontWeights? fontWeight,
-    NBLineHeights? lineHeight,
-    NBComponent? component,
-    NBSpaces? spaces,
-    NBSizes? sizes,
-    NBBorders? borders,
-  })  : fontSize = fontSize ?? nbFontSizes,
+  NativeBaseTheme(
+      {NBFontSizes? fontSize,
+      NBLetterSpacings? letterSpacing,
+      NBFontWeights? fontWeight,
+      NBLineHeights? lineHeight,
+      NBComponent? component,
+      NBSpaces? spaces,
+      NBSizes? sizes,
+      NBBorders? borders,
+      NBRadius? radiuses})
+      : fontSize = fontSize ?? nbFontSizes,
         letterSpacing = letterSpacing ?? baseLetterSpacings,
         fontWeight = fontWeight ?? baseNBFontWeights,
         lineHeight = lineHeight ?? baseLineHeights,
         component = component ?? baseComponents,
         spaces = spaces ?? nbBaseSpaces,
         sizes = sizes ?? nbBaseSizes,
-        borders = borders ?? nbBorders;
+        borders = borders ?? nbBorders,
+        radiuses = radiuses ?? nbRadius;
 
   Map<String, dynamic> toJson() {
     return {
@@ -47,7 +52,8 @@ class NativeBaseTheme {
       "component": component,
       "spaces": spaces,
       "sizes": sizes,
-      "borders": borders
+      "borders": borders,
+      "radii": radiuses
     };
   }
 }

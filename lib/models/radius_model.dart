@@ -1,24 +1,24 @@
 class NBRadius {
-  int? _none;
-  int? _xs;
-  int? _sm;
-  int? _md;
-  int? _lg;
-  int? _xl;
-  int? _i2xl;
-  int? _i3xl;
-  int? _full;
+  double? _none;
+  double? _xs;
+  double? _sm;
+  double? _md;
+  double? _lg;
+  double? _xl;
+  double? _i2xl;
+  double? _i3xl;
+  double? _full;
 
   NBRadius(
-      {int? none,
-      int? xs,
-      int? sm,
-      int? md,
-      int? lg,
-      int? xl,
-      int? i2xl,
-      int? i3xl,
-      int? full}) {
+      {double? none,
+      double? xs,
+      double? sm,
+      double? md,
+      double? lg,
+      double? xl,
+      double? i2xl,
+      double? i3xl,
+      double? full}) {
     if (none != null) {
       _none = none;
     }
@@ -48,23 +48,23 @@ class NBRadius {
     }
   }
 
-  int? get none => _none;
+  double? get none => _none;
 
-  int? get xs => _xs;
+  double? get xs => _xs;
 
-  int? get sm => _sm;
+  double? get sm => _sm;
 
-  int? get md => _md;
+  double? get md => _md;
 
-  int? get lg => _lg;
+  double? get lg => _lg;
 
-  int? get xl => _xl;
+  double? get xl => _xl;
 
-  int? get i2xl => _i2xl;
+  double? get i2xl => _i2xl;
 
-  int? get i3xl => _i3xl;
+  double? get i3xl => _i3xl;
 
-  int? get full => _full;
+  double? get full => _full;
 
   NBRadius.fromJson(Map<String, dynamic> json) {
     _none = json['none'];

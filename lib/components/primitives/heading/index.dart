@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nativebase_flutter/components/primitives/text/text.dart';
+import 'package:nativebase_flutter/utils/extension/resolver.dart';
+import 'package:nativebase_flutter/utils/resolve_double.dart';
 import '../../../utils/components_enum.dart';
-import '../../../utils/style_resolver.dart';
 
 class Heading extends StatelessWidget {
   final String text;
@@ -22,23 +24,17 @@ class Heading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle style = FactoryStyle.resolver(
-      context,
-      toJson(),
-      Component.heading,
-    );
-    return Text(
-      text,
-      style: style,
-    );
+    return NBText(heading: this, styles: toJson(context));
   }
 
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson(BuildContext context) {
     return {
-      "size": size,
-      "fontSize": fontSize,
-      "fs": fs,
-      "letterSpacing": letterSpacing
+      "size": "size".resolve(
+          context: context, value: size!, component: Component.heading),
+      "fontSize": getDirectResolvedValue("fontSize", context, fontSize),
+      "fs": getDirectResolvedValue("fontSize", context, fs),
+      "letterSpacing":
+          getDirectResolvedValue("letterSpacing", context, letterSpacing)
     };
   }
 }

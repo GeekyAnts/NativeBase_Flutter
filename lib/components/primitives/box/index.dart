@@ -40,6 +40,15 @@ class Box extends StatelessWidget {
   final String? borderBottom;
   final String? borderStyle;
   final Color? borderColor;
+  final String? borderRadius;
+  final String? borderBottomLeftRadius;
+  final String? borderBottomRightRadius;
+  final String? borderTopLeftRadius;
+  final String? borderTopRightRadius;
+  final String? borderLeftRadius;
+  final String? borderRightRadius;
+  final String? borderTopRadius;
+  final String? borderBottomRadius;
   const Box({
     super.key,
     this.m,
@@ -72,23 +81,48 @@ class Box extends StatelessWidget {
     this.borderTop,
     this.borderColor,
     this.borderStyle,
+    this.borderRadius,
+    this.borderBottomLeftRadius,
+    this.borderBottomRightRadius,
+    this.borderTopLeftRadius,
+    this.borderTopRightRadius,
+    this.borderLeftRadius,
+    this.borderBottomRadius,
+    this.borderRightRadius,
+    this.borderTopRadius,
     required this.child,
   });
 
   @override
   Widget build(BuildContext context) {
     // print(getDirectResolvedValue("h", context, "sm"));
-    print(toStyle(context));
+
+    /// STEP : 1
+    /// Resolved Values from the theme
+    /// Basically we convert all the native base tokens to the Flutter required types and values
+    Map<String, dynamic> styles = toStyle(context);
+
+    /// Step : 3
+    /// Resolve to the required material widget
+    /// For instance [Box] required a styled container hence the below function will return
+    /// the style container from the [FactoryStyle] resolver method
     return FactoryStyle.resolver(
       context,
-      toStyle(context),
+      styles,
       Component.box,
       child: child,
     );
   }
 
+  ///
+  /// Step : 2
+  /// The below will map the required Types a.k.a Instance of flutter from the token of Nativebase.
+  /// It will use required function when we need a specific  type and
+  /// it will use `getDirectResolvedValue` when it requires a double value
+  ///
   Map<String, dynamic> toStyle(BuildContext context) {
     EdgeInsetsGeometry edgeInsetsGeometry = EdgeInsets.zero;
+
     return {
       "m": getEdgeInsetsGeometry(
         edgeInsetsGeometry,
@@ -130,8 +164,16 @@ class Box extends StatelessWidget {
               wr: borderRight ?? borderWidth,
               wt: borderTop ?? borderWidth,
               color: borderColor,
-              borderStyle: borderStyle)
-          : null
+              borderStyle: borderStyle,
+            )
+          : null,
+      "borderRadius": getBorderRadius(
+        bl: borderBottomLeftRadius ?? borderLeftRadius ?? borderRadius,
+        br: borderBottomRightRadius ?? borderRadius,
+        tl: borderTopLeftRadius ?? borderLeftRadius ?? borderRadius,
+        tr: borderTopRightRadius ?? borderRadius,
+        context: context,
+      )
     };
   }
 }
