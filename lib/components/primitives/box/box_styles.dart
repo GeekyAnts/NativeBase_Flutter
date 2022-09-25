@@ -18,7 +18,8 @@ Widget containerStyle(
     ),
     alignment: styles["alignment"],
     padding: styles["p"],
-    margin: styles["m"],
+    margin: styles["margin"]["property"]
+        .call(left: 10.0, right: 10.0, top: 30.0, bottom: 10.0),
     height: styles["h"],
     width: styles["w"],
     child: child,

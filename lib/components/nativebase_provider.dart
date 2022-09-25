@@ -3,7 +3,6 @@ import 'package:nativebase_flutter/nativebase_flutter.dart';
 
 class NativeBaseProvider extends StatefulWidget {
   final NativeBaseTheme theme;
-
   final Widget child;
 
   const NativeBaseProvider({
@@ -24,8 +23,12 @@ class NativeBaseProvider extends StatefulWidget {
 }
 
 class _NativeBaseProvider extends State<NativeBaseProvider> {
+  late BuildContext myContext;
+
   @override
   Widget build(BuildContext context) {
+    myContext = context;
+    print(context.widget);
     return widget.child;
   }
 }

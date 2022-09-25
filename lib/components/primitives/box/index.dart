@@ -49,6 +49,7 @@ class Box extends StatelessWidget {
   final String? borderRightRadius;
   final String? borderTopRadius;
   final String? borderBottomRadius;
+  final EdgeInsetsGeometry? padding;
   const Box({
     super.key,
     this.m,
@@ -90,6 +91,7 @@ class Box extends StatelessWidget {
     this.borderBottomRadius,
     this.borderRightRadius,
     this.borderTopRadius,
+    this.padding,
     required this.child,
   });
 
@@ -101,6 +103,8 @@ class Box extends StatelessWidget {
     /// Resolved Values from the theme
     /// Basically we convert all the native base tokens to the Flutter required types and values
     Map<String, dynamic> styles = toStyle(context);
+
+    print(toStyle(context));
 
     /// Step : 3
     /// Resolve to the required material widget
@@ -124,6 +128,7 @@ class Box extends StatelessWidget {
     EdgeInsetsGeometry edgeInsetsGeometry = EdgeInsets.zero;
 
     return {
+      "margin": propConfig["margin"],
       "m": getEdgeInsetsGeometry(
         edgeInsetsGeometry,
         context,

@@ -16,6 +16,10 @@ class MyApp extends StatelessWidget {
       home: NativeBaseProvider(
         theme: appTheme,
         child: const NativeBaseExample(),
+        builder: (c, _) {
+          print(context.widget);
+          return const NativeBaseExample();
+        },
       ),
     );
   }
@@ -34,16 +38,14 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
     return Scaffold(
       body: Center(
         child: Column(
-          children: const [
+          children: [
             Box(
-              color: Colors.amber,
-              h: '500',
-              w: '1300',
-              alignment: 'center',
-              borderRadius: '10',
-              child: Heading(
-                "Hello From Native Base Heading Widget",
-              ),
+              child: Text("Hello"),
+            ),
+            Container(
+              padding: p10(context),
+              color: Colors.red,
+              child: Text("red"),
             )
           ],
         ),

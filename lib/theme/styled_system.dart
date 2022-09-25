@@ -30,7 +30,22 @@ const Map<String, dynamic> borderStyle = {
 
 Map<String, dynamic> spaces = {
   "margin": {
-    "property": "margin",
+    "property": EdgeInsets.only,
+    "nb-props": [
+      "m",
+      "mr",
+      "ml",
+      "mt",
+      "mb",
+      "marginTop",
+      "marginBottom",
+      "marginLeft",
+      "marginRight",
+      "mx",
+      "marginX",
+      "marginY",
+      "my"
+    ],
     "scale": "spaces",
   },
   "m": {
