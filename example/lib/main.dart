@@ -16,10 +16,6 @@ class MyApp extends StatelessWidget {
       home: NativeBaseProvider(
         theme: appTheme,
         child: const NativeBaseExample(),
-        builder: (c, _) {
-          print(context.widget);
-          return const NativeBaseExample();
-        },
       ),
     );
   }
