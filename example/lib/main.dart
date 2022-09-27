@@ -34,15 +34,20 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
     return Scaffold(
       body: Center(
         child: Column(
-          children: [
+          children: const [
             Box(
-              child: Text("Hello"),
+              m: '6',
+              mt: '4',
+              maxH: 'lg',
+              h: '600',
+              borderStyle: 'solid',
+              borderRadius: 'full',
+              borderColor: Colors.red,
+              borderWidth: '1',
+              alignment: 'center',
+              color: Colors.yellow,
+              child: Heading("Hello From NativeBase Heading Widget"),
             ),
-            Container(
-              padding: p10(context),
-              color: Colors.red,
-              child: Text("red"),
-            )
           ],
         ),
       ),

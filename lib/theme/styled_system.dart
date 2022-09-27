@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/nativebase_flutter.dart';
-import 'package:nativebase_flutter/utils/edge_insets.dart';
 
 const Map<String, dynamic> typography = {
   "fontSize": {"property": 'fontSize', "scale": 'fontSize', "type": "double"},
@@ -30,22 +28,7 @@ const Map<String, dynamic> borderStyle = {
 
 Map<String, dynamic> spaces = {
   "margin": {
-    "property": EdgeInsets.only,
-    "nb-props": [
-      "m",
-      "mr",
-      "ml",
-      "mt",
-      "mb",
-      "marginTop",
-      "marginBottom",
-      "marginLeft",
-      "marginRight",
-      "mx",
-      "marginX",
-      "marginY",
-      "my"
-    ],
+    "property": "margin",
     "scale": "spaces",
   },
   "m": {
@@ -114,10 +97,14 @@ Map<String, dynamic> spaces = {
   "p": {
     "property": "padding",
     "scale": "spaces",
-    "transformer": getEdgeInsetsGeometry
+    "val": const EdgeInsets.all(0)
   },
   "paddingTop": {"property": "paddingTop", "scale": "spaces"},
-  "pt": {"property": "paddingTop", "scale": "spaces"},
+  "pt": {
+    "property": "paddingTop",
+    "scale": "spaces",
+    "val": const EdgeInsets.only(top: 0)
+  },
   "paddingRight": {"property": "paddingRight", "scale": "spaces"},
   "pr": {"property": "paddingRight", "scale": "spaces"},
   "paddingBottom": {"property": "paddingBottom", "scale": "spaces"},
@@ -173,7 +160,7 @@ Map<String, dynamic> layout = {
 };
 
 Map<String, dynamic> border = {
-  "borderWidth": {"property": "borderWidth", "scale": "borderWidths"},
+  "borderWidth": {"property": "borderWidth", "scale": "borders"},
   "borderStyle": {"property": "borderStyle", "scale": "borderStyles"},
   "borderColor": {
     "property": "borderColor",
@@ -218,17 +205,14 @@ Map<String, dynamic> border = {
     "properties": ["borderTop", "borderBottom"],
     "scale": "borders"
   },
-  "borderTopWidth": {"property": "borderTopWidth", "scale": "borderWidths"},
+  "borderTopWidth": {"property": "borderTopWidth", "scale": "borders"},
   "borderTopColor": {
     "property": "borderTopColor",
     "scale": "colors",
     "transformer": "getColor"
   },
   "borderTopStyle": {"property": "borderTopStyle", "scale": "borderStyles"},
-  "borderBottomWidth": {
-    "property": "borderBottomWidth",
-    "scale": "borderWidths"
-  },
+  "borderBottomWidth": {"property": "borderBottomWidth", "scale": "borders"},
   "borderBottomColor": {
     "property": "borderBottomColor",
     "scale": "colors",
@@ -238,14 +222,14 @@ Map<String, dynamic> border = {
     "property": "borderBottomStyle",
     "scale": "borderStyles"
   },
-  "borderLeftWidth": {"property": "borderLeftWidth", "scale": "borderWidths"},
+  "borderLeftWidth": {"property": "borderLeftWidth", "scale": "borders"},
   "borderLeftColor": {
     "property": "borderLeftColor",
     "scale": "colors",
     "transformer": "getColor"
   },
   "borderLeftStyle": {"property": "borderLeftStyle", "scale": "borderStyles"},
-  "borderRightWidth": {"property": "borderRightWidth", "scale": "borderWidths"},
+  "borderRightWidth": {"property": "borderRightWidth", "scale": "borders"},
   "borderRightColor": {
     "property": "borderRightColor",
     "scale": "colors",

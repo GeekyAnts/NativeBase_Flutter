@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/utils/border.dart';
-
-import 'package:nativebase_flutter/utils/components_enum.dart';
-import 'package:nativebase_flutter/utils/edge_insets.dart';
-import 'package:nativebase_flutter/utils/resolve_double.dart';
-import 'package:nativebase_flutter/utils/style_resolver.dart';
-
-import '../../../theme/styled_system.dart';
+import 'package:nativebase_flutter/utils/prop-resolver/prop_resolver.dart';
+import '../../../utils/token-resolver/token_resolver.dart';
 
 class Box extends StatelessWidget {
   final String? m;
@@ -97,88 +91,76 @@ class Box extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print(getDirectResolvedValue("h", context, "sm"));
+    /// Token Resolver
+    ///
+    Map<String, dynamic> s = tokenResolver(toJson(), context);
 
-    /// STEP : 1
-    /// Resolved Values from the theme
-    /// Basically we convert all the native base tokens to the Flutter required types and values
-    Map<String, dynamic> styles = toStyle(context);
+    /// Prop Resolver
+    ///
+    Map<String, dynamic> rs = propResolver(s);
 
-    print(toStyle(context));
-
-    /// Step : 3
-    /// Resolve to the required material widget
-    /// For instance [Box] required a styled container hence the below function will return
-    /// the style container from the [FactoryStyle] resolver method
-    return FactoryStyle.resolver(
-      context,
-      styles,
-      Component.box,
+    return Container(
+      padding: rs["padding"],
+      margin: rs["margin"],
+      height: rs['height'],
+      alignment: rs['alignment'],
+      constraints: rs["constraints"],
+      decoration: BoxDecoration(
+        color: color,
+        border: rs["border"],
+        borderRadius: rs["borderRadius"],
+      ),
       child: child,
     );
   }
 
-  ///
-  /// Step : 2
-  /// The below will map the required Types a.k.a Instance of flutter from the token of Nativebase.
-  /// It will use required function when we need a specific  type and
-  /// it will use `getDirectResolvedValue` when it requires a double value
-  ///
-  Map<String, dynamic> toStyle(BuildContext context) {
-    EdgeInsetsGeometry edgeInsetsGeometry = EdgeInsets.zero;
-
+  Map<String, dynamic> toJson() {
     return {
-      "margin": propConfig["margin"],
-      "m": getEdgeInsetsGeometry(
-        edgeInsetsGeometry,
-        context,
-        m,
-        my,
-        mx,
-        ml,
-        mt,
-        mb,
-        mr,
-        "m",
-      ),
-      "p": getEdgeInsetsGeometry(
-        edgeInsetsGeometry,
-        context,
-        p,
-        py,
-        px,
-        pl,
-        pt,
-        pb,
-        pr,
-        "p",
-      ),
-      "alignment": propConfig[alignment],
-      "color": color,
-      "h": getDirectResolvedValue("h", context, h),
-      "w": getDirectResolvedValue("w", context, w),
-      "maxW": getDirectResolvedValue("maxW", context, maxW),
-      "maxH": getDirectResolvedValue("maxH", context, maxH),
-      "minW": getDirectResolvedValue("minW", context, minW),
-      "minH": getDirectResolvedValue("minH", context, maxH),
-      "border": borderWidth != null
-          ? getBorder(
-              context: context,
-              wb: borderBottom ?? borderWidth,
-              wl: borderLeft ?? borderWidth,
-              wr: borderRight ?? borderWidth,
-              wt: borderTop ?? borderWidth,
-              color: borderColor,
-              borderStyle: borderStyle,
-            )
-          : null,
-      "borderRadius": getBorderRadius(
-        bl: borderBottomLeftRadius ?? borderLeftRadius ?? borderRadius,
-        br: borderBottomRightRadius ?? borderRadius,
-        tl: borderTopLeftRadius ?? borderLeftRadius ?? borderRadius,
-        tr: borderTopRightRadius ?? borderRadius,
-        context: context,
-      )
+      "padding": {
+        "p": p,
+        "pt": pt,
+        "pb": pb,
+        "pl": pl,
+        "pr": pr,
+        "px": px,
+        "py": py
+      },
+      "margin": {
+        "m": m,
+        "mt": mt,
+        "mb": mb,
+        "ml": ml,
+        "mr": mr,
+        "mx": mx,
+        "my": my
+      },
+      "border": {
+        "borderLeft": borderLeft,
+        "borderTop": borderTop,
+        "borderRight": borderRight,
+        "borderBottom": borderBottom,
+        "borderWidth": borderWidth,
+        "borderStyle": borderStyle,
+        "color": borderColor,
+      },
+      "borderRadius": {
+        "borderBottomLeftRadius": borderBottomLeftRadius,
+        "borderTopLeftRadius": borderTopLeftRadius,
+        "borderBottomRightRadius": borderBottomRightRadius,
+        "borderTopRightRadius": borderTopRightRadius,
+        "borderRightRadius": borderRightRadius,
+        "borderLeftRadius": borderLeftRadius,
+        "borderRadius": borderRadius
+      },
+      "alignment": alignment,
+      "constraints": {
+        "maxH": maxH,
+        "maxW": maxW,
+        "minH": minH,
+        "minW": minW,
+      },
+      "height": h,
+      "width": w
     };
   }
 }
