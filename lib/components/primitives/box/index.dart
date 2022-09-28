@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/utils/prop-resolver/prop_resolver.dart';
+import 'package:nativebase_flutter/utils/style-instance-generator/style_instance_generator.dart';
 import '../../../utils/token-resolver/token_resolver.dart';
 
 class Box extends StatelessWidget {
@@ -93,25 +94,17 @@ class Box extends StatelessWidget {
   Widget build(BuildContext context) {
     /// Token Resolver
     ///
+    /// IN p : "2"
+    /// OUT p: 8.0
     Map<String, dynamic> s = tokenResolver(toJson(), context);
 
     /// Prop Resolver
     ///
+    /// IN p: 8.0
+    /// OUT padding :z
     Map<String, dynamic> rs = propResolver(s);
 
-    return Container(
-      padding: rs["padding"],
-      margin: rs["margin"],
-      height: rs['height'],
-      alignment: rs['alignment'],
-      constraints: rs["constraints"],
-      decoration: BoxDecoration(
-        color: color,
-        border: rs["border"],
-        borderRadius: rs["borderRadius"],
-      ),
-      child: child,
-    );
+    return styleInstanceGenerator<Container>(rs);
   }
 
   Map<String, dynamic> toJson() {
@@ -160,7 +153,9 @@ class Box extends StatelessWidget {
         "minW": minW,
       },
       "height": h,
-      "width": w
+      "width": w,
+      "color": color,
+      "child": child
     };
   }
 }

@@ -11,7 +11,7 @@ dynamic propResolver(Map<String, dynamic> style) {
     } else if (key == 'border') {
       v = getBorder(v, key, value);
     } else if (key == "borderRadius") {
-      v = getBorderRadii(key, v, value);
+      v = getBorderRadius(key, v, value);
     } else if (key == "constraints") {
       v = getConstraints(key, v, value);
     } else {

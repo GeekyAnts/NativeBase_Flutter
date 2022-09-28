@@ -1,3 +1,4 @@
+import 'package:example/example.dart';
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/nativebase_flutter.dart';
 
@@ -32,25 +33,41 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: const [
-            Box(
-              m: '6',
-              mt: '4',
-              maxH: 'lg',
-              h: '600',
-              borderStyle: 'solid',
-              borderRadius: 'full',
-              borderColor: Colors.red,
-              borderWidth: '1',
-              alignment: 'center',
-              color: Colors.yellow,
-              child: Heading("Hello From NativeBase Heading Widget"),
+      body: Column(
+        children: [
+          Center(
+            child: Box(
+              px: "6",
+              py: "3",
+              p: "20",
+              borderRadius: "full",
+              color: NativeBaseColor.primary.shade600,
+              m: "2",
+              borderColor: NativeBaseColor.purple,
+              child: const Heading(
+                "Hey There!",
+                fontSize: 'sm',
+                fontWeight: 'extraBold',
+                color: Colors.white,
+              ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
+  }
+}
+
+class MyWidget extends StatefulWidget with Layout {
+  MyWidget({super.key});
+
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

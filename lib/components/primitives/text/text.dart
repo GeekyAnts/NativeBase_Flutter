@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/nativebase_flutter.dart';
+import 'package:nativebase_flutter/utils/component-theme-resolver/component_theme_resolver.dart';
 import 'package:nativebase_flutter/utils/components_enum.dart';
-import 'package:nativebase_flutter/utils/style_resolver.dart';
+import 'package:nativebase_flutter/utils/prop-resolver/prop_resolver.dart';
+import 'package:nativebase_flutter/utils/style-instance-generator/style_instance_generator.dart';
+
+import '../../../utils/token-resolver/token_resolver.dart';
 
 class NBText extends StatelessWidget {
-  final Heading heading;
   final Map<String, dynamic> styles;
-  const NBText({required this.heading, super.key, required this.styles});
+  const NBText({super.key, required this.styles});
 
   @override
   Widget build(BuildContext context) {
-    for (String key in styles.keys) {
-      if (key == 'size' || key == 'variant') {
-        Map size = styles[key];
-
-        for (String k in size.keys) {
-          if (styles[k] == null) {
-            styles[k] = size[k];
-          }
-        }
-      }
-    }
-
-    return FactoryStyle.resolver(
-      context,
-      styles,
-      Component.heading,
-      child: heading.text,
+    /// Token Resolver
+    ///
+    Map<String, dynamic> componentTheme = componentThemeResolver(
+      context: context,
+      component: Component.heading,
+      style: styles,
     );
+    Map<String, dynamic> s = tokenResolver(componentTheme, context);
+    Map<String, dynamic> rs = propResolver(s);
+
+    return Text(rs["text"], style: styleInstanceGenerator<TextStyle>(rs));
   }
 }

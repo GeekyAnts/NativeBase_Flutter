@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-Map<String, dynamic> getBorderRadii(String key, Map<String, dynamic> v, value) {
+Map<String, dynamic> getBorderRadius(
+    String key, Map<String, dynamic> v, value) {
   v.addAll({
     key: BorderRadius.only(
       bottomLeft: Radius.circular(
@@ -33,29 +34,30 @@ Map<String, dynamic> getBorderRadii(String key, Map<String, dynamic> v, value) {
 }
 
 Map<String, dynamic> getBorder(Map<String, dynamic> v, String key, value) {
-  BorderStyle borderStyle = value["borderStyle"];
+  BorderStyle borderStyle = value["borderStyle"] ?? BorderStyle.none;
+  Color color = value["color"] ?? Colors.transparent;
 
   v.addAll({
     key: Border(
       left: BorderSide(
         width: value["borderLeft"] ?? value["borderWidth"] ?? 0,
         style: borderStyle,
-        color: value["color"],
+        color: color,
       ),
       right: BorderSide(
         width: value["borderRight"] ?? value["borderWidth"] ?? 0,
         style: borderStyle,
-        color: value["color"],
+        color: color,
       ),
       top: BorderSide(
         width: value["borderTop"] ?? value["borderWidth"] ?? 0,
         style: borderStyle,
-        color: value["color"],
+        color: color,
       ),
       bottom: BorderSide(
         width: value["borderBottom"] ?? value["borderWidth"] ?? 0,
         style: borderStyle,
-        color: value["color"],
+        color: color,
       ),
     )
   });

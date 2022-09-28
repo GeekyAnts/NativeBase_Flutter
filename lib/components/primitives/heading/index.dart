@@ -6,8 +6,10 @@ class Heading extends StatelessWidget {
   final String? size;
 
   final String? fontSize;
-  final String? fs;
+  final String? fontWeight;
   final String? letterSpacing;
+  final Color? color;
+  final Color? backgroundColor;
 
   const Heading(
     this.text, {
@@ -15,23 +17,26 @@ class Heading extends StatelessWidget {
     // Default style will be initialized like this
     this.size = 'lg',
     this.fontSize,
-    this.fs,
     this.letterSpacing,
+    this.color,
+    this.fontWeight,
+    this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
-    return NBText(heading: this, styles: {});
+    return NBText(styles: toJson());
   }
 
-  // Map<String, dynamic> toJson(BuildContext context) {
-  //   return {
-  //     "size": "size".resolve(
-  //         context: context, value: size!, component: Component.heading),
-  //     "fontSize": getDirectResolvedValue("fontSize", context, fontSize),
-  //     "fs": getDirectResolvedValue("fontSize", context, fs),
-  //     "letterSpacing":
-  //         getDirectResolvedValue("letterSpacing", context, letterSpacing)
-  //   };
-  // }
+  Map<String, dynamic> toJson() {
+    return {
+      "size": size,
+      "fontSize": fontSize,
+      "letterSpacing": letterSpacing,
+      "fontColor": color,
+      "fontWeight": fontWeight,
+      "backgroundColor": backgroundColor,
+      "text": text
+    };
+  }
 }

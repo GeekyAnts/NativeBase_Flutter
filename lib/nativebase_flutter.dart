@@ -7,4 +7,4 @@ export 'package:nativebase_flutter/theme/base/typography.dart';
 export 'package:nativebase_flutter/models/typography_model.dart';
 export 'package:nativebase_flutter/components/primitives/heading/index.dart';
 export 'package:nativebase_flutter/components/primitives/box/index.dart';
-export 'package:nativebase_flutter/test-apis/nb_padding.dart';
+export 'package:nativebase_flutter/theme/colors.dart';

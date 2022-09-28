@@ -7,7 +7,11 @@ const Map<String, dynamic> typography = {
     "property": 'letterSpacing',
     "scale": 'letterSpacing',
     "type": "double"
-  }
+  },
+  "fontWeight": {
+    "property": 'fontWeight',
+    "scale": 'fontWeight',
+  },
 };
 
 const Map<String, dynamic> alignment = {

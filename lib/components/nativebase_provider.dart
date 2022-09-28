@@ -28,7 +28,7 @@ class _NativeBaseProvider extends State<NativeBaseProvider> {
   @override
   Widget build(BuildContext context) {
     myContext = context;
-    print(context.widget);
+
     return widget.child;
   }
 }
