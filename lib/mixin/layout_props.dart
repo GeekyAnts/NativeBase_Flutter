@@ -1,11 +1,19 @@
+import 'package:flutter/material.dart';
+
 mixin LayoutProp {
-  String? p;
+  @protected
+  Map<String, dynamic> layoutPropsToJson<T>(dynamic props) {
+    return {
+      "padding": {"p": props.p}
+    };
+  }
 }
 
 mixin LayoutProp1 {
-  final String? p = null;
-
-  Map<String, dynamic> layoutProp1Json() {
-    return {"margin": p};
+  @protected
+  Map<String, dynamic> layoutPropsToJson<T>(dynamic props) {
+    return {
+      "padding": {"p": props.p}
+    };
   }
 }

@@ -2,10 +2,10 @@ import '../border.dart';
 import '../edge_insets.dart';
 import '../constraints.dart';
 
-dynamic propResolver(Map<String, dynamic> style) {
+dynamic propResolver({required Map<String, dynamic> resolvedTokens}) {
   var v = <String, dynamic>{};
 
-  style.forEach((key, value) {
+  resolvedTokens.forEach((key, value) {
     if (key == "padding" || key == "margin") {
       v = getEdgeInsets(key, v, value);
     } else if (key == 'border') {

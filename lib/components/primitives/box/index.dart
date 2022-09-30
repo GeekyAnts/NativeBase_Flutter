@@ -1,159 +1,103 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/utils/prop-resolver/prop_resolver.dart';
+import 'package:nativebase_flutter/models/utility-props-models/border_props_model.dart';
+import 'package:nativebase_flutter/models/utility-props-models/flexbox_props_model.dart';
+import 'package:nativebase_flutter/models/utility-props-models/layout_props_model.dart';
+import 'package:nativebase_flutter/models/utility-props-models/style_props_model.dart';
 import 'package:nativebase_flutter/utils/style-instance-generator/style_instance_generator.dart';
-import '../../../utils/token-resolver/token_resolver.dart';
+import '../../../builder/nativebase_builder.dart';
 
-class Box extends StatelessWidget {
-  final String? m;
-  final String? p;
-  final String? mt;
-  final String? mb;
-  final String? mr;
-  final String? ml;
-  final String? mx;
-  final String? my;
-  final String? pt;
-  final String? pb;
-  final String? pl;
-  final String? pr;
-  final String? px;
-  final String? py;
-  final String? alignment;
+class Box extends NativeBaseBuilder {
+  final StyleProps _styleProps;
+  final BorderProps _borderProps;
+  final LayoutProps _layoutProps;
+  final FlexBoxProps _flexBoxProps;
   final Color? color;
   final Widget child;
-  final String? h;
-  final String? w;
   final String? size;
-  final String? maxW;
-  final String? maxH;
-  final String? minH;
-  final String? minW;
-  final String? borderWidth;
-  final String? borderLeft;
-  final String? borderRight;
-  final String? borderTop;
-  final String? borderBottom;
-  final String? borderStyle;
-  final Color? borderColor;
-  final String? borderRadius;
-  final String? borderBottomLeftRadius;
-  final String? borderBottomRightRadius;
-  final String? borderTopLeftRadius;
-  final String? borderTopRightRadius;
-  final String? borderLeftRadius;
-  final String? borderRightRadius;
-  final String? borderTopRadius;
-  final String? borderBottomRadius;
-  final EdgeInsetsGeometry? padding;
-  const Box({
+
+  Box({
     super.key,
-    this.m,
-    this.p,
-    this.mt,
-    this.mb,
-    this.ml,
-    this.mr,
-    this.mx,
-    this.my,
-    this.pb,
-    this.pr,
-    this.pl,
-    this.pt,
-    this.px,
-    this.py,
-    this.color,
-    this.alignment,
-    this.h,
-    this.w,
-    this.maxW,
-    this.size,
-    this.maxH,
-    this.minH,
-    this.minW,
-    this.borderWidth,
-    this.borderLeft,
-    this.borderBottom,
-    this.borderRight,
-    this.borderTop,
-    this.borderColor,
-    this.borderStyle,
-    this.borderRadius,
-    this.borderBottomLeftRadius,
-    this.borderBottomRightRadius,
-    this.borderTopLeftRadius,
-    this.borderTopRightRadius,
-    this.borderLeftRadius,
-    this.borderBottomRadius,
-    this.borderRightRadius,
-    this.borderTopRadius,
-    this.padding,
+    String? mt,
+    String? p,
+    String? m,
+    String? mb,
+    String? mr,
+    String? ml,
+    String? mx,
+    String? my,
+    String? pt,
+    String? pb,
+    String? pl,
+    String? pr,
+    String? px,
+    String? py,
+    String? alignment,
+    String? h,
+    String? w,
+    String? maxW,
+    String? maxH,
+    String? minH,
+    String? minW,
+    String? borderWidth,
+    String? borderLeft,
+    String? borderRight,
+    String? borderTop,
+    String? borderBottom,
+    String? borderStyle,
+    Color? borderColor,
+    String? borderRadius,
+    String? borderBottomLeftRadius,
+    String? borderBottomRightRadius,
+    String? borderTopLeftRadius,
+    String? borderTopRightRadius,
+    String? borderLeftRadius,
+    String? borderRightRadius,
+    String? borderTopRadius,
+    String? borderBottomRadius,
     required this.child,
-  });
+    this.color,
+    this.size,
+  })  : _styleProps =
+            StyleProps(mt, mr, mb, ml, mx, my, p, pt, pr, pb, pl, px, py, m),
+        _borderProps = BorderProps(
+          borderWidth,
+          borderLeft,
+          borderRight,
+          borderTop,
+          borderBottom,
+          borderStyle,
+          borderColor,
+          borderRadius,
+          borderBottomLeftRadius,
+          borderBottomRightRadius,
+          borderTopLeftRadius,
+          borderTopRightRadius,
+          borderLeftRadius,
+          borderRightRadius,
+          borderTopRadius,
+          borderBottomRadius,
+        ),
+        _layoutProps = LayoutProps(h, w, maxW, maxH, minH, minW),
+        _flexBoxProps = FlexBoxProps(alignment);
 
   @override
   Widget build(BuildContext context) {
-    /// Token Resolver
-    ///
-    /// IN p : "2"
-    /// OUT p: 8.0
-    Map<String, dynamic> s = tokenResolver(toJson(), context);
-
-    /// Prop Resolver
-    ///
-    /// IN p: 8.0
-    /// OUT padding :z
-    Map<String, dynamic> rs = propResolver(s);
-
-    return styleInstanceGenerator<Container>(rs);
+    return styleInstanceGenerator<Container>(
+        resolvedProps: resolveProps(
+      resolvedTokens: resolveTokens(
+        toJson: toJson(),
+        context: context,
+      ),
+    ));
   }
 
+  @override
   Map<String, dynamic> toJson() {
     return {
-      "padding": {
-        "p": p,
-        "pt": pt,
-        "pb": pb,
-        "pl": pl,
-        "pr": pr,
-        "px": px,
-        "py": py
-      },
-      "margin": {
-        "m": m,
-        "mt": mt,
-        "mb": mb,
-        "ml": ml,
-        "mr": mr,
-        "mx": mx,
-        "my": my
-      },
-      "border": {
-        "borderLeft": borderLeft,
-        "borderTop": borderTop,
-        "borderRight": borderRight,
-        "borderBottom": borderBottom,
-        "borderWidth": borderWidth,
-        "borderStyle": borderStyle,
-        "color": borderColor,
-      },
-      "borderRadius": {
-        "borderBottomLeftRadius": borderBottomLeftRadius,
-        "borderTopLeftRadius": borderTopLeftRadius,
-        "borderBottomRightRadius": borderBottomRightRadius,
-        "borderTopRightRadius": borderTopRightRadius,
-        "borderRightRadius": borderRightRadius,
-        "borderLeftRadius": borderLeftRadius,
-        "borderRadius": borderRadius
-      },
-      "alignment": alignment,
-      "constraints": {
-        "maxH": maxH,
-        "maxW": maxW,
-        "minH": minH,
-        "minW": minW,
-      },
-      "height": h,
-      "width": w,
+      ..._styleProps.toJson(),
+      ..._borderProps.toJson(),
+      ..._layoutProps.toJson(),
+      ..._flexBoxProps.toJson(),
       "color": color,
       "child": child
     };

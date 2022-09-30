@@ -1,6 +1,7 @@
 import 'package:example/example.dart';
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/nativebase_flutter.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,22 +37,21 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
       body: Column(
         children: [
           Center(
-            child: Box(
-              px: "6",
-              py: "3",
-              p: "20",
-              borderRadius: "full",
-              color: NativeBaseColor.primary.shade600,
-              m: "2",
-              borderColor: NativeBaseColor.purple,
-              child: const Heading(
-                "Hey There!",
-                fontSize: 'sm',
-                fontWeight: 'extraBold',
-                color: Colors.white,
-              ),
+              child: Box(
+            px: "6",
+            py: "3",
+            p: "20",
+            borderRadius: "full",
+            color: NativeBaseColor.primary.shade600,
+            m: "2",
+            borderColor: NativeBaseColor.purple,
+            child: const Heading(
+              "Hey There!",
+              fontSize: 'sm',
+              fontWeight: 'extraBold',
+              color: Colors.white,
             ),
-          ),
+          )),
         ],
       ),
     );
