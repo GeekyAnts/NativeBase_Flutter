@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 
-mixin LayoutProp {
-  @protected
-  Map<String, dynamic> layoutPropsToJson<T>(dynamic props) {
-    return {
-      "padding": {"p": props.p}
-    };
-  }
-}
+import '../utils/component-theme-resolver/component_theme_resolver.dart';
+import '../utils/components_enum.dart';
 
-mixin LayoutProp1 {
-  @protected
-  Map<String, dynamic> layoutPropsToJson<T>(dynamic props) {
-    return {
-      "padding": {"p": props.p}
-    };
+mixin ComponentThemeResolver {
+  Map<String, dynamic> resolveComponentLevelTheme(
+      BuildContext context, Map<String, dynamic> styles) {
+    return componentThemeResolver(
+      context: context,
+      component: Component.heading,
+      style: styles,
+    );
   }
 }

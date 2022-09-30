@@ -1,7 +1,6 @@
 import 'package:example/example.dart';
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/nativebase_flutter.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 void main() {
   runApp(const MyApp());
