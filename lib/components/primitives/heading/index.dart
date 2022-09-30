@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/components/primitives/text/text.dart';
+import 'package:nativebase_flutter/builder/nativebase_builder.dart';
 
-class Heading extends StatelessWidget {
+class Heading extends NativeBaseBuilder<Text> {
   final String text;
   final String? size;
 
@@ -23,11 +23,9 @@ class Heading extends StatelessWidget {
     this.backgroundColor,
   });
 
-  @override
-  Widget build(BuildContext context) {
-    return NBText(styles: toJson());
-  }
+  /// TODO :: Where to resolve component level theme ?
 
+  @override
   Map<String, dynamic> toJson() {
     return {
       "size": size,

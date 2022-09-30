@@ -3,10 +3,9 @@ import 'package:nativebase_flutter/models/utility-props-models/border_props_mode
 import 'package:nativebase_flutter/models/utility-props-models/flexbox_props_model.dart';
 import 'package:nativebase_flutter/models/utility-props-models/layout_props_model.dart';
 import 'package:nativebase_flutter/models/utility-props-models/style_props_model.dart';
-import 'package:nativebase_flutter/utils/style-instance-generator/style_instance_generator.dart';
 import '../../../builder/nativebase_builder.dart';
 
-class Box extends NativeBaseBuilder {
+class Box extends NativeBaseBuilder<Container> {
   final StyleProps _styleProps;
   final BorderProps _borderProps;
   final LayoutProps _layoutProps;
@@ -79,17 +78,6 @@ class Box extends NativeBaseBuilder {
         ),
         _layoutProps = LayoutProps(h, w, maxW, maxH, minH, minW),
         _flexBoxProps = FlexBoxProps(alignment);
-
-  @override
-  Widget build(BuildContext context) {
-    return styleInstanceGenerator<Container>(
-        resolvedProps: resolveProps(
-      resolvedTokens: resolveTokens(
-        toJson: toJson(),
-        context: context,
-      ),
-    ));
-  }
 
   @override
   Map<String, dynamic> toJson() {

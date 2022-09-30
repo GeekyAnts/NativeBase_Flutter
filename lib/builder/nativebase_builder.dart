@@ -1,8 +1,9 @@
 import 'package:flutter/widgets.dart';
 import '../utils/prop-resolver/prop_resolver.dart';
+import '../utils/style-instance-generator/style_instance_generator.dart';
 import '../utils/token-resolver/token_resolver.dart';
 
-abstract class NativeBaseBuilder extends StatelessWidget {
+abstract class NativeBaseBuilder<T extends Widget> extends StatelessWidget {
   const NativeBaseBuilder({super.key});
 
   Map<String, dynamic> resolveTokens({
@@ -16,4 +17,15 @@ abstract class NativeBaseBuilder extends StatelessWidget {
       propResolver(resolvedTokens: resolvedTokens);
 
   Map<String, dynamic> toJson();
+
+  @override
+  T build(BuildContext context) {
+    return styleInstanceGenerator<T>(
+        resolvedProps: resolveProps(
+      resolvedTokens: resolveTokens(
+        toJson: toJson(),
+        context: context,
+      ),
+    ));
+  }
 }
