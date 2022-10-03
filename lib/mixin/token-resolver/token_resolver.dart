@@ -45,6 +45,8 @@ Map<String, dynamic> tokenResolver(
 ) {
   Map<String, dynamic> resolvedProp = {};
 
+  /// Remove Null
+
   style.removeWhere((key, value) => (value == null));
 
   style.forEach((key, value) {
@@ -55,7 +57,7 @@ Map<String, dynamic> tokenResolver(
       value.forEach((k, val) {
         if (propConfig[k] != null) {
           /// Resolves from the Theme
-          getResolvedValueFromTheme(context, k, v, val);
+          v.addAll({...getResolvedValueFromTheme(context, k, v, val)});
         } else {
           /// Converts string to double
           v.addAll({
@@ -72,7 +74,8 @@ Map<String, dynamic> tokenResolver(
       /// For e.g. sm lg
       var styledSystemValue = propConfig[key];
       if (styledSystemValue != null) {
-        getResolvedValueFromTheme(context, key, v, value);
+        resolvedProp
+            .addAll({...getResolvedValueFromTheme(context, key, v, value)});
       } else {
         /// Direct Resolver
         /// EG colors
@@ -86,13 +89,14 @@ Map<String, dynamic> tokenResolver(
   return resolvedProp;
 }
 
-void getResolvedValueFromTheme(
+Map<String, dynamic> getResolvedValueFromTheme(
     BuildContext context, k, Map<String, dynamic> v, val) {
   dynamic theme =
       NativeBaseProvider.of(context).toJson()[propConfig[k]["scale"]];
-  v.addAll({
-    k: theme?.toJson()[val] ?? (val != null ? convertToDouble(val) : val),
-  });
+  return {
+    k: theme?.toJson()[val] ??
+        (val != null ? convertToDouble(val.toString()) : val),
+  };
 }
 
 dynamic convertToDouble(String v) {

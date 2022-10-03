@@ -1,6 +1,6 @@
-import '../border.dart';
-import '../edge_insets.dart';
-import '../constraints.dart';
+import '../../utils/border.dart';
+import '../../utils/constraints.dart';
+import '../../utils/edge_insets.dart';
 
 dynamic propResolver({required Map<String, dynamic> resolvedTokens}) {
   var v = <String, dynamic>{};

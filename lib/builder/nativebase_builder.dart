@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:nativebase_flutter/mixin/resolvers.dart';
-import '../utils/style-instance-generator/style_instance_generator.dart';
+import '../mixin/style-instance-generator/style_instance_generator.dart';
 
 abstract class NativeBaseWidgetBuilder<T extends Widget> extends StatelessWidget
     with Resolvers {

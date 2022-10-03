@@ -5,7 +5,7 @@ import 'package:nativebase_flutter/models/utility-props-models/layout_props_mode
 import 'package:nativebase_flutter/models/utility-props-models/style_props_model.dart';
 import '../../../builder/nativebase_builder.dart';
 
-class Box extends NativeBaseBuilder<Container> {
+class Box extends NativeBaseWidgetBuilder<Container> {
   final StyleProps _styleProps;
   final BorderProps _borderProps;
   final LayoutProps _layoutProps;

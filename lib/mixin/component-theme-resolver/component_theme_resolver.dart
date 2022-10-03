@@ -9,7 +9,7 @@ Map<String, dynamic> componentThemeResolver({
   required Map<String, dynamic> style,
 }) {
   Map<String, dynamic> resolvedProp = {};
-
+  style.removeWhere((key, value) => (value == null));
   style.forEach((key, value) {
     if (key == "size") {
       Map componentTheme = NativeBaseProvider.of(context)

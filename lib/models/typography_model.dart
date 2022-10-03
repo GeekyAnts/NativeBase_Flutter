@@ -252,28 +252,28 @@ class NBFontWeights {
         _extraBlack = extraBlack;
 
   NBFontWeights.fromJson(Map<String, dynamic> json) {
-    _hairline = json['hairline'];
+    _hairline = json['hairLine'];
     _thin = json['thin'];
     _light = json['light'];
     _normal = json['normal'];
     _medium = json['medium'];
-    _semibold = json['semibold'];
+    _semibold = json['semiBold'];
     _bold = json['bold'];
-    _extrabold = json['extrabold'];
+    _extrabold = json['extraBold'];
     _black = json['black'];
     _extraBlack = json['extraBlack'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['hairline'] = _hairline;
+    data['hairLine'] = _hairline;
     data['thin'] = _thin;
     data['light'] = _light;
     data['normal'] = _normal;
     data['medium'] = _medium;
-    data['semibold'] = _semibold;
+    data['semiBold'] = _semibold;
     data['bold'] = _bold;
-    data['extrabold'] = _extrabold;
+    data['extraBold'] = _extrabold;
     data['black'] = _black;
     data['extraBlack'] = _extraBlack;
     return data;

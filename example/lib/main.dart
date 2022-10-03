@@ -46,7 +46,6 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
             borderColor: NativeBaseColor.purple,
             child: const Heading(
               "Hey There!",
-              fontSize: 'sm',
               fontWeight: 'extraBold',
               color: Colors.white,
             ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/builder/nativebase_builder.dart';
 
-class Heading extends NativeBaseBuilder<Text> {
+class Heading extends NativeBaseWidgetBuilder<Text> {
   final String text;
   final String? size;
 
