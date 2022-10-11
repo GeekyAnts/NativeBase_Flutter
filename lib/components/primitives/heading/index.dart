@@ -1,40 +1,45 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/builder/nativebase_builder.dart';
+import 'package:nativebase_flutter/components/primitives/text/text.dart';
+import 'package:nativebase_flutter/models/utility-props-models/typography_props_model.dart';
+import '../../../models/utility-props-models/color_props_model.dart';
 
-class Heading extends NativeBaseWidgetBuilder<Text> {
+class Heading extends StatelessWidget {
+  final ColorProps _colorProps;
+  final TypographyProps _typographyProps;
   final String text;
   final String? size;
 
-  final String? fontSize;
-  final String? fontWeight;
-  final String? letterSpacing;
-  final Color? color;
-  final Color? backgroundColor;
-
-  const Heading(
+  Heading(
     this.text, {
     super.key,
     // Default style will be initialized like this
     this.size = 'lg',
-    this.fontSize,
-    this.letterSpacing,
-    this.color,
-    this.fontWeight,
-    this.backgroundColor,
-  });
-
-  /// TODO :: Where to resolve component level theme ?
+    String? color,
+    String? backgroundColor,
+    String? fontSize,
+    String? fontWeight,
+    String? letterSpacing,
+  })  : _colorProps = ColorProps(
+          color: color,
+          backgroundColor: backgroundColor,
+        ),
+        _typographyProps = TypographyProps(
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          letterSpacing: letterSpacing,
+        );
 
   @override
+  Widget build(BuildContext context) {
+    return NBText(styles: toJson());
+  }
+
   Map<String, dynamic> toJson() {
     return {
+      ..._colorProps.toJson(),
+      ..._typographyProps.toJson(),
+      "text": text,
       "size": size,
-      "fontSize": fontSize,
-      "letterSpacing": letterSpacing,
-      "fontColor": color,
-      "fontWeight": fontWeight,
-      "backgroundColor": backgroundColor,
-      "text": text
     };
   }
 }

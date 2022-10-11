@@ -9,7 +9,7 @@ abstract class NativeBaseWidgetBuilder<T extends Widget> extends StatelessWidget
   Map<String, dynamic> toJson();
 
   @override
-  T build(BuildContext context) {
+  Widget build(BuildContext context) {
     return styleInstanceGenerator<T>(
         resolvedProps: resolveProps(
       resolvedTokens: resolveTokens(

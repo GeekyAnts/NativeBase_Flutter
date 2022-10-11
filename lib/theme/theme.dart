@@ -1,9 +1,8 @@
+import 'package:nativebase_flutter/nativebase_flutter.dart';
 import 'package:nativebase_flutter/theme/base/border.dart';
 import 'package:nativebase_flutter/theme/base/sizes.dart';
 import 'package:nativebase_flutter/theme/base/spaces.dart';
 
-import '../models/nativebase_theme_model.dart';
-import 'base/typography.dart';
 import '../theme/components/index.dart';
 
 NativeBaseTheme appTheme = NativeBaseTheme(
@@ -15,6 +14,7 @@ NativeBaseTheme appTheme = NativeBaseTheme(
   spaces: nbBaseSpaces,
   sizes: nbBaseSizes,
   borders: nbBorders,
+  colors: nbColor,
 );
 
 

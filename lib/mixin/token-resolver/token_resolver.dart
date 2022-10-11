@@ -93,6 +93,7 @@ Map<String, dynamic> getResolvedValueFromTheme(
     BuildContext context, k, Map<String, dynamic> v, val) {
   dynamic theme =
       NativeBaseProvider.of(context).toJson()[propConfig[k]["scale"]];
+
   return {
     k: theme?.toJson()[val] ??
         (val != null ? convertToDouble(val.toString()) : val),

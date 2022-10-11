@@ -1,4 +1,3 @@
-import 'package:example/example.dart';
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/nativebase_flutter.dart';
 
@@ -33,39 +32,41 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Center(
-              child: Box(
-            px: "6",
-            py: "3",
-            p: "20",
-            borderRadius: "full",
-            color: NativeBaseColor.primary.shade600,
-            m: "2",
-            borderColor: NativeBaseColor.purple,
-            child: const Heading(
-              "Hey There!",
-              fontWeight: 'extraBold',
-              color: Colors.white,
+      body: Center(
+        child: Column(
+          children: [
+            NBCard(
+              child: Heading(
+                'Hey There!',
+                size: 'md',
+                fontWeight: 'normal',
+              ),
             ),
-          )),
-        ],
+            Box(
+              px: '10',
+              py: '2',
+              shadow: '2',
+              borderRadius: 'full',
+              borderBottomLeftRadius: '0',
+              color: 'blue.900',
+              gradient: const LinearGradient(
+                colors: [
+                  Colors.black,
+                  Colors.blue,
+                ],
+                begin: Alignment.bottomLeft,
+                end: Alignment.topRight,
+              ),
+              child: Heading(
+                'Hey There!',
+                fontSize: 'lg',
+                fontWeight: 'normal',
+                color: 'coolGray.200',
+              ),
+            ),
+          ],
+        ),
       ),
     );
-  }
-}
-
-class MyWidget extends StatefulWidget with Layout {
-  MyWidget({super.key});
-
-  @override
-  State<MyWidget> createState() => _MyWidgetState();
-}
-
-class _MyWidgetState extends State<MyWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

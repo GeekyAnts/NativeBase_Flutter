@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'container.dart';
 import 'text_style.dart';
 
-T styleInstanceGenerator<T>({required Map<String, dynamic> resolvedProps}) {
+Widget styleInstanceGenerator<T>(
+    {required Map<String, dynamic> resolvedProps}) {
   if (T == Container) {
-    return getContainer(resolvedProps) as T;
+    return getContainer(resolvedProps);
   } else if (T == Text) {
-    return getText(resolvedProps) as T;
+    return getText(resolvedProps);
   } else {
-    return null as T;
+    return Container();
   }
 }

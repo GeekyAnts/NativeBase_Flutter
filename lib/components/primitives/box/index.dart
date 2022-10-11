@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/models/utility-props-models/border_props_model.dart';
+import 'package:nativebase_flutter/models/utility-props-models/color_props_model.dart';
 import 'package:nativebase_flutter/models/utility-props-models/flexbox_props_model.dart';
 import 'package:nativebase_flutter/models/utility-props-models/layout_props_model.dart';
+import 'package:nativebase_flutter/models/utility-props-models/shadow_props.dart';
 import 'package:nativebase_flutter/models/utility-props-models/style_props_model.dart';
 import '../../../builder/nativebase_builder.dart';
 
@@ -10,7 +12,11 @@ class Box extends NativeBaseWidgetBuilder<Container> {
   final BorderProps _borderProps;
   final LayoutProps _layoutProps;
   final FlexBoxProps _flexBoxProps;
-  final Color? color;
+  final ColorProps _colorProps;
+  final ShadowProps _shadowProps;
+
+  final LinearGradient? gradient;
+
   final Widget child;
   final String? size;
 
@@ -53,8 +59,10 @@ class Box extends NativeBaseWidgetBuilder<Container> {
     String? borderRightRadius,
     String? borderTopRadius,
     String? borderBottomRadius,
+    String? color,
+    String? shadow,
+    this.gradient,
     required this.child,
-    this.color,
     this.size,
   })  : _styleProps =
             StyleProps(mt, mr, mb, ml, mx, my, p, pt, pr, pb, pl, px, py, m),
@@ -76,8 +84,21 @@ class Box extends NativeBaseWidgetBuilder<Container> {
           borderTopRadius,
           borderBottomRadius,
         ),
-        _layoutProps = LayoutProps(h, w, maxW, maxH, minH, minW),
-        _flexBoxProps = FlexBoxProps(alignment);
+        _layoutProps = LayoutProps(
+          h,
+          w,
+          maxW,
+          maxH,
+          minH,
+          minW,
+        ),
+        _flexBoxProps = FlexBoxProps(
+          alignment,
+        ),
+        _colorProps = ColorProps(
+          color: color,
+        ),
+        _shadowProps = ShadowProps(shadow);
 
   @override
   Map<String, dynamic> toJson() {
@@ -86,8 +107,10 @@ class Box extends NativeBaseWidgetBuilder<Container> {
       ..._borderProps.toJson(),
       ..._layoutProps.toJson(),
       ..._flexBoxProps.toJson(),
-      "color": color,
-      "child": child
+      ..._colorProps.toJson(),
+      ..._shadowProps.toJson(),
+      "child": child,
+      "linerGradient": gradient
     };
   }
 }

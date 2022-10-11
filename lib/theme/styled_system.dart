@@ -269,6 +269,24 @@ Map<String, dynamic> border = {
     "scale": "radii"
   }
 };
+Map<String, dynamic> color = {
+  "color": {
+    "property": 'color',
+    "scale": 'colors',
+  },
+};
+const extraProps = {
+  "outline": true,
+  "outlineWidth": true,
+  "outlineColor": true,
+  "outlineStyle": true,
+  "shadow": {
+    "scale": 'shadows',
+  },
+  "cursor": true,
+  "overflow": true,
+  "userSelect": {"property": 'userSelect'},
+};
 
 Map<String, dynamic> propConfig = {
   ...spaces,
@@ -276,5 +294,7 @@ Map<String, dynamic> propConfig = {
   ...alignment,
   ...layout,
   ...border,
-  ...borderStyle
+  ...borderStyle,
+  ...color,
+  ...extraProps
 };
