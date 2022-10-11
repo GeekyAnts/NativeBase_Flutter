@@ -1,5 +1,6 @@
-import 'package:nativebase_flutter/models/shadow_model.dart';
 import 'package:nativebase_flutter/nativebase_flutter.dart';
+
+import '../../models/theme/shadow_model.dart';
 
 NBShadows nbShadow = NBShadows(
   none: NBShadowProperties(

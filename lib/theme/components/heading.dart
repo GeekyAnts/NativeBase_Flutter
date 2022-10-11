@@ -1,4 +1,4 @@
-import 'package:nativebase_flutter/models/heading_model.dart';
+import 'package:nativebase_flutter/models/components/heading_model.dart';
 import '../base/typography.dart';
 
 NBHeading sizes = NBHeading(

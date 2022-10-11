@@ -31,42 +31,13 @@ class NativeBaseExample extends StatefulWidget {
 class _NativeBaseExampleState extends State<NativeBaseExample> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            NBCard(
-              child: Heading(
-                'Hey There!',
-                size: 'md',
-                fontWeight: 'normal',
-              ),
-            ),
-            Box(
-              px: '10',
-              py: '2',
-              shadow: '2',
-              borderRadius: 'full',
-              borderBottomLeftRadius: '0',
-              color: 'blue.900',
-              gradient: const LinearGradient(
-                colors: [
-                  Colors.black,
-                  Colors.blue,
-                ],
-                begin: Alignment.bottomLeft,
-                end: Alignment.topRight,
-              ),
-              child: Heading(
-                'Hey There!',
-                fontSize: 'lg',
-                fontWeight: 'normal',
-                color: 'coolGray.200',
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    return const Scaffold(
+        body: NBCard(
+      p: '2',
+      m: '2',
+      color: 'cyan',
+      shadow: '1',
+      child: Text("Hello"),
+    ));
   }
 }

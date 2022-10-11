@@ -1,4 +1,4 @@
-import 'package:nativebase_flutter/models/spaces_model.dart';
+import '../../models/theme/spaces_model.dart';
 
 NBSpaces nbBaseSpaces = NBSpaces(
   d0: 0,

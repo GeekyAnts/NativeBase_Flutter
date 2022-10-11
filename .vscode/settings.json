@@ -3,7 +3,9 @@
         "flexbox",
         "fontsizes",
         "headingstyles",
+        "hstack",
         "LTRB",
-        "nativebase"
+        "nativebase",
+        "vstack"
     ]
 }

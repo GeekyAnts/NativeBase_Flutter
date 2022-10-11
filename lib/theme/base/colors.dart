@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/models/color_model.dart';
+
+import '../../models/theme/color_model.dart';
 
 /// [NativeBaseColor] is use to get the list of color palette available in NativeBase theme.
 /// Primary color for this theme is [NativeBaseColor.violet] which internally returns the shade of [violet.shade500]

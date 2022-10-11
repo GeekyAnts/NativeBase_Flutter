@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:nativebase_flutter/models/typography_model.dart';
+import '../../models/theme/typography_model.dart';
 
 NBFontSizes nbFontSizes = NBFontSizes(
   i2xs: 10.0,

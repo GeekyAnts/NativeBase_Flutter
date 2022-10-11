@@ -17,8 +17,7 @@ class Box extends NativeBaseWidgetBuilder<Container> {
 
   final LinearGradient? gradient;
 
-  final Widget child;
-  final String? size;
+  final Widget? child;
 
   Box({
     super.key,
@@ -62,8 +61,7 @@ class Box extends NativeBaseWidgetBuilder<Container> {
     String? color,
     String? shadow,
     this.gradient,
-    required this.child,
-    this.size,
+    this.child,
   })  : _styleProps =
             StyleProps(mt, mr, mb, ml, mx, my, p, pt, pr, pb, pl, px, py, m),
         _borderProps = BorderProps(

@@ -1,6 +1,5 @@
-import 'package:nativebase_flutter/models/box_model.dart';
-
-import 'heading_model.dart';
+import '../components/box_model.dart';
+import '../components/heading_model.dart';
 
 class NBComponent {
   NBHeading? _heading;

@@ -1,5 +1,5 @@
-import '../../models/container_model.dart';
-import '../../models/sizes_model.dart';
+import '../../models/theme/container_model.dart';
+import '../../models/theme/sizes_model.dart';
 import '../../theme/base/spaces.dart';
 
 NBSizes nbBaseSizes = NBSizes(

@@ -1,4 +1,4 @@
-import 'package:nativebase_flutter/models/opacity_model.dart';
+import '../../models/theme/opacity_model.dart';
 
 NBOpacity nbOpacity = NBOpacity(
   dp0: 0,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/models/color_model.dart';
 
 class NBShadows {
   NBShadowProperties? none;

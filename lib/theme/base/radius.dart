@@ -1,4 +1,4 @@
-import 'package:nativebase_flutter/models/radius_model.dart';
+import '../../models/theme/radius_model.dart';
 
 NBRadius nbRadius = NBRadius(
   none: 0.0,
