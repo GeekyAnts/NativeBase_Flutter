@@ -1,9 +1,9 @@
 import '../../builder/props_builder.dart';
 
 class ColorProps extends PropsBuilder {
-  String? color;
-  String? backgroundColor;
-  ColorProps({this.color, this.backgroundColor});
+  final String? color;
+  final String? backgroundColor;
+  ColorProps({required this.color, required this.backgroundColor});
 
   @override
   Map<String, dynamic> toJson() {

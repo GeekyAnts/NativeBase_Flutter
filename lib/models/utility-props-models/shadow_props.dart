@@ -1,8 +1,8 @@
 import '../../builder/props_builder.dart';
 
 class ShadowProps extends PropsBuilder {
-  String? shadow;
-  ShadowProps(this.shadow);
+  final String? shadow;
+  ShadowProps({required this.shadow});
 
   @override
   Map<String, dynamic> toJson() {

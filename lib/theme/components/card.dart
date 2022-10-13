@@ -4,5 +4,4 @@ NbCardModel cardBaseStyles = NbCardModel(
   shadow: '4',
   borderRadius: 'md',
   padding: '4',
-  overflow: 'hidden',
 );

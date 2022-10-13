@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/mixin/prop-resolver/prop_resolver.dart';
 import 'package:nativebase_flutter/mixin/token-resolver/token_resolver.dart';
+import 'package:nativebase_flutter/utils/components_enum.dart';
 
-import '../utils/components_enum.dart';
 import 'component-theme-resolver/component_theme_resolver.dart';
 
 mixin Resolvers on Widget {
   Map<String, dynamic> resolveComponentLevelTheme(
-      BuildContext context, Map<String, dynamic> styles) {
+      BuildContext context, Map<String, dynamic> styles,
+      {Component? component}) {
     return componentThemeResolver(
       context: context,
-      component: Component.heading,
+      component: component,
       style: styles,
     );
   }
 
-  Map<String, dynamic> resolveTokens({
-    required Map<String, dynamic> toJson,
-    required BuildContext context,
-  }) =>
+  Map<String, dynamic> resolveTokens(
+          {required Map<String, dynamic> toJson,
+          required BuildContext context,
+          Component? component}) =>
       tokenResolver(resolveComponentLevelTheme(context, toJson), context);
 
   Map<String, dynamic> resolveProps(

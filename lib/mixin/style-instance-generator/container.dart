@@ -11,20 +11,20 @@ Container getContainer(Map<String, dynamic> rs) {
     decoration: BoxDecoration(
       boxShadow: [
         BoxShadow(
-          spreadRadius:
-              rs["shadow"] != null ? rs["shadow"]["shadowRadius"] : 0.0,
-          blurRadius: rs["shadow"] != null ? rs["shadow"]["elevation"] : 0.0,
+          blurStyle: BlurStyle.normal,
+          blurRadius: rs["shadow"] != null ? rs["shadow"]["shadowRadius"] : 0.0,
           color: rs["shadow"] != null
               ? rs["shadow"]["shadowColor"]
               : Colors.transparent,
           offset: Offset(
-            rs["shadow"] != null ? rs["shadow"]["shadowOffset"]["height"] : 0,
             rs["shadow"] != null ? rs["shadow"]["shadowOffset"]["width"] : 0,
+            rs["shadow"] != null ? rs["shadow"]["shadowOffset"]["height"] : 0,
           ),
         )
       ],
       gradient: rs["gradient"],
-      color: rs["color"],
+      color:
+          rs["color"].runtimeType == String ? Colors.transparent : rs["color"],
       border: rs["border"],
       borderRadius: rs["borderRadius"],
     ),

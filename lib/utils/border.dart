@@ -34,7 +34,7 @@ Map<String, dynamic> getBorderRadius(
 }
 
 Map<String, dynamic> getBorder(Map<String, dynamic> v, String key, value) {
-  BorderStyle borderStyle = value["borderStyle"] ?? BorderStyle.none;
+  BorderStyle borderStyle = value["borderStyle"] ?? BorderStyle.solid;
   Color color = value["color"] ?? Colors.transparent;
 
   v.addAll({

@@ -1,15 +1,13 @@
-import 'dart:ui';
-
 import 'package:nativebase_flutter/builder/props_builder.dart';
 
-class BorderProps extends PropsBuilder {
+class BorderProps implements PropsBuilder {
   final String? borderWidth;
   final String? borderLeft;
   final String? borderRight;
   final String? borderTop;
   final String? borderBottom;
   final String? borderStyle;
-  final Color? borderColor;
+  final String? borderColor;
   final String? borderRadius;
   final String? borderBottomLeftRadius;
   final String? borderBottomRightRadius;
@@ -20,24 +18,24 @@ class BorderProps extends PropsBuilder {
   final String? borderTopRadius;
   final String? borderBottomRadius;
 
-  BorderProps(
-    this.borderWidth,
-    this.borderLeft,
-    this.borderRight,
-    this.borderTop,
-    this.borderBottom,
-    this.borderStyle,
-    this.borderColor,
-    this.borderRadius,
-    this.borderBottomLeftRadius,
-    this.borderBottomRightRadius,
-    this.borderTopLeftRadius,
-    this.borderTopRightRadius,
-    this.borderLeftRadius,
-    this.borderRightRadius,
-    this.borderTopRadius,
-    this.borderBottomRadius,
-  );
+  BorderProps({
+    required this.borderWidth,
+    required this.borderLeft,
+    required this.borderRight,
+    required this.borderTop,
+    required this.borderBottom,
+    required this.borderStyle,
+    required this.borderColor,
+    required this.borderRadius,
+    required this.borderBottomLeftRadius,
+    required this.borderBottomRightRadius,
+    required this.borderTopLeftRadius,
+    required this.borderTopRightRadius,
+    required this.borderLeftRadius,
+    required this.borderRightRadius,
+    required this.borderTopRadius,
+    required this.borderBottomRadius,
+  });
   @override
   Map<String, dynamic> toJson() {
     return {

@@ -1,6 +1,6 @@
 import 'package:nativebase_flutter/builder/props_builder.dart';
 
-class StyleProps extends PropsBuilder {
+class StyleProps implements PropsBuilder {
   final String? m;
   final String? mt;
   final String? mr;
@@ -16,8 +16,21 @@ class StyleProps extends PropsBuilder {
   final String? px;
   final String? py;
 
-  StyleProps(this.mt, this.mr, this.mb, this.ml, this.mx, this.my, this.p,
-      this.pt, this.pr, this.pb, this.pl, this.px, this.py, this.m);
+  StyleProps(
+      {required this.m,
+      required this.mt,
+      required this.mr,
+      required this.mb,
+      required this.ml,
+      required this.mx,
+      required this.my,
+      required this.p,
+      required this.pt,
+      required this.pr,
+      required this.pb,
+      required this.pl,
+      required this.px,
+      required this.py});
 
   @override
   Map<String, dynamic> toJson() {

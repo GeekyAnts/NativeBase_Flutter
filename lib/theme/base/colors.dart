@@ -23,7 +23,7 @@ NBColor primary = cyan;
 NBColor white = const NBColor(
   0xffFFFFFF,
   <String, Color>{
-    'white': Color(0xffFFFFFF),
+    'white.500': Color(0xffFFFFFF),
   },
   'white',
 );
@@ -486,4 +486,6 @@ NativeBaseColor nbColor = NativeBaseColor(
   trueGray,
   warmGray,
   yellow,
+  white,
+  black,
 );

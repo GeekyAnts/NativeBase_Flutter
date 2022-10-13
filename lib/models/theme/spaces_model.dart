@@ -1,3 +1,86 @@
+abstract class Space {
+  /// Returns a space of 0 dp padding or margin
+  static String get dp0 => '0';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp1 => '1';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp2 => '2';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp3 => '3';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp4 => '4';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp5 => '5';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp6 => '6';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp7 => '7';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp8 => '8';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp9 => '9';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp10 => '10';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp12 => '12';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp16 => '16';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp20 => '20';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp24 => '24';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp32 => '32';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp40 => '40';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp48 => '48';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp56 => '56';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp64 => '64';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp72 => '72';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp80 => '80';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp96 => '96';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp0_5 => '0.5';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp1_5 => '1.5';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp2_5 => '2.5';
+
+  /// Returns a space of 0 dp padding or margin
+  static String get dp3_5 => '3.5';
+}
+
 class NBSpaces {
   double? _d0;
   double? _d1;

@@ -1,15 +1,15 @@
 import 'package:nativebase_flutter/builder/props_builder.dart';
 
 class TypographyProps extends PropsBuilder {
-  String? fontFamily;
-  String? fontSize;
-  String? fontWeight;
-  String? lineHeight;
-  String? letterSpacing;
-  String? textAlign;
-  String? fontStyle;
-  String? textTransform;
-  String? textDecoration;
+  final String? fontFamily;
+  final String? fontSize;
+  final String? fontWeight;
+  final String? lineHeight;
+  final String? letterSpacing;
+  final String? textAlign;
+  final String? fontStyle;
+  final String? textTransform;
+  final String? textDecoration;
 
   TypographyProps(
       {this.fontFamily,
