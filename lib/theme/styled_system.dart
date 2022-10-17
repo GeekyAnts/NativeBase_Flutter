@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/edge_insets.dart';
+
 const Map<String, dynamic> typography = {
   "fontSize": {"property": 'fontSize', "scale": 'fontSize', "type": "double"},
   "fs": {"property": 'fontSize', "scale": 'fontSizes', "type": "double"},
@@ -34,103 +36,101 @@ Map<String, dynamic> spaces = {
   "margin": {
     "property": "margin",
     "scale": "spaces",
+    "transformer": getEdgeInsets
   },
   "m": {
     "property": "margin",
     "scale": "spaces",
+    "transformer": getEdgeInsets,
   },
   "marginTop": {
-    "property": "marginTop",
+    "property": "margin",
     "scale": "spaces",
+    "transformer": getEdgeInsets
   },
   "mt": {
-    "property": "marginTop",
+    "property": "margin",
     "scale": "spaces",
+    "transformer": getEdgeInsets,
   },
   "marginRight": {
-    "property": "marginRight",
+    "property": "margin",
     "scale": "spaces",
-    "transformer": "getMargin"
+    "transformer": getEdgeInsets
   },
   "mr": {
-    "property": "marginRight",
+    "property": "margin",
     "scale": "spaces",
-    "transformer": "getMargin"
+    "transformer": getEdgeInsets,
   },
   "marginBottom": {
-    "property": "marginBottom",
+    "property": "margin",
     "scale": "spaces",
-    "transformer": "getMargin"
+    "transformer": getEdgeInsets
   },
   "mb": {
-    "property": "marginBottom",
+    "property": "margin",
     "scale": "spaces",
-    "transformer": "getMargin"
+    "transformer": getEdgeInsets,
   },
   "marginLeft": {
-    "property": "marginLeft",
+    "property": "margin",
     "scale": "spaces",
-    "transformer": "getMargin"
+    "transformer": getEdgeInsets
   },
   "ml": {
-    "property": "marginLeft",
+    "property": "margin",
     "scale": "spaces",
-    "transformer": "getMargin"
+    "transformer": getEdgeInsets,
   },
   "marginX": {
-    "properties": ["marginLeft", "marginRight"],
+    "property": "margin",
     "scale": "spaces",
-    "transformer": "getMargin"
+    "transformer": getEdgeInsets
   },
   "mx": {
-    "properties": ["marginLeft", "marginRight"],
+    "property": "margin",
     "scale": "spaces",
-    "transformer": "getMargin"
+    "transformer": getEdgeInsets,
   },
   "marginY": {
-    "properties": ["marginTop", "marginBottom"],
+    "property": "margin",
     "scale": "spaces",
-    "transformer": "getMargin"
+    "transformer": getEdgeInsets
   },
   "my": {
-    "properties": ["marginTop", "marginBottom"],
+    "property": "margin",
     "scale": "spaces",
-    "transformer": "getMargin"
+    "transformer": getEdgeInsets,
   },
   "padding": {"property": "padding", "scale": "spaces"},
   "p": {
     "property": "padding",
     "scale": "spaces",
-    "val": const EdgeInsets.all(0)
+    "transformer": getEdgeInsets,
   },
-  "paddingTop": {"property": "paddingTop", "scale": "spaces"},
-  "pt": {
-    "property": "paddingTop",
+  "paddingTop": {
+    "property": "padding",
     "scale": "spaces",
-    "val": const EdgeInsets.only(top: 0)
   },
-  "paddingRight": {"property": "paddingRight", "scale": "spaces"},
-  "pr": {"property": "paddingRight", "scale": "spaces"},
-  "paddingBottom": {"property": "paddingBottom", "scale": "spaces"},
-  "pb": {"property": "paddingBottom", "scale": "spaces"},
-  "paddingLeft": {"property": "paddingLeft", "scale": "spaces"},
-  "pl": {"property": "paddingLeft", "scale": "spaces"},
-  "paddingX": {
-    "properties": ["paddingLeft", "paddingRight"],
-    "scale": "spaces"
+  "pt": {
+    "property": "padding",
+    "scale": "spaces",
+    "transformer": getEdgeInsets
   },
-  "px": {
-    "properties": ["paddingLeft", "paddingRight"],
-    "scale": "spaces"
+  "paddingRight": {
+    "property": "padding",
+    "scale": "spaces",
   },
-  "paddingY": {
-    "properties": ["paddingTop", "paddingBottom"],
-    "scale": "spaces"
-  },
-  "py": {
-    "properties": ["paddingTop", "paddingBottom"],
-    "scale": "spaces"
-  },
+  "pr": {"property": "padding", "scale": "spaces"},
+  "paddingBottom": {"property": "padding", "scale": "spaces"},
+  "pb": {"property": "padding", "scale": "spaces"},
+  "paddingLeft": {"property": "padding", "scale": "spaces"},
+  "pl": {"property": "padding", "scale": "spaces"},
+  "paddingX": {"property": "padding", "scale": "spaces"},
+  "px": {"property": "padding", "scale": "spaces"},
+  "paddingY": {"property": "padding", "scale": "spaces"},
+  "py": {"property": "padding", "scale": "spaces"},
   "gap": {"property": "gap", "scale": "spaces"}
 };
 
@@ -286,6 +286,24 @@ const extraProps = {
   "cursor": true,
   "overflow": true,
   "userSelect": {"property": 'userSelect'},
+};
+
+const background = {
+  {
+    "backgroundSize": true,
+    "backgroundPosition": true,
+    "backgroundRepeat": true,
+    "backgroundAttachment": true,
+    "backgroundBlendMode": true,
+    "bgImage": {"property": "backgroundImage"},
+    "bgImg": {"property": "backgroundImage"},
+    "bgBlendMode": {"property": "backgroundBlendMode"},
+    "bgSize": {"property": "backgroundSize"},
+    "bgPosition": {"property": "backgroundPosition"},
+    "bgPos": {"property": "backgroundPosition"},
+    "bgRepeat": {"property": "backgroundRepeat"},
+    "bgAttachment": {"property": "backgroundAttachment"}
+  }
 };
 
 Map<String, dynamic> propConfig = {

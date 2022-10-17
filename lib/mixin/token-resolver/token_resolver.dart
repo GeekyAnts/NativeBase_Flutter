@@ -45,7 +45,30 @@ Map<String, dynamic> tokenResolver(
 ) {
   Map<String, dynamic> resolvedProp = {};
 
+  /// Merge BaseStyles
+  ///
+  if (style.containsKey("baseStyle")) {
+    Map<String, dynamic> map = style['baseStyle'];
+
+    map.forEach((key, value) {
+      if (style[key] is Map) {
+        Map<String, dynamic> s = style[key] as Map<String, dynamic>;
+        s.forEach((sKey, sValue) {
+          if (sValue == null) {
+            style[key][sKey] = map[key][sKey];
+          }
+        });
+      } else {
+        if (style[key] == null) {
+          style[key] = map[key];
+        }
+      }
+    });
+  }
+
   /// Remove Null
+  ///
+  ///
 
   style.removeWhere((key, value) => (value == null));
 

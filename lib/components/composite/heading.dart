@@ -1,4 +1,5 @@
 import 'package:nativebase_flutter/components/primitives/text/text.dart';
+import 'package:nativebase_flutter/theme/components/heading.dart';
 
 class Heading extends NBText {
   final String? size;
@@ -25,6 +26,7 @@ class Heading extends NBText {
     return {
       ...super.toJson(),
       "size": size,
+      "baseStyle": headingBaseStyle.toJson(),
     };
   }
 }

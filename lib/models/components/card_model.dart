@@ -1,6 +1,3 @@
-import 'package:nativebase_flutter/models/utility-props-models/shadow_props.dart';
-import 'package:nativebase_flutter/models/utility-props-models/style_props_model.dart';
-
 class NbCardModel {
   String? shadow;
   String? borderRadius;
@@ -13,9 +10,14 @@ class NbCardModel {
   });
 
   Map<String, dynamic> toJson() {
-
-    return <String, dynamic>{
-
+    return {
+      "padding": {
+        "p": padding,
+      },
+      "borderRadius": {
+        "borderRadius": borderRadius,
+      },
+      "shadow": shadow
     };
   }
 }

@@ -16,21 +16,22 @@ class StyleProps implements PropsBuilder {
   final String? px;
   final String? py;
 
-  StyleProps(
-      {required this.m,
-      required this.mt,
-      required this.mr,
-      required this.mb,
-      required this.ml,
-      required this.mx,
-      required this.my,
-      required this.p,
-      required this.pt,
-      required this.pr,
-      required this.pb,
-      required this.pl,
-      required this.px,
-      required this.py});
+  StyleProps({
+    required this.m,
+    required this.mt,
+    required this.mr,
+    required this.mb,
+    required this.ml,
+    required this.mx,
+    required this.my,
+    required this.p,
+    required this.pt,
+    required this.pr,
+    required this.pb,
+    required this.pl,
+    required this.px,
+    required this.py,
+  });
 
   @override
   Map<String, dynamic> toJson() {

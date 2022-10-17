@@ -20,6 +20,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
         FlexBoxProps {
   final LinearGradient? gradient;
   final Widget? child;
+  final String? bgImage;
 
   @override
   final String? m;
@@ -110,6 +111,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   const Box({
     this.alignment,
     this.color,
+    this.bgImage,
     this.shadow,
     this.backgroundColor,
     this.borderWidth,
@@ -157,8 +159,10 @@ class Box extends NativeBaseWidgetBuilder<Container>
   Map<String, dynamic> toJson() {
     return {
       "child": child,
-      "linerGradient": gradient,
-      ...LayoutProps(h, w, maxW, maxH, minH, minW).toJson(),
+      "gradient": gradient,
+      "bgImage": bgImage,
+      ...LayoutProps(h: h, w: w, maxW: maxW, maxH: maxH, minH: minH, minW: minW)
+          .toJson(),
       ...StyleProps(
               m: m,
               mt: mt,
@@ -195,7 +199,10 @@ class Box extends NativeBaseWidgetBuilder<Container>
         borderTopRadius: borderTopRadius,
         borderBottomRadius: borderBottomRadius,
       ).toJson(),
-      ...ColorProps(color: color, backgroundColor: backgroundColor).toJson()
+      ...ColorProps(
+        color: color,
+        backgroundColor: backgroundColor,
+      ).toJson()
     };
   }
 }

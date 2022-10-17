@@ -8,4 +8,5 @@ NBComponent baseComponents = NBComponent(
   heading: sizes,
   box: box,
   card: cardBaseStyles,
+  customWidget: customWidget,
 );

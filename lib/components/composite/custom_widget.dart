@@ -1,7 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import 'package:nativebase_flutter/components/primitives/text/text.dart';
+import 'package:nativebase_flutter/mixin/component-theme-resolver/component_theme_resolver.dart';
 import 'package:nativebase_flutter/models/utility-props-models/color_props_model.dart';
 import 'package:nativebase_flutter/models/utility-props-models/layout_props_model.dart';
 import 'package:nativebase_flutter/models/utility-props-models/style_props_model.dart';
@@ -17,7 +17,7 @@ class CustomWidget extends StatelessWidget
     this.m,
     this.mb,
     this.ml,
-    this.mr,
+    this.mr = '2',
     this.mt,
     this.mx,
     this.my,
@@ -47,21 +47,51 @@ class CustomWidget extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Box(
-          h: h,
-          w: w,
-          m: m,
-          color: color,
-        ),
-        NBText(
-          text: "Terms and Conditions",
-          fontSize: fontSize,
-        )
-      ],
+    var v = componentThemeResolver(
+      context: context,
+      style: toJson(),
+      component: 'customWidget',
+    );
+
+    return Box(
+      p: v["padding"]["p"],
+      backgroundColor: backgroundColor,
+      child: Row(
+        children: [
+          Box(
+            h: h,
+            w: w,
+            m: m,
+            color: color,
+            mr: mr,
+          ),
+          const NBText(
+            text: "Terms and Conditions",
+            color: 'gray',
+          )
+        ],
+      ),
     );
   }
+
+  @override
+  final String? fontFamily;
+  @override
+  final String? fontSize;
+  @override
+  final String? fontWeight;
+  @override
+  final String? lineHeight;
+  @override
+  final String? letterSpacing;
+  @override
+  final String? textAlign;
+  @override
+  final String? fontStyle;
+  @override
+  final String? textTransform;
+  @override
+  final String? textDecoration;
 
   @override
   final String? backgroundColor;
@@ -130,26 +160,33 @@ class CustomWidget extends StatelessWidget
   final String? w;
 
   @override
-  final String? fontFamily;
-  @override
-  final String? fontSize;
-  @override
-  final String? fontWeight;
-  @override
-  final String? lineHeight;
-  @override
-  final String? letterSpacing;
-  @override
-  final String? textAlign;
-  @override
-  final String? fontStyle;
-  @override
-  final String? textTransform;
-  @override
-  final String? textDecoration;
-
-  @override
   Map<String, dynamic> toJson() {
-    throw UnimplementedError();
+    return {
+      ...StyleProps(
+              m: m,
+              mt: mt,
+              mr: mr,
+              mb: mb,
+              ml: ml,
+              mx: mx,
+              my: my,
+              p: p,
+              pt: pt,
+              pr: pr,
+              pb: pb,
+              pl: pl,
+              px: px,
+              py: py)
+          .toJson(),
+      ...ColorProps(color: color, backgroundColor: backgroundColor).toJson(),
+      ...LayoutProps(h: h, w: w, maxW: maxW, maxH: maxH, minH: minH, minW: minW)
+          .toJson(),
+    };
+  }
+
+  factory CustomWidget.fromJson(Map<String, dynamic> json) {
+    return CustomWidget(
+      backgroundColor: json["background"],
+    );
   }
 }

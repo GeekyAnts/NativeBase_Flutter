@@ -9,6 +9,12 @@ Container getContainer(Map<String, dynamic> rs) {
     alignment: rs['alignment'],
     constraints: rs["constraints"],
     decoration: BoxDecoration(
+      image: rs["bgImage"] != null
+          ? DecorationImage(
+              image: NetworkImage(rs["bgImage"]),
+              fit: BoxFit.cover,
+            )
+          : null,
       boxShadow: [
         BoxShadow(
           blurStyle: BlurStyle.normal,
@@ -22,9 +28,9 @@ Container getContainer(Map<String, dynamic> rs) {
           ),
         )
       ],
-      gradient: rs["gradient"],
       color:
           rs["color"].runtimeType == String ? Colors.transparent : rs["color"],
+      gradient: rs["gradient"],
       border: rs["border"],
       borderRadius: rs["borderRadius"],
     ),

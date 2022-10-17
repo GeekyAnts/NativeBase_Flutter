@@ -8,7 +8,7 @@ import 'component-theme-resolver/component_theme_resolver.dart';
 mixin Resolvers on Widget {
   Map<String, dynamic> resolveComponentLevelTheme(
       BuildContext context, Map<String, dynamic> styles,
-      {Component? component}) {
+      {String? component}) {
     return componentThemeResolver(
       context: context,
       component: component,

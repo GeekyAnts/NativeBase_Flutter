@@ -29,3 +29,10 @@ NBHeading sizes = NBHeading(
     fontSize: nbFontSizes.sm,
   ),
 );
+
+HeadingBaseStyle headingBaseStyle = HeadingBaseStyle(
+  color: 'text.900',
+  dDark: Dark(color: 'text.50'),
+  fontWeight: "bold",
+  lineHeight: "sm",
+);

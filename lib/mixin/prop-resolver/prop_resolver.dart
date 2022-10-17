@@ -7,6 +7,13 @@ dynamic propResolver({required Map<String, dynamic> resolvedTokens}) {
 
   resolvedTokens.forEach((key, value) {
     /// This could be done using propConfig
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+
     if (key == "padding" || key == "margin") {
       v = getEdgeInsets(key, v, value);
     } else if (key == 'border') {

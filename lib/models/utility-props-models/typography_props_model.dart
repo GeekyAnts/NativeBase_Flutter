@@ -11,16 +11,17 @@ class TypographyProps extends PropsBuilder {
   final String? textTransform;
   final String? textDecoration;
 
-  TypographyProps(
-      {this.fontFamily,
-      this.fontSize,
-      this.fontStyle,
-      this.fontWeight,
-      this.letterSpacing,
-      this.lineHeight,
-      this.textAlign,
-      this.textDecoration,
-      this.textTransform});
+  TypographyProps({
+    required this.fontFamily,
+    required this.fontSize,
+    required this.fontStyle,
+    required this.fontWeight,
+    required this.letterSpacing,
+    required this.lineHeight,
+    required this.textAlign,
+    required this.textDecoration,
+    required this.textTransform,
+  });
 
   @override
   Map<String, dynamic> toJson() {

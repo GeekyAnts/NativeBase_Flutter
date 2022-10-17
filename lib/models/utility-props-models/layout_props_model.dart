@@ -9,7 +9,14 @@ class LayoutProps extends PropsBuilder {
   final String? minH;
   final String? minW;
 
-  LayoutProps(this.h, this.w, this.maxW, this.maxH, this.minH, this.minW);
+  LayoutProps({
+    required this.h,
+    required this.w,
+    required this.maxW,
+    required this.maxH,
+    required this.minH,
+    required this.minW,
+  });
   @override
   Map<String, dynamic> toJson() {
     return {
