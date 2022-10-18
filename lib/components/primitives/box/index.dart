@@ -18,99 +18,415 @@ class Box extends NativeBaseWidgetBuilder<Container>
         ColorProps,
         ShadowProps,
         FlexBoxProps {
+  /// Sets linearGradient to the box
+  /// ``` dart
+  /// Box(
+  ///  gradient:LinearGradient(colors:[Colors.red,Colors.blue],
+  ///   )
+  /// )
+  /// ```
   final LinearGradient? gradient;
+
+  /// Sets child to the box
+  /// ``` dart
+  /// Box(
+  ///  child:Heading(text:"Hello World!")
+  /// )
+  /// ```
   final Widget? child;
+
+  /// Sets the background image of the box
+  /// ``` dart
+  /// Box(
+  ///  bgImage:"url"
+  /// )
+  ///
+  /// ```
+  /// ** Note currently only supports Network Image
   final String? bgImage;
 
+  /// Sets the box margin from all the side of box
+  /// ``` dart
+  /// Box(
+  ///  m:'2'
+  /// )
+  /// ```
   @override
   final String? m;
+
+  /// Sets the box margin from top
+  /// ``` dart
+  /// Box(
+  ///  mt:'2'
+  /// )
+  /// ```
   @override
   final String? mt;
+
+  /// Sets the box margin from right
+  /// ``` dart
+  /// Box(
+  ///  mr:'2'
+  /// )
+  /// ```
   @override
   final String? mr;
+
+  /// Sets the box margin from bottom
+  /// ``` dart
+  /// Box(
+  ///  mb:'2'
+  /// )
+  /// ```
   @override
   final String? mb;
+
+  /// Sets the box margin from left
+  /// ``` dart
+  /// Box(
+  ///  ml:'2'
+  /// )
+  /// ```
   @override
   final String? ml;
+
+  /// Sets the box margin on X-Axis
+  /// ``` dart
+  /// Box(
+  ///  mx:'2'
+  /// )
+  /// ```
   @override
   final String? mx;
+
+  /// Sets the box margin on Y-Axis
+  /// ``` dart
+  /// Box(
+  ///  my:'2'
+  /// )
+  /// ```
   @override
   final String? my;
+
+  /// Sets the box padding from all the side
+  /// ``` dart
+  /// Box(
+  ///  p:'2'
+  /// )
+  /// ```
   @override
   final String? p;
+
+  /// Sets the box padding from top
+  /// ``` dart
+  /// Box(
+  ///  pt:'2'
+  /// )
+  /// ```
   @override
   final String? pt;
+
+  /// Sets the box padding from right
+  /// ``` dart
+  /// Box(
+  ///  pr:'2'
+  /// )
+  /// ```
   @override
   final String? pr;
+
+  /// Sets the box padding from bottom
+  /// ``` dart
+  /// Box(
+  ///  pb:'2'
+  /// )
+  /// ```
   @override
   final String? pb;
+
+  /// Sets the box padding from left
+  /// ``` dart
+  /// Box(
+  ///  pl:'2'
+  /// )
+  /// ```
   @override
   final String? pl;
+
+  /// Sets the box padding on X-Axis
+  /// ``` dart
+  /// Box(
+  ///  px:'2'
+  /// )
+  /// ```
   @override
   final String? px;
+
+  /// Sets the box padding on Y-Axis
+  /// ``` dart
+  /// Box(
+  ///  py:'2'
+  /// )
+  /// ```
   @override
   final String? py;
+
+  /// Sets the box height
+  /// ``` dart
+  /// Box(
+  ///  h:'2'
+  /// )
+  /// ```
   @override
   final String? h;
+
+  /// Sets the box width
+  /// ``` dart
+  /// Box(
+  ///  w:'2'
+  /// )
+  /// ```
   @override
   final String? w;
 
+  /// Sets the max width of the box
+  /// ``` dart
+  /// Box(
+  ///  maxW:'1'
+  /// )
+  /// ```
+  ///
   @override
   final String? maxW;
+
+  /// Sets the max height of the box
+  /// ``` dart
+  /// Box(
+  ///  maxH:'1'
+  /// )
+  /// ```
+  ///
   @override
   final String? maxH;
+
+  /// Sets the min height of the box
+  /// ``` dart
+  /// Box(
+  ///  minH:'1'
+  /// )
+  /// ```
+  ///
   @override
   final String? minH;
+
+  /// Sets the min width of the box
+  /// ``` dart
+  /// Box(
+  ///  minW:'1'
+  /// )
+  /// ```
+  ///
   @override
   final String? minW;
 
+  /// Sets the  border width  of the box from all the side.
+  /// ``` dart
+  /// Box(
+  ///  borderWidth:'1'
+  /// )
+  /// ```
+  ///
   @override
   final String? borderWidth;
+
+  /// Sets the right border width  of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderLeft:'1'
+  /// )
+  /// ```
+  ///
   @override
   final String? borderLeft;
+
+  /// Sets the right border width  of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderRight:'1'
+  /// )
+  /// ```
+  ///
   @override
   final String? borderRight;
+
+  /// Sets the top border width  of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderTop:'1'
+  /// )
+  /// ```
+  ///
   @override
   final String? borderTop;
+
+  /// Sets the bottom border width  of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderBottom:'1'
+  /// )
+  /// ```
+  ///
   @override
   final String? borderBottom;
+
+  /// Sets the border color of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderStyle:'solid'
+  /// )
+  /// ```
+  ///
   @override
   final String? borderStyle;
+
+  /// Sets the border color of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderColor:'2'
+  /// )
+  /// ```
   @override
   final String? borderColor;
+
+  /// Sets the corner Radius of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderRadius:'2'
+  /// )
+  /// ```
   @override
   final String? borderRadius;
+
+  /// Sets the Radius of bottom right corner of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderBottomLeftRadius:'2'
+  /// )
+  /// ```
   @override
   final String? borderBottomLeftRadius;
+
+  /// Sets the Radius of bottom right corner of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderBottomRightRadius:'2'
+  /// )
+  /// ```
   @override
   final String? borderBottomRightRadius;
+
+  /// Sets the Radius of top left corner of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderTopLeftRadius:'2'
+  /// )
+  /// ```
   @override
   final String? borderTopLeftRadius;
+
+  /// Sets the Radius of top right corner of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderTopRightRadius:'2'
+  /// )
+  /// ```
   @override
   final String? borderTopRightRadius;
+
+  /// Sets the Radius of left top and bottom corner of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderLeftRadius:'2'
+  /// )
+  /// ```
   @override
   final String? borderLeftRadius;
+
+  /// Sets the Radius of right top and bottom corner of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderRightRadius:'2'
+  /// )
+  /// ```
   @override
   final String? borderRightRadius;
+
+  /// Sets the Radius of top right and left corner of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderTopRadius:'2'
+  /// )
+  /// ```
   @override
   final String? borderTopRadius;
+
+  /// Sets the Radius of bottom right and left corner of the box.
+  /// ``` dart
+  /// Box(
+  ///  borderBottomRadius:'2'
+  /// )
+  /// ```
+
   @override
   final String? borderBottomRadius;
 
+  /// The Box background color.
+  /// Use nativebase color tokens as string like wise
+  /// ``` dart
+  /// Box(
+  ///  color:'cyan.300'
+  /// )
+  /// ```
   @override
   final String? color;
-  @override
-  final String? backgroundColor;
+
+  /// The Box elevation shadow.
+  /// Use nativebase shadow tokens as string like wise
+  /// ``` dart
+  /// Box(
+  ///  shadow:'4'
+  /// )
+  /// ```
 
   @override
   final String? shadow;
 
+  /// The Box child alignment will be set using alignment.
+  /// Use nativebase alignment tokens as string like wise
+  /// ``` dart
+  /// Box(
+  ///  alignment:'leftBottom'
+  /// )
+  /// ```
+
   @override
   final String? alignment;
 
+  /// Sets the box height
+  /// ``` dart
+  /// Box(
+  ///  height:'2'
+  /// )
+  /// ```
   @override
   final String? height;
 
+  /// Sets the box height
+  /// ``` dart
+  /// Box(
+  ///  width:'2'
+  /// )
+  /// ```
   @override
   final String? width;
 
@@ -119,7 +435,6 @@ class Box extends NativeBaseWidgetBuilder<Container>
     this.color,
     this.bgImage,
     this.shadow,
-    this.backgroundColor,
     this.borderWidth,
     this.borderLeft,
     this.borderRight,
@@ -170,15 +485,15 @@ class Box extends NativeBaseWidgetBuilder<Container>
       "gradient": gradient,
       "bgImage": bgImage,
       ...LayoutProps(
-              h: h,
-              w: w,
-              maxW: maxW,
-              maxH: maxH,
-              minH: minH,
-              minW: minW,
-              height: height,
-              width: width)
-          .toJson(),
+        h: h,
+        w: w,
+        maxW: maxW,
+        maxH: maxH,
+        minH: minH,
+        minW: minW,
+        height: height,
+        width: width,
+      ).toJson(),
       ...StyleProps(
               m: m,
               mt: mt,
@@ -217,7 +532,6 @@ class Box extends NativeBaseWidgetBuilder<Container>
       ).toJson(),
       ...ColorProps(
         color: color,
-        backgroundColor: backgroundColor,
       ).toJson()
     };
   }

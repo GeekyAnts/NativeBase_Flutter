@@ -39,10 +39,10 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
   }
 
   Widget card() {
+    var img = 'https://tinyurl.com/4e7fty6f';
     return NBCard(
       m: '2',
-      bgImage:
-          'https://static.vecteezy.com/system/resources/thumbnails/008/489/981/small/wave-abstract-lines-background-line-art-png.png',
+      bgImage: img,
       color: 'cyan.700',
       child: Row(
         children: [
@@ -65,6 +65,7 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
                 color: 'white',
               ),
               const Box(
+                alignment: 'center',
                 mt: '3',
                 color: 'cyan.400',
                 p: '3',
@@ -84,8 +85,7 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
             p: Space.dp10,
             borderWidth: '3',
             borderColor: 'white',
-            bgImage:
-                'https://media.vanityfair.com/photos/5ba12e6d42b9d16f4545aa19/3:2/w_1998,h_1332,c_limit/t-Avatar-The-Last-Airbender-Live-Action.jpg',
+            bgImage: img,
             borderRadius: 'full',
           ),
         ],
@@ -114,7 +114,8 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
               fontStyle: 'italic',
               color: 'red',
             ),
-            card()
+            card(),
+            Card()
           ],
         ),
       ),

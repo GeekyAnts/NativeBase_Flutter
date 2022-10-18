@@ -25,7 +25,6 @@ dynamic propResolver({required Map<String, dynamic> resolvedTokens}) {
     }
   });
 
-  print(configMap);
   var v = <String, dynamic>{};
   configMap.forEach((key, value) {
     if (propConfig[key] != null) {

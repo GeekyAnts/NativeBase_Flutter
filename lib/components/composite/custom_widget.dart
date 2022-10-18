@@ -56,7 +56,6 @@ class CustomWidget extends StatelessWidget
 
     return Box(
       p: v["padding"]["p"],
-      backgroundColor: backgroundColor,
       child: Row(
         children: [
           Box(
@@ -188,7 +187,9 @@ class CustomWidget extends StatelessWidget
               px: px,
               py: py)
           .toJson(),
-      ...ColorProps(color: color, backgroundColor: backgroundColor).toJson(),
+      ...ColorProps(
+        color: color,
+      ).toJson(),
       ...LayoutProps(
         h: h,
         w: w,

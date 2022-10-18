@@ -7,7 +7,6 @@ class Heading extends NBText {
   const Heading({
     super.key,
     required super.text,
-    super.backgroundColor,
     super.color,
     super.fontFamily,
     super.fontSize,

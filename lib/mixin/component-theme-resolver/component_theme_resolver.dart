@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../components/nativebase_provider.dart';
 
+/// Resolves the component level theme
+
 Map<String, dynamic> componentThemeResolver({
   required BuildContext context,
   required Map<String, dynamic> style,

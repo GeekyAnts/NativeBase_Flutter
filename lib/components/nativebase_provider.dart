@@ -5,6 +5,9 @@ class NativeBaseProvider extends StatefulWidget {
   final NativeBaseTheme theme;
   final Widget child;
 
+  /// The [NativeBaseProvider] holds the theme data of the nativebase
+  /// Nativebase Provider needs to provided on the root level of the tree of the
+  /// flutter app in order to resolves the token of the nativebase
   const NativeBaseProvider({
     Key? key,
     required this.theme,
@@ -23,12 +26,8 @@ class NativeBaseProvider extends StatefulWidget {
 }
 
 class _NativeBaseProvider extends State<NativeBaseProvider> {
-  late BuildContext myContext;
-
   @override
   Widget build(BuildContext context) {
-    myContext = context;
-
     return widget.child;
   }
 }

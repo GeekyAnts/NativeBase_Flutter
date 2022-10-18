@@ -3,6 +3,13 @@ import 'package:nativebase_flutter/theme/components/card.dart';
 import '../primitives/box/index.dart';
 
 class NBCard extends Box {
+  /// A Nativebase Design card: a panel with slightly rounded corners and an
+  /// elevation shadow along with padding .
+  ///
+  /// A card is a sheet of [Box] used to represent some related information,
+  /// for example an album, a geographical location, a meal, contact details, etc.
+  ///
+
   const NBCard({
     super.key,
     super.bgImage,
@@ -51,7 +58,6 @@ class NBCard extends Box {
 
   @override
   Map<String, dynamic> toJson() {
-    print({"baseStyle": cardBaseStyles.toJson(), ...super.toJson()});
     return {"baseStyle": cardBaseStyles.toJson(), ...super.toJson()};
   }
 }
