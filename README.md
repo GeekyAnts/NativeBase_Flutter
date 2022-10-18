@@ -23,7 +23,7 @@ This alpha version has minimum NativeBase widget
 
 
 
-  <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/exampleImage/card.png?token=GHSAT0AAAAAABYNAUQHONGMYH22YGKODSWEY2OUDWA" width="350" title="Build with NativeBase">
+  <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/exampleImage/card.png" width="450" title="Build with NativeBase">
 
 
 
