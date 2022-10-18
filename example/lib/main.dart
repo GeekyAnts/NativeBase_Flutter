@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/components/primitives/text/text.dart';
 import 'package:nativebase_flutter/nativebase_flutter.dart';
 
 void main() {
@@ -39,6 +38,7 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
   }
 
   Widget card() {
+    NativeBaseProvider.of(context).component.heading.md.letterSpacing;
     var img = 'https://tinyurl.com/4e7fty6f';
     return NBCard(
       m: '2',

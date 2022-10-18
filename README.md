@@ -21,6 +21,14 @@ This alpha version has minimum NativeBase widget
 ---
 ## Build with NativeBase
 
+
+
+  <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/exampleImage/card.png?token=GHSAT0AAAAAABYNAUQHONGMYH22YGKODSWEY2OUDWA" width="350" title="Build with NativeBase">
+
+
+
+#### Code Snippet
+
 ```dart
  Widget card() {
     var img = 'https://tinyurl.com/4e7fty6f';
@@ -66,7 +74,7 @@ This alpha version has minimum NativeBase widget
             ml: '3',
             h: '90',
             w: '90',
-            p: Space.dp10,
+            p: '10,
             borderWidth: '3',
             borderColor: 'white',
             bgImage: img,
@@ -77,3 +85,44 @@ This alpha version has minimum NativeBase widget
     );
   }
 ```
+---
+## Installation Guide
+
+Add package in your `pubspec.ymal` file as below 
+```dart
+nativebase_flutter: 0.0.1
+```
+
+Now import the package into your `main.dart` file
+```dart
+import 'package:nativebase_flutter/nativebase_flutter.dart';
+```
+
+Now Inject NativeBaseProvider into the Widget tree like below 
+```dart
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: NativeBaseProvider(
+        theme: appTheme,
+        child: const NativeBaseExample(),
+      ),
+    );
+  }
+```
+**NativeBaseProvider needs to be on top of widget tree in order to resolve the tokens from the theme**
+
+`NativeBase` Tokens can also be access using `NativeBaseProvider` class as shown below.
+```dart
+NativeBaseProvider.of(context).component.heading.md.fontSize;
+NativeBaseProvider.of(context).component.heading.md.letterSpacing;
+```
+The above code snippet will return token value of md `fontSize` and `letterSpacing` for `Heading` widget.
+
+**NOTE: NativeBase Token resolver engine resolves the token from the theme**
+
+
+ 
+

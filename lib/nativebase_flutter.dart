@@ -1,9 +1,8 @@
 library nativebase_flutter;
 
 export 'package:nativebase_flutter/models/theme/spaces_model.dart';
-
 export 'package:nativebase_flutter/components/composite/custom_widget.dart';
-
+export 'package:nativebase_flutter/components/primitives/text/text.dart';
 export 'package:nativebase_flutter/components/composite/card.dart';
 export 'package:nativebase_flutter/components/nativebase_provider.dart';
 export 'package:nativebase_flutter/components/primitives/box/index.dart';
