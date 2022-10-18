@@ -16,21 +16,10 @@ Container getContainer(Map<String, dynamic> rs) {
             )
           : null,
       boxShadow: [
-        BoxShadow(
-          blurStyle: BlurStyle.normal,
-          blurRadius: rs["shadow"] != null ? rs["shadow"]["shadowRadius"] : 0.0,
-          color: rs["shadow"] != null
-              ? rs["shadow"]["shadowColor"]
-              : Colors.transparent,
-          offset: Offset(
-            rs["shadow"] != null ? rs["shadow"]["shadowOffset"]["width"] : 0,
-            rs["shadow"] != null ? rs["shadow"]["shadowOffset"]["height"] : 0,
-          ),
-        )
+        rs["shadow"] ?? const BoxShadow(color: Colors.transparent),
       ],
-      color:
-          rs["color"].runtimeType == String ? Colors.transparent : rs["color"],
       gradient: rs["gradient"],
+      color: rs["color"],
       border: rs["border"],
       borderRadius: rs["borderRadius"],
     ),

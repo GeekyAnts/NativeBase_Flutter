@@ -1,30 +1,45 @@
-import '../../utils/border.dart';
-import '../../utils/constraints.dart';
-import '../../utils/edge_insets.dart';
+import 'package:nativebase_flutter/theme/styled_system.dart';
 
 dynamic propResolver({required Map<String, dynamic> resolvedTokens}) {
-  var v = <String, dynamic>{};
-
+  var configMap = <String, dynamic>{};
   resolvedTokens.forEach((key, value) {
-    /// This could be done using propConfig
-    ///
-    ///
-    ///
-    ///
-    ///
-    ///
+    var v = <String, dynamic>{};
+    if (propConfig[key] != null) {
+      var kk = propConfig[key] as Map;
+      if (kk.containsKey("transformer")) {
+        if (configMap.containsKey(propConfig[key]["property"])) {
+          v = configMap[propConfig[key]["property"]];
+          v.addAll({
+            key: value,
+          });
+        } else {
+          configMap.addAll({
+            propConfig[key]["property"]: {key: value}
+          });
+        }
+      } else {
+        configMap.addAll({propConfig[key]["property"]: value});
+      }
+    } else {
+      configMap.addAll({key: value});
+    }
+  });
 
-    if (key == "padding" || key == "margin") {
-      v = getEdgeInsets(key, v, value);
-    } else if (key == 'border') {
-      v = getBorder(v, key, value);
-    } else if (key == "borderRadius") {
-      v = getBorderRadius(key, v, value);
-    } else if (key == "constraints") {
-      v = getConstraints(key, v, value);
+  print(configMap);
+  var v = <String, dynamic>{};
+  configMap.forEach((key, value) {
+    if (propConfig[key] != null) {
+      var kk = propConfig[key] as Map;
+      if (kk.containsKey("transformer")) {
+        dynamic transformer = propConfig[key]?["transformer"];
+        v = transformer(key, v, configMap[key]);
+      } else {
+        v.addAll({key: value});
+      }
     } else {
       v.addAll({key: value});
     }
   });
+
   return v;
 }

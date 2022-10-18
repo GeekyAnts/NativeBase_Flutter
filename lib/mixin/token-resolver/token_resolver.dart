@@ -109,6 +109,8 @@ Map<String, dynamic> tokenResolver(
     }
   });
 
+  print(resolvedProp);
+
   return resolvedProp;
 }
 

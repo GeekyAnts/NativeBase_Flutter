@@ -10,40 +10,41 @@ import 'package:nativebase_flutter/nativebase_flutter.dart';
 
 class CustomWidget extends StatelessWidget
     implements StyleProps, ColorProps, LayoutProps, TypographyProps {
-  const CustomWidget({
-    super.key,
-    this.backgroundColor,
-    this.color,
-    this.m,
-    this.mb,
-    this.ml,
-    this.mr = '2',
-    this.mt,
-    this.mx,
-    this.my,
-    this.p,
-    this.pb,
-    this.pl,
-    this.pr,
-    this.pt,
-    this.px,
-    this.py,
-    this.h,
-    this.maxH,
-    this.maxW,
-    this.minH,
-    this.minW,
-    this.w,
-    this.fontFamily,
-    this.fontSize,
-    this.fontWeight,
-    this.lineHeight,
-    this.letterSpacing,
-    this.textAlign,
-    this.fontStyle,
-    this.textTransform,
-    this.textDecoration,
-  });
+  const CustomWidget(
+      {super.key,
+      this.backgroundColor,
+      this.color,
+      this.m,
+      this.mb,
+      this.ml,
+      this.mr = '2',
+      this.mt,
+      this.mx,
+      this.my,
+      this.p,
+      this.pb,
+      this.pl,
+      this.pr,
+      this.pt,
+      this.px,
+      this.py,
+      this.h,
+      this.maxH,
+      this.maxW,
+      this.minH,
+      this.minW,
+      this.w,
+      this.fontFamily,
+      this.fontSize,
+      this.fontWeight,
+      this.lineHeight,
+      this.letterSpacing,
+      this.textAlign,
+      this.fontStyle,
+      this.textTransform,
+      this.textDecoration,
+      this.height,
+      this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +69,9 @@ class CustomWidget extends StatelessWidget
           const NBText(
             text: "Terms and Conditions",
             color: 'gray',
+          ),
+          Container(
+            decoration: BoxDecoration(boxShadow: [BoxShadow()]),
           )
         ],
       ),
@@ -160,6 +164,12 @@ class CustomWidget extends StatelessWidget
   final String? w;
 
   @override
+  final String? height;
+
+  @override
+  final String? width;
+
+  @override
   Map<String, dynamic> toJson() {
     return {
       ...StyleProps(
@@ -179,8 +189,16 @@ class CustomWidget extends StatelessWidget
               py: py)
           .toJson(),
       ...ColorProps(color: color, backgroundColor: backgroundColor).toJson(),
-      ...LayoutProps(h: h, w: w, maxW: maxW, maxH: maxH, minH: minH, minW: minW)
-          .toJson(),
+      ...LayoutProps(
+        h: h,
+        w: w,
+        maxW: maxW,
+        maxH: maxH,
+        minH: minH,
+        minW: minW,
+        height: height,
+        width: width,
+      ).toJson(),
     };
   }
 

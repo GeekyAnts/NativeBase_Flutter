@@ -2,30 +2,32 @@ import 'package:flutter/material.dart';
 
 Map<String, dynamic> getBorderRadius(
     String key, Map<String, dynamic> v, value) {
+  print(value);
+  var m = value;
   v.addAll({
     key: BorderRadius.only(
       bottomLeft: Radius.circular(
-        value["borderBottomLeftRadius"] ??
-            value["borderLeftRadius"] ??
-            value["borderRadius"] ??
+        m["borderBottomLeftRadius"] ??
+            m["borderLeftRadius"] ??
+            m["borderRadius"] ??
             0,
       ),
       bottomRight: Radius.circular(
-        value["borderBottomRightRadius"] ??
-            value["borderRightRadius"] ??
-            value["borderRadius"] ??
+        m["borderBottomRightRadius"] ??
+            m["borderRightRadius"] ??
+            m["borderRadius"] ??
             0,
       ),
       topLeft: Radius.circular(
-        value["borderTopLeftRadius"] ??
-            value["borderLeftRadius"] ??
-            value["borderRadius"] ??
+        m["borderTopLeftRadius"] ??
+            m["borderLeftRadius"] ??
+            m["borderRadius"] ??
             0,
       ),
       topRight: Radius.circular(
-        value["borderTopRightRadius"] ??
-            value["borderRightRadius"] ??
-            value["borderRadius"] ??
+        m["borderTopRightRadius"] ??
+            m["borderRightRadius"] ??
+            m["borderRadius"] ??
             0,
       ),
     )
@@ -33,9 +35,9 @@ Map<String, dynamic> getBorderRadius(
   return v;
 }
 
-Map<String, dynamic> getBorder(Map<String, dynamic> v, String key, value) {
+Map<String, dynamic> getBorder(String key, Map<String, dynamic> v, value) {
   BorderStyle borderStyle = value["borderStyle"] ?? BorderStyle.solid;
-  Color color = value["color"] ?? Colors.transparent;
+  Color color = value["borderColor"] ?? Colors.transparent;
 
   v.addAll({
     key: Border(

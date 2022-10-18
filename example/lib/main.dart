@@ -49,19 +49,22 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
-            children: const [
-              Box(
-                mb: '3',
-                child: NBText(
-                  text: "Today @ 9PM",
-                  color: 'white',
-                ),
+            children: [
+              Row(
+                children: const [
+                  Box(
+                    child: NBText(
+                      text: "Today @ 9PM",
+                      color: 'white',
+                    ),
+                  ),
+                ],
               ),
-              Heading(
+              const Heading(
                 text: "Let's talk about avatar!",
                 color: 'white',
               ),
-              Box(
+              const Box(
                 mt: '3',
                 color: 'cyan.400',
                 p: '3',
@@ -70,7 +73,6 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
                   text: "Remind Me",
                   textTransform: 'capital',
                   color: 'white',
-                  fontWeight: 'black',
                 ),
               ),
             ],
@@ -95,14 +97,26 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: NBCard(
-          borderRadius: 'full',
-          child: Heading(
-            text: "Hello",
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              "Hello",
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+              ),
+            ),
+            const NBText(
+              text: "Hello",
+              textAlign: 'textCenter',
+              textDecoration: 'overline',
+              fontSize: '30',
+              fontStyle: 'italic',
+              color: 'red',
+            ),
+            card()
+          ],
         ),
-        //child: customWidget(),
-        //child: card(),
       ),
     );
   }

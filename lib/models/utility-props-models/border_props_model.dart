@@ -39,24 +39,20 @@ class BorderProps implements PropsBuilder {
   @override
   Map<String, dynamic> toJson() {
     return {
-      "border": {
-        "borderLeft": borderLeft,
-        "borderTop": borderTop,
-        "borderRight": borderRight,
-        "borderBottom": borderBottom,
-        "borderWidth": borderWidth,
-        "borderStyle": borderStyle,
-        "color": borderColor,
-      },
-      "borderRadius": {
-        "borderBottomLeftRadius": borderBottomLeftRadius,
-        "borderTopLeftRadius": borderTopLeftRadius,
-        "borderBottomRightRadius": borderBottomRightRadius,
-        "borderTopRightRadius": borderTopRightRadius,
-        "borderRightRadius": borderRightRadius,
-        "borderLeftRadius": borderLeftRadius,
-        "borderRadius": borderRadius
-      },
+      "borderLeft": borderLeft,
+      "borderTop": borderTop,
+      "borderRight": borderRight,
+      "borderBottom": borderBottom,
+      "borderWidth": borderWidth,
+      "borderStyle": borderStyle,
+      "borderColor": borderColor,
+      "borderBottomLeftRadius": borderBottomLeftRadius,
+      "borderTopLeftRadius": borderTopLeftRadius,
+      "borderBottomRightRadius": borderBottomRightRadius,
+      "borderTopRightRadius": borderTopRightRadius,
+      "borderRightRadius": borderRightRadius,
+      "borderLeftRadius": borderLeftRadius,
+      "borderRadius": borderRadius
     };
   }
 }

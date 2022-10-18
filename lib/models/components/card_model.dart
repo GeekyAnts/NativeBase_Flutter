@@ -10,14 +10,6 @@ class NbCardModel {
   });
 
   Map<String, dynamic> toJson() {
-    return {
-      "padding": {
-        "p": padding,
-      },
-      "borderRadius": {
-        "borderRadius": borderRadius,
-      },
-      "shadow": shadow
-    };
+    return {"p": padding, "borderRadius": borderRadius, "shadow": shadow};
   }
 }

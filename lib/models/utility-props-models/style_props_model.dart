@@ -36,24 +36,20 @@ class StyleProps implements PropsBuilder {
   @override
   Map<String, dynamic> toJson() {
     return {
-      "padding": {
-        "p": p,
-        "pt": pt,
-        "pr": pr,
-        "pb": pb,
-        "pl": pl,
-        "px": px,
-        "py": py,
-      },
-      "margin": {
-        "m": m,
-        "mt": mt,
-        "mr": mr,
-        "mb": mb,
-        "ml": ml,
-        "mx": mx,
-        "my": my
-      }
+      "p": p,
+      "pt": pt,
+      "pr": pr,
+      "pb": pb,
+      "pl": pl,
+      "px": px,
+      "py": py,
+      "m": m,
+      "mt": mt,
+      "mr": mr,
+      "mb": mb,
+      "ml": ml,
+      "mx": mx,
+      "my": my
     };
   }
 }

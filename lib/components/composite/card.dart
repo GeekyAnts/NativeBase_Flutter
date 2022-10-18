@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/builder/nativebase_composite_widget_builder.dart';
 import 'package:nativebase_flutter/nativebase_flutter.dart';
 import 'package:nativebase_flutter/theme/components/card.dart';
 import '../primitives/box/index.dart';
@@ -53,22 +51,7 @@ class NBCard extends Box {
 
   @override
   Map<String, dynamic> toJson() {
+    print({"baseStyle": cardBaseStyles.toJson(), ...super.toJson()});
     return {"baseStyle": cardBaseStyles.toJson(), ...super.toJson()};
-  }
-}
-
-class NBCardD extends NativebaseCompositeWidgetBuilder {
-  const NBCardD({super.key});
-
-  @override
-  Widget compositeBuild() {
-    // TODO: implement compositeBuild
-    throw UnimplementedError();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    // TODO: implement toJson
-    throw UnimplementedError();
   }
 }

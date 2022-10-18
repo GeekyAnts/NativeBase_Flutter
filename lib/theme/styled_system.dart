@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nativebase_flutter/utils/border.dart';
+import 'package:nativebase_flutter/utils/constraints.dart';
+import 'package:nativebase_flutter/utils/shadow.dart';
 
 import '../utils/edge_insets.dart';
 
@@ -14,6 +17,16 @@ const Map<String, dynamic> typography = {
     "property": 'fontWeight',
     "scale": 'fontWeight',
   },
+  "textCenter": TextAlign.center,
+  "textEnd": TextAlign.end,
+  "textJustify": TextAlign.justify,
+  "textLeft": TextAlign.left,
+  "textRight": TextAlign.right,
+  "textStart": TextAlign.start,
+  "underline": TextDecoration.underline,
+  "lineThrough": TextDecoration.lineThrough,
+  "overline": TextDecoration.overline,
+  "italic": FontStyle.italic
 };
 
 const Map<String, dynamic> alignment = {
@@ -103,7 +116,11 @@ Map<String, dynamic> spaces = {
     "scale": "spaces",
     "transformer": getEdgeInsets,
   },
-  "padding": {"property": "padding", "scale": "spaces"},
+  "padding": {
+    "property": "padding",
+    "scale": "spaces",
+    "transformer": getEdgeInsets,
+  },
   "p": {
     "property": "padding",
     "scale": "spaces",
@@ -121,153 +138,319 @@ Map<String, dynamic> spaces = {
   "paddingRight": {
     "property": "padding",
     "scale": "spaces",
+    "transformer": getEdgeInsets
   },
-  "pr": {"property": "padding", "scale": "spaces"},
-  "paddingBottom": {"property": "padding", "scale": "spaces"},
-  "pb": {"property": "padding", "scale": "spaces"},
-  "paddingLeft": {"property": "padding", "scale": "spaces"},
-  "pl": {"property": "padding", "scale": "spaces"},
-  "paddingX": {"property": "padding", "scale": "spaces"},
-  "px": {"property": "padding", "scale": "spaces"},
-  "paddingY": {"property": "padding", "scale": "spaces"},
-  "py": {"property": "padding", "scale": "spaces"},
-  "gap": {"property": "gap", "scale": "spaces"}
+  "pr": {
+    "property": "padding",
+    "scale": "spaces",
+    "transformer": getEdgeInsets
+  },
+  "paddingBottom": {
+    "property": "padding",
+    "scale": "spaces",
+    "transformer": getEdgeInsets
+  },
+  "pb": {
+    "property": "padding",
+    "scale": "spaces",
+    "transformer": getEdgeInsets
+  },
+  "paddingLeft": {
+    "property": "padding",
+    "scale": "spaces",
+    "transformer": getEdgeInsets
+  },
+  "pl": {
+    "property": "padding",
+    "scale": "spaces",
+    "transformer": getEdgeInsets
+  },
+  "paddingX": {
+    "property": "padding",
+    "scale": "spaces",
+    "transformer": getEdgeInsets
+  },
+  "px": {
+    "property": "padding",
+    "scale": "spaces",
+    "transformer": getEdgeInsets
+  },
+  "paddingY": {
+    "property": "padding",
+    "scale": "spaces",
+    "transformer": getEdgeInsets
+  },
+  "py": {
+    "property": "padding",
+    "scale": "spaces",
+    "transformer": getEdgeInsets
+  },
+  "gap": {
+    "property": "gap",
+    "scale": "spaces",
+    "transformer": getEdgeInsets,
+  }
 };
 
 Map<String, dynamic> layout = {
-  "width": {"property": "width", "scale": "sizes"},
+  "constraints": {"transformer": getConstraints},
+  "width": {
+    "property": "width",
+    "scale": "sizes",
+  },
   "w": {"property": "width", "scale": "sizes"},
   "height": {"property": "height", "scale": "sizes"},
   "h": {"property": "height", "scale": "sizes"},
-  "minWidth": {"property": "minWidth", "scale": "sizes"},
-  "minW": {"property": "minWidth", "scale": "sizes"},
-  "minHeight": {"property": "minHeight", "scale": "sizes"},
-  "minH": {"property": "minHeight", "scale": "sizes"},
-  "maxWidth": {"property": "maxWidth", "scale": "sizes"},
-  "maxW": {"property": "maxWidth", "scale": "sizes"},
-  "maxHeight": {"property": "maxHeight", "scale": "sizes"},
-  "maxH": {"property": "maxHeight", "scale": "sizes"},
+  "minWidth": {
+    "property": "constraints",
+    "scale": "sizes",
+    "transformer": getConstraints
+  },
+  "minW": {
+    "property": "constraints",
+    "scale": "sizes",
+    "transformer": getConstraints
+  },
+  "minHeight": {
+    "property": "constraints",
+    "scale": "sizes",
+    "transformer": getConstraints
+  },
+  "minH": {
+    "property": "constraints",
+    "scale": "sizes",
+    "transformer": getConstraints
+  },
+  "maxWidth": {
+    "property": "constraints",
+    "scale": "sizes",
+    "transformer": getConstraints
+  },
+  "maxW": {
+    "property": "constraints",
+    "scale": "sizes",
+    "transformer": getConstraints
+  },
+  "maxHeight": {
+    "property": "constraints",
+    "scale": "sizes",
+    "transformer": getConstraints
+  },
+  "maxH": {
+    "property": "constraints",
+    "scale": "sizes",
+    "transformer": getConstraints
+  },
   "size": {
-    "properties": ["width", "height"],
-    "scale": "sizes"
+    "property": "constraints",
+    "scale": "sizes",
+    "transformer": getConstraints
   },
   "boxSize": {
-    "properties": ["width", "height"],
-    "scale": "sizes"
+    "property": "constraints",
+    "scale": "sizes",
+    "transformer": getConstraints
   },
-  "overflow": true,
-  "overflowX": true,
-  "overflowY": true,
-  "display": true,
-  "verticalAlign": true,
-  "textAlign": true
+};
+
+Map<String, dynamic> borderRadius = {
+  "borderRadius": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "borderTopRadius": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "borderLeftRadius": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "borderRightRadius": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "borderTopLeftRadius": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "borderTopRightRadius": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "borderBottomLeftRadius": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "borderBottomRightRadius": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "borderBottomRadius": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "rounded": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "roundedTopLeft": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "roundedTopRight": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "roundedBottomLeft": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "roundedBottomRight": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "roundedTop": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "roundedBottom": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "roundedLeft": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  },
+  "roundedRight": {
+    "property": "borderRadius",
+    "scale": "radii",
+    "transformer": getBorderRadius
+  }
 };
 
 Map<String, dynamic> border = {
-  "borderWidth": {"property": "borderWidth", "scale": "borders"},
-  "borderStyle": {"property": "borderStyle", "scale": "borderStyles"},
+  "border": {
+    "transformer": getBorder,
+  },
+  "borderWidth": {
+    "property": "border",
+    "scale": "borders",
+    "transformer": getBorder,
+  },
+  "borderStyle": {"property": "border", "scale": "borderStyles"},
   "borderColor": {
-    "property": "borderColor",
+    "property": "border",
     "scale": "colors",
-    "transformer": "getColor"
+    "transformer": getBorder,
   },
-  "borderRadius": {"property": "borderRadius", "scale": "radii"},
-  "borderTop": {"property": "borderTop", "scale": "borders"},
-  "borderTopRadius": {
-    "properties": ["borderTopLeftRadius", "borderTopRightRadius"],
-    "scale": "radii"
+  "borderTop": {
+    "property": "border",
+    "scale": "radii",
+    "transformer": getBorder,
   },
-  "borderLeftRadius": {
-    "properties": ["borderTopLeftRadius", "borderBottomLeftRadius"],
-    "scale": "radii"
+  "borderRight": {
+    "property": "border",
+    "scale": "borders",
+    "transformer": getBorder,
   },
-  "borderRightRadius": {
-    "properties": ["borderTopRightRadius", "borderBottomRightRadius"],
-    "scale": "radii"
+  "borderBottom": {
+    "property": "border",
+    "scale": "borders",
+    "transformer": getBorder,
   },
-  "borderTopLeftRadius": {"property": "borderTopLeftRadius", "scale": "radii"},
-  "borderTopRightRadius": {
-    "property": "borderTopRightRadius",
-    "scale": "radii"
+  "borderLeft": {
+    "property": "border",
+    "scale": "borders",
+    "transformer": getBorder,
   },
-  "borderRight": {"property": "borderRight", "scale": "borders"},
-  "borderBottom": {"property": "borderBottom", "scale": "borders"},
-  "borderBottomLeftRadius": {
-    "property": "borderBottomLeftRadius",
-    "scale": "radii"
-  },
-  "borderBottomRightRadius": {
-    "property": "borderBottomRightRadius",
-    "scale": "radii"
-  },
-  "borderLeft": {"property": "borderLeft", "scale": "borders"},
   "borderX": {
-    "properties": ["borderLeft", "borderRight"],
-    "scale": "borders"
+    "property": "border",
+    "scale": "borders",
+    "transformer": getBorder,
   },
   "borderY": {
-    "properties": ["borderTop", "borderBottom"],
-    "scale": "borders"
+    "property": "border",
+    "scale": "borders",
+    "transformer": getBorder,
   },
-  "borderTopWidth": {"property": "borderTopWidth", "scale": "borders"},
+  "borderTopWidth": {
+    "property": "border",
+    "scale": "borders",
+    "transformer": getBorder,
+  },
   "borderTopColor": {
-    "property": "borderTopColor",
+    "property": "border",
     "scale": "colors",
-    "transformer": "getColor"
+    "transformer": getBorder,
   },
-  "borderTopStyle": {"property": "borderTopStyle", "scale": "borderStyles"},
-  "borderBottomWidth": {"property": "borderBottomWidth", "scale": "borders"},
+  "borderTopStyle": {
+    "property": "border",
+    "scale": "borderStyles",
+    "transformer": getBorder,
+  },
+  "borderBottomWidth": {
+    "property": "border",
+    "scale": "borders",
+    "transformer": getBorder,
+  },
   "borderBottomColor": {
-    "property": "borderBottomColor",
+    "property": "border",
     "scale": "colors",
-    "transformer": "getColor"
+    "transformer": getBorder,
   },
   "borderBottomStyle": {
-    "property": "borderBottomStyle",
-    "scale": "borderStyles"
+    "property": "border",
+    "scale": "borderStyles",
+    "transformer": getBorder,
   },
-  "borderLeftWidth": {"property": "borderLeftWidth", "scale": "borders"},
+  "borderLeftWidth": {
+    "property": "border",
+    "scale": "borders",
+    "transformer": getBorder,
+  },
   "borderLeftColor": {
-    "property": "borderLeftColor",
+    "property": "border",
     "scale": "colors",
-    "transformer": "getColor"
+    "transformer": getBorder,
   },
-  "borderLeftStyle": {"property": "borderLeftStyle", "scale": "borderStyles"},
-  "borderRightWidth": {"property": "borderRightWidth", "scale": "borders"},
+  "borderLeftStyle": {
+    "property": "border",
+    "scale": "borderStyles",
+    "transformer": getBorder,
+  },
+  "borderRightWidth": {
+    "property": "border",
+    "scale": "borders",
+    "transformer": getBorder,
+  },
   "borderRightColor": {
-    "property": "borderRightColor",
+    "property": "border",
     "scale": "colors",
-    "transformer": "getColor"
+    "transformer": getBorder,
   },
-  "borderRightStyle": {"property": "borderRightStyle", "scale": "borderStyles"},
-  "rounded": {"property": "borderRadius", "scale": "radii"},
-  "roundedTopLeft": {"property": "borderTopLeftRadius", "scale": "radii"},
-  "roundedTopRight": {"property": "borderTopRightRadius", "scale": "radii"},
-  "roundedBottomLeft": {"property": "borderBottomLeftRadius", "scale": "radii"},
-  "roundedBottomRight": {
-    "property": "borderBottomRightRadius",
-    "scale": "radii"
+  "borderRightStyle": {
+    "property": "border",
+    "scale": "borderStyles",
+    "transformer": getBorder,
   },
-  "roundedTop": {
-    "properties": ["borderTopLeftRadius", "borderTopRightRadius"],
-    "scale": "radii"
-  },
-  "borderBottomRadius": {
-    "properties": ["borderBottomLeftRadius", "borderBottomRightRadius"],
-    "scale": "radii"
-  },
-  "roundedBottom": {
-    "properties": ["borderBottomLeftRadius", "borderBottomRightRadius"],
-    "scale": "radii"
-  },
-  "roundedLeft": {
-    "properties": ["borderTopLeftRadius", "borderBottomLeftRadius"],
-    "scale": "radii"
-  },
-  "roundedRight": {
-    "properties": ["borderTopRightRadius", "borderBottomRightRadius"],
-    "scale": "radii"
-  }
 };
 Map<String, dynamic> color = {
   "color": {
@@ -276,16 +459,11 @@ Map<String, dynamic> color = {
   },
 };
 const extraProps = {
-  "outline": true,
-  "outlineWidth": true,
-  "outlineColor": true,
-  "outlineStyle": true,
   "shadow": {
+    "property": 'shadow',
+    "transformer": getBoxShadow,
     "scale": 'shadows',
   },
-  "cursor": true,
-  "overflow": true,
-  "userSelect": {"property": 'userSelect'},
 };
 
 const background = {
@@ -312,6 +490,7 @@ Map<String, dynamic> propConfig = {
   ...alignment,
   ...layout,
   ...border,
+  ...borderRadius,
   ...borderStyle,
   ...color,
   ...extraProps

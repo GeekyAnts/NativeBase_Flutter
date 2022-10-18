@@ -108,6 +108,12 @@ class Box extends NativeBaseWidgetBuilder<Container>
   @override
   final String? alignment;
 
+  @override
+  final String? height;
+
+  @override
+  final String? width;
+
   const Box({
     this.alignment,
     this.color,
@@ -153,6 +159,8 @@ class Box extends NativeBaseWidgetBuilder<Container>
     super.key,
     this.gradient,
     this.child,
+    this.height,
+    this.width,
   });
 
   @override
@@ -161,7 +169,15 @@ class Box extends NativeBaseWidgetBuilder<Container>
       "child": child,
       "gradient": gradient,
       "bgImage": bgImage,
-      ...LayoutProps(h: h, w: w, maxW: maxW, maxH: maxH, minH: minH, minW: minW)
+      ...LayoutProps(
+              h: h,
+              w: w,
+              maxW: maxW,
+              maxH: maxH,
+              minH: minH,
+              minW: minW,
+              height: height,
+              width: width)
           .toJson(),
       ...StyleProps(
               m: m,
