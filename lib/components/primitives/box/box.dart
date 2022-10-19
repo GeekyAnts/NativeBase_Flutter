@@ -10,9 +10,11 @@ import 'package:nativebase_flutter/models/utility-props-models/style_props.dart'
 
 import '../../../builder/nativebase_builder.dart';
 
-/// This is a generic component for low level layout needs. It is similar to a [Container] in Material Widget.
+/// This is a generic widget for low level layout needs. It is similar to a [Container] in Material Widget.
 ///
-/// [Box] Widget is used display its child with many decoration around the it.
+/// [Box] Widget is used to display its child with many decoration around it.
+///
+/// ## Example
 ///
 /// ![An basic example of the Box widget](https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/box/box.1.png)
 ///
@@ -31,7 +33,7 @@ import '../../../builder/nativebase_builder.dart';
 ///  )
 /// ```
 /// [Box] with customized border width , border color and border radius
-/// **See the list of properties of [Box] for more example
+/// **See the list of properties of [Box] for more example**
 /// ![An example of the Box widget with borders and border radius](https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/box/box.2.png)
 /// ```dart
 ///  Box(

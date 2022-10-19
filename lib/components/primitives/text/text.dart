@@ -4,6 +4,23 @@ import 'package:nativebase_flutter/models/utility-props-models/typography_props.
 
 import '../../../models/utility-props-models/color_props.dart';
 
+/// The [NBText] widget displays a string of text with single style.
+/// The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints.
+/// It is similar to a [Text] in Material Widget.
+///
+/// ## Example
+/// ![An basic example of the NBText widget](https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/nbtext/text.1.png)
+///```dart
+/// NBText(
+///   text: "Hello There !",
+///   color: 'red.600',
+///   fontSize: 'lg',
+///   fontStyle: 'italic',
+///   letterSpacing: 'xl',
+///   fontWeight: 'black',
+/// )
+///```
+///
 class NBText extends NativeBaseWidgetBuilder<Text>
     implements ColorProps, TypographyProps {
   /// Sets the [String] as child of the [NBText]

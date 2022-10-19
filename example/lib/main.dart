@@ -92,20 +92,13 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Box(
-              p: '2',
-              color: 'cyan.500',
-              shadow: '2',
-              borderWidth: '2',
-              borderColor: 'pink',
-              borderRadius: 'full',
-              child: NBText(
-                text: "This is Box",
-                fontSize: 'md',
-                fontWeight: 'medium',
-                letterSpacing: 'lg',
-                color: 'warmGray.100',
-              ),
+            NBText(
+              text: "Hello There !",
+              color: 'red.600',
+              fontSize: 'lg',
+              fontStyle: 'italic',
+              letterSpacing: 'xl',
+              fontWeight: 'black',
             )
           ],
         ),
