@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/builder/nativebase_builder.dart';
-import 'package:nativebase_flutter/models/utility-props-models/typography_props.dart';
+import '/builder/nativebase_builder.dart';
+import '/models/utility-props-models/typography_props.dart';
 
-import '../../../models/utility-props-models/color_props.dart';
+import '/models/utility-props-models/color_props.dart';
 
 /// The [NBText] widget displays a string of text with single style.
 /// The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints.

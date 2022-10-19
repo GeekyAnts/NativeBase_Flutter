@@ -1,10 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/models/utility-props-models/border_props.dart';
-import 'package:nativebase_flutter/models/utility-props-models/color_props.dart';
-import 'package:nativebase_flutter/models/utility-props-models/flexbox_props.dart';
-import 'package:nativebase_flutter/models/utility-props-models/layout_props.dart';
-import 'package:nativebase_flutter/models/utility-props-models/shadow_props.dart';
+import '/models/utility-props-models/border_props.dart';
+import '/models/utility-props-models/color_props.dart';
+import '/models/utility-props-models/flexbox_props.dart';
+import '/models/utility-props-models/layout_props.dart';
+import '/models/utility-props-models/shadow_props.dart';
 
 import 'package:nativebase_flutter/models/utility-props-models/style_props.dart';
 

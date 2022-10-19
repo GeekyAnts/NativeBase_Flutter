@@ -1,4 +1,4 @@
-import 'package:nativebase_flutter/theme/styled_system.dart';
+import '/theme/styled_system.dart';
 
 dynamic propResolver({required Map<String, dynamic> resolvedTokens}) {
   var configMap = <String, dynamic>{};

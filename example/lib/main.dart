@@ -70,11 +70,11 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
               ),
             ],
           ),
-          Box(
+          const Box(
             ml: '3',
             h: '90',
             w: '90',
-            p: Space.dp10,
+            p: '10',
             borderWidth: '3',
             borderColor: 'white',
             bgImage: 'https://tinyurl.com/2vfrtp7d',
@@ -92,9 +92,10 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Heading(
-              text: "Hello There !",
-              color: 'cyan.600',
+            NBCard(
+              child: NBText(
+                text: "This Card looks awesome",
+              ),
             )
           ],
         ),

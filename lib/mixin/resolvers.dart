@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/mixin/prop-resolver/prop_resolver.dart';
-import 'package:nativebase_flutter/mixin/token-resolver/token_resolver.dart';
-import 'package:nativebase_flutter/utils/components_enum.dart';
+import '/mixin/prop-resolver/prop_resolver.dart';
+import '/mixin/token-resolver/token_resolver.dart';
+import '/utils/components_enum.dart';
 
 import 'component-theme-resolver/component_theme_resolver.dart';
 

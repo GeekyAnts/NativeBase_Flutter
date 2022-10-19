@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/theme/base/typography.dart';
+import '/theme/base/typography.dart';
 
 class NBFontSizes {
   double? _i2xs;

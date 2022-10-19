@@ -1,7 +1,6 @@
-import 'package:nativebase_flutter/models/components/card.dart';
-
-import '../components/box.dart';
-import '../components/heading.dart';
+import '/models/components/card.dart';
+import '/models/components/box.dart';
+import '/models/components/heading.dart';
 
 class NBComponent {
   NBHeading? _heading;

@@ -1,15 +1,27 @@
-import 'package:nativebase_flutter/nativebase_flutter.dart';
-import 'package:nativebase_flutter/theme/components/card.dart';
+import '/theme/components/card.dart';
 import '../primitives/box/box.dart';
 
+/// A Nativebase Design card: a panel with slightly rounded corners and an
+/// elevation shadow along with padding .
+///
+/// A card is a sheet of [Box] used to represent some related information,
+/// for example an album, a geographical location, a meal, contact details, etc.
+///
+/// ![An basic example of the NBText widget](https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/card/card.1.png)
+/// ## Example
+/// ```dart
+///NBCard(
+///   child: NBText(
+///     text: "This Card looks awesome",
+///   ),
+/// )
+/// ```
 class NBCard extends Box {
   /// A Nativebase Design card: a panel with slightly rounded corners and an
   /// elevation shadow along with padding .
   ///
   /// A card is a sheet of [Box] used to represent some related information,
   /// for example an album, a geographical location, a meal, contact details, etc.
-  ///
-
   const NBCard({
     super.key,
     super.bgImage,

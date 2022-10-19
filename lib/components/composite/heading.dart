@@ -1,5 +1,5 @@
-import 'package:nativebase_flutter/components/primitives/text/text.dart';
-import 'package:nativebase_flutter/theme/components/heading.dart';
+import '/components/primitives/text/text.dart';
+import '/theme/components/heading.dart';
 
 /// The [Heading] widget displays a string of text with set of default style of NativeBase Design System such as `fontSize` and `letterSpacing`.
 /// The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints.
@@ -9,7 +9,7 @@ import 'package:nativebase_flutter/theme/components/heading.dart';
 ///```dart
 /// Heading(
 ///   text: "Hello There !",
-///   color: 'red.600',
+///   color: 'cyan.600',
 /// )
 ///```
 /// The above example shows that the [Heading] widget as a default size of `lg`.

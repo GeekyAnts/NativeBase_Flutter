@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:nativebase_flutter/mixin/resolvers.dart';
+import '../mixin/resolvers.dart';
 import '../mixin/style-instance-generator/style_instance_generator.dart';
 
 /// [NativeBaseWidgetBuilder] is builder class which should be used by all the nativebase widget

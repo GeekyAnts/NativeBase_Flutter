@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/nativebase_flutter.dart';
+
+import '/models/theme/nativebase_theme_model.dart';
 
 class NativeBaseProvider extends StatefulWidget {
   final NativeBaseTheme theme;

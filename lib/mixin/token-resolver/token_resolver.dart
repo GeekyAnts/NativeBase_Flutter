@@ -36,8 +36,8 @@ import 'package:flutter/material.dart';
 }
 */
 
-import '../../components/nativebase_provider.dart';
-import '../../theme/styled_system.dart';
+import '/components/nativebase_provider.dart';
+import '/theme/styled_system.dart';
 
 Map<String, dynamic> tokenResolver(
   Map<String, dynamic> style,
