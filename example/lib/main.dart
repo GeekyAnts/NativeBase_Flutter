@@ -92,13 +92,9 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            NBText(
+            Heading(
               text: "Hello There !",
-              color: 'red.600',
-              fontSize: 'lg',
-              fontStyle: 'italic',
-              letterSpacing: 'xl',
-              fontWeight: 'black',
+              color: 'cyan.600',
             )
           ],
         ),
