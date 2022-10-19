@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nativebase_flutter/builder/nativebase_builder.dart';
-import 'package:nativebase_flutter/models/utility-props-models/typography_props_model.dart';
+import 'package:nativebase_flutter/models/utility-props-models/typography_props.dart';
 
-import '../../../models/utility-props-models/color_props_model.dart';
+import '../../../models/utility-props-models/color_props.dart';
 
 class NBText extends NativeBaseWidgetBuilder<Text>
     implements ColorProps, TypographyProps {

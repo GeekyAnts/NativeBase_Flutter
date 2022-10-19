@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "nativebase_flutter",
+			"path": "../../../.."
+		},
+		{
+			"name": "bin",
+			"path": "../../../../../../Downloads/flutter/bin"
+		}
+	],
+	"settings": {}
+}

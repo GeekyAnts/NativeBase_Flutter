@@ -1,4 +1,4 @@
-import 'package:nativebase_flutter/models/components/card_model.dart';
+import 'package:nativebase_flutter/models/components/card.dart';
 
 NbCardModel cardBaseStyles = NbCardModel(
   shadow: '4',

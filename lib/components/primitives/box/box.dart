@@ -1,14 +1,35 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:nativebase_flutter/models/utility-props-models/border_props_model.dart';
-import 'package:nativebase_flutter/models/utility-props-models/color_props_model.dart';
-import 'package:nativebase_flutter/models/utility-props-models/flexbox_props_model.dart';
-import 'package:nativebase_flutter/models/utility-props-models/layout_props_model.dart';
+import 'package:nativebase_flutter/models/utility-props-models/border_props.dart';
+import 'package:nativebase_flutter/models/utility-props-models/color_props.dart';
+import 'package:nativebase_flutter/models/utility-props-models/flexbox_props.dart';
+import 'package:nativebase_flutter/models/utility-props-models/layout_props.dart';
 import 'package:nativebase_flutter/models/utility-props-models/shadow_props.dart';
 
-import 'package:nativebase_flutter/models/utility-props-models/style_props_model.dart';
+import 'package:nativebase_flutter/models/utility-props-models/style_props.dart';
 
 import '../../../builder/nativebase_builder.dart';
+
+/// This is a generic component for low level layout needs. It is similar to a [Container] in Material Widget.
+///
+/// [Box] Widget is used display its child with many decoration around the it.
+///
+/// ![An amber colored container with the dimensions of 48 square pixels.](https://flutter.github.io/assets-for-api-docs/assets/widgets/container_a.png)
+///
+/// ```dart
+///  Box(
+///    p: '2',
+///    color: 'cyan.500',
+///    shadow: '2',
+///    child: NBText(
+///      text: "This is Box",
+///      fontSize: 'md',
+///      fontWeight: 'medium',
+///      letterSpacing: 'lg',
+///      color: 'warmGray.100',
+///    ),
+///  )
+/// ```
 
 class Box extends NativeBaseWidgetBuilder<Container>
     implements

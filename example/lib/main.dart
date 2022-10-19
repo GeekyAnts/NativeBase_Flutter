@@ -29,14 +29,6 @@ class NativeBaseExample extends StatefulWidget {
 }
 
 class _NativeBaseExampleState extends State<NativeBaseExample> {
-  Widget customWidget() {
-    return const CustomWidget(
-      h: '20',
-      w: '20',
-      color: 'cyan',
-    );
-  }
-
   Widget card() {
     NativeBaseProvider.of(context).component.heading.md.letterSpacing;
     var img = 'https://tinyurl.com/4e7fty6f';

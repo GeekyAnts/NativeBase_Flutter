@@ -1,6 +1,6 @@
 import 'package:nativebase_flutter/nativebase_flutter.dart';
 import 'package:nativebase_flutter/theme/components/card.dart';
-import '../primitives/box/index.dart';
+import '../primitives/box/box.dart';
 
 class NBCard extends Box {
   /// A Nativebase Design card: a panel with slightly rounded corners and an

@@ -1,4 +1,3 @@
-import 'package:nativebase_flutter/models/components/box_model.dart';
+import 'package:nativebase_flutter/models/components/box.dart';
 
 NBBox box = NBBox();
-CustomWidget customWidget = CustomWidget(p: '3');
