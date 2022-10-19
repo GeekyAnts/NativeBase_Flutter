@@ -2,7 +2,7 @@
 
 # Introducing NativeBase Design System for Flutter
 
-<span style="background-color:blue;height:300px"><img src="https://nativebase.io/img/nativebase-logo-light.svg" width="500"></span>.
+<img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/logo/logo.png" width="500">
 
 
 
