@@ -85,7 +85,7 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
             p: Space.dp10,
             borderWidth: '3',
             borderColor: 'white',
-            bgImage: img,
+            bgImage: 'https://tinyurl.com/2vfrtp7d',
             borderRadius: 'full',
           ),
         ],
@@ -99,23 +99,19 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              "Hello",
-              style: TextStyle(
-                decoration: TextDecoration.underline,
+          children: const [
+            Box(
+              p: '2',
+              color: 'cyan.500',
+              shadow: '2',
+              child: NBText(
+                text: "This is Box",
+                fontSize: 'md',
+                fontWeight: 'medium',
+                letterSpacing: 'lg',
+                color: 'warmGray.100',
               ),
-            ),
-            const NBText(
-              text: "Hello",
-              textAlign: 'textCenter',
-              textDecoration: 'overline',
-              fontSize: '30',
-              fontStyle: 'italic',
-              color: 'red',
-            ),
-            card(),
-            Card()
+            )
           ],
         ),
       ),

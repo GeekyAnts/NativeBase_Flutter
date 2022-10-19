@@ -77,7 +77,7 @@ This alpha version has minimum NativeBase widget
             p: '10,
             borderWidth: '3',
             borderColor: 'white',
-            bgImage: img,
+            bgImage: 'https://tinyurl.com/2vfrtp7d',
             borderRadius: 'full',
           ),
         ],
@@ -122,6 +122,47 @@ NativeBaseProvider.of(context).component.heading.md.letterSpacing;
 The above code snippet will return token value of md `fontSize` and `letterSpacing` for `Heading` widget.
 
 **NOTE: NativeBase Token resolver engine resolves the token from the theme**
+
+
+# Widgets 
+
+## Box
+This is a generic component for low level layout needs. It is similar to a 
+Container in Flutter. 
+```dart
+Box(
+  p: '2',
+  color: 'cyan.500',
+  shadow: '2',
+  child: NBText(
+    text: "This is Box",
+    fontSize: 'md',
+    fontWeight: 'medium',
+    letterSpacing: 'lg',
+    color: 'warmGray.100',
+  ),
+)
+
+```
+
+ <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/exampleImage/card.png" width="450" title="Build with NativeBase">
+ 
+### Example
+#### Basic
+``` dart
+Box(
+  color: 'cyan.500',
+  shadow: '2',
+  child: NBText(
+    text: "This is Box",
+    fontSize: 'md',
+    fontWeight: 'medium',
+    letterSpacing: 'lg',
+    color: 'warmGray.100',
+  ),
+)
+```
+
 
 
  
