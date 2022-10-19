@@ -14,7 +14,7 @@ import '../../../builder/nativebase_builder.dart';
 ///
 /// [Box] Widget is used display its child with many decoration around the it.
 ///
-/// ![An amber colored container with the dimensions of 48 square pixels.](https://flutter.github.io/assets-for-api-docs/assets/widgets/container_a.png)
+/// ![An basic example of the Box widget](https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/box/box.1.png)
 ///
 /// ```dart
 ///  Box(
@@ -29,6 +29,26 @@ import '../../../builder/nativebase_builder.dart';
 ///      color: 'warmGray.100',
 ///    ),
 ///  )
+/// ```
+/// [Box] with customized border width , border color and border radius
+/// **See the list of properties of [Box] for more example
+/// ![An example of the Box widget with borders and border radius](https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/box/box.2.png)
+/// ```dart
+///  Box(
+///   p: '2',
+///   color: 'cyan.500',
+///   shadow: '2',
+///   borderWidth: '2',
+///   borderColor: 'pink',
+///   borderRadius: 'full',
+///   child: NBText(
+///     text: "This is Box",
+///     fontSize: 'md',
+///     fontWeight: 'medium',
+///     letterSpacing: 'lg',
+///     color: 'warmGray.100',
+///   ),
+/// )
 /// ```
 
 class Box extends NativeBaseWidgetBuilder<Container>

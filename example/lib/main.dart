@@ -96,6 +96,9 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
               p: '2',
               color: 'cyan.500',
               shadow: '2',
+              borderWidth: '2',
+              borderColor: 'pink',
+              borderRadius: 'full',
               child: NBText(
                 text: "This is Box",
                 fontSize: 'md',
