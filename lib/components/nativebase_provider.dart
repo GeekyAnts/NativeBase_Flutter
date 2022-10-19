@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 import '/models/theme/nativebase_theme_model.dart';
 
+/// @nodoc for NativeBaseProvider
 class NativeBaseProvider extends StatefulWidget {
   final NativeBaseTheme theme;
+
+  /// { @nodoc }
   final Widget child;
 
   /// The [NativeBaseProvider] holds the theme data of the nativebase

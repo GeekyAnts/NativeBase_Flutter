@@ -2,7 +2,8 @@
 
 # Introducing NativeBase Design System for Flutter
 
-<img src="https://nativebase.io/img/nativebase-logo-dark.svg" width="500">
+<span style="background-color:blue;height:300px"><img src="https://nativebase.io/img/nativebase-logo-light.svg" width="500"></span>.
+
 
 
 NativeBase is a design system and universal component library for React and React Native . NativeBase has gained good popularity in the React and React Native community. We at GeekyAnts is experimenting to bring this same design system in Flutter. Hence we are releasing `Alpha` version for flutter where we are asking Flutter Developers to try this package to build UI
@@ -12,11 +13,11 @@ NativeBase design system is build on top of Material design system and uses toke
 This alpha version has minimum NativeBase widget 
 
 * Primitive Widgets
-    * Box
-    * NBText
+    * [Box](https://nativebase-flutter-doc.vercel.app/components_primitives_box_box/Box-class.html)
+    * [NBText](https://nativebase-flutter-doc.vercel.app/components_primitives_text_text/NBText-class.html)
 * Composite Widgets
-    * NBCard
-    * Heading
+    * [NBCard](https://nativebase-flutter-doc.vercel.app/components_composite_card/NBCard-class.html)
+    * [Heading](https://nativebase-flutter-doc.vercel.app/components_composite_heading/Heading-class.html)
 
 ---
 ## Installation Guide
