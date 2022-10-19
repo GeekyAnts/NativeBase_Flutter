@@ -39,6 +39,8 @@ Map<String, dynamic> getBorder(String key, Map<String, dynamic> v, value) {
   BorderStyle borderStyle = value["borderStyle"] ?? BorderStyle.solid;
   Color color = value["borderColor"] ?? Colors.transparent;
 
+  // TODO :: NEED TO ADD COLOR PROPS FOR ALL SIDE BORDER
+
   v.addAll({
     key: Border(
       left: BorderSide(

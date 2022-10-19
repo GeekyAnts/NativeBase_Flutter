@@ -153,20 +153,186 @@ Box(
 
 ### Box Properties
 
-* child → Widget 
+* **alignment** → String?
 
-    The child contained by the Box.
+  The Box child alignment will be set using alignment. Use nativebase alignment tokens
+
+* **bgImage** → String?
+
+  Sets the background image of the box
+
+* **borderBottom** → String?
+
+  Sets the bottom border width of the box.
+
+* **borderBottomLeftRadius** → String?
+
+  Sets the Radius of bottom right corner of the box.
+
+* **borderBottomRadius** → String?
+
+  Sets the Radius of bottom right and left corner of the box.
+
+* **borderBottomRightRadius** → String?
+
+  Sets the Radius of bottom right corner of the box.
+
+* **borderColor** → String?
+
+  Sets the border color of the box.
+
+* **borderLeft** → String?
+
+  Sets the right border width of the box.
+
+* **borderLeftRadius** → String?
+
+  Sets the Radius of left top and bottom corner of the box.
+
+* **borderRadius** → String?
+
+  Sets the corner Radius of the box.
+
+* **borderRight** → String?
+
+  Sets the right border width of the box.
+
+* **borderRightRadius** → String?
+
+  Sets the Radius of right top and bottom corner of the box.
+
+* **borderStyle** → String?
+
+  Sets the border color of the box.
+
+* **borderTop** → String?
+
+  Sets the top border width of the box.
+
+* **borderTopLeftRadius** → String?
+
+  Sets the Radius of top left corner of the box.
+
+* **borderTopRadius** → String?
+
+  Sets the Radius of top right and left corner of the box.
+
+* **borderTopRightRadius** → String?
+
+  Sets the Radius of top right corner of the box.
+
+* **borderWidth** → String?
+
+  Sets the border width of the box from all the side.
+
+* **child** → Widget?
+
+  Sets child to the box
+
+* **color** → String?
+
+  The Box background color. Use nativebase color tokens as string like wise
+
+* **gradient** → LinearGradient?
+
+  Sets linearGradient to the box
+
+* **h** → String?
+
+  Sets the box height
+
+* **height** → String?
+
+  Sets the box height
+
+* **key** → Key?
+
+  Controls how one widget replaces another widget in the tree.
+
+* **m** → String?
+
+  Sets the box margin from all the side of box
+
+* **maxH** → String?
+
+  Sets the max height of the box
+
+* **maxW** → String?
+
+  Sets the max width of the box
+
+* **mb** → String?
+
+  Sets the box margin from bottom
+
+* **minH** → String?
+
+  Sets the min height of the box
+
+* **minW** → String?
+
+  Sets the min width of the box
+
+* **ml** → String?
+
+  Sets the box margin from left
+
+* **mr** → String?
+
+  Sets the box margin from right
+
+* **mt** → String?
+
+  Sets the box margin from top
+
+* **mx** → String?
+
+  Sets the box margin on X-Axis
+
+* **my** → String?
+
+  Sets the box margin on Y-Axis
+
+* **p** → String?
+
+  Sets the box padding from all the side
+
+* **pb** → String?
+
+  Sets the box padding from bottom
+
+* **pl** → String?
+
+  Sets the box padding from left
+
+* **pr** → String?
+
+  Sets the box padding from right
+
+* **pt** → String?
+
+  Sets the box padding from top
+
+* **px** → String?
+
+  Sets the box padding on X-Axis
+
+* **py** → String?
+
+  Sets the box padding on Y-Axis
+
+* **shadow** → String?
+
+  The Box elevation shadow. Use nativebase shadow tokens as string like wise
+
+* **w** → String?
+
+  Sets the box width
+
+* **width** → String?
+
+  Sets the box height
+
   
 
-* alignment → String (NativeBase Token)
-
-    Align the child within the Box.
-
-
-* color → String (NativeBase Token)
-
-    The color to paint behind the child.
-  
-
- 
 
