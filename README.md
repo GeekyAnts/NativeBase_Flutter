@@ -129,6 +129,8 @@ The above code snippet will return token value of md `fontSize` and `letterSpaci
 ## Box
 This is a generic component for low level layout needs. It is similar to a 
 Container in Flutter. 
+
+**Code Snippet**
 ```dart
 Box(
   p: '2',
@@ -144,9 +146,10 @@ Box(
 )
 
 ```
+**Output**
 
- <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/exampleImage/card.png" width="450" title="Build with NativeBase">
- 
+ <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/exampleImage/boxeg1.png" width="150" title="Build with NativeBase">
+
 ### Example
 #### Basic
 ``` dart
