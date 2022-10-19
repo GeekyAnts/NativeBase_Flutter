@@ -130,7 +130,7 @@ The above code snippet will return token value of md `fontSize` and `letterSpaci
 This is a generic component for low level layout needs. It is similar to a 
 Container in Flutter. 
 
-**Code Snippet**
+**Example**
 ```dart
 Box(
   p: '2',
@@ -146,27 +146,27 @@ Box(
 )
 
 ```
-**Output**
 
  <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/exampleImage/boxeg1.png" width="150" title="Build with NativeBase">
 
-### Example
-#### Basic
-``` dart
-Box(
-  color: 'cyan.500',
-  shadow: '2',
-  child: NBText(
-    text: "This is Box",
-    fontSize: 'md',
-    fontWeight: 'medium',
-    letterSpacing: 'lg',
-    color: 'warmGray.100',
-  ),
-)
-```
 
 
+### Box Properties
+
+* child → Widget 
+
+    The child contained by the Box.
+  
+
+* alignment → String (NativeBase Token)
+
+    Align the child within the Box.
+
+
+* color → String (NativeBase Token)
+
+    The color to paint behind the child.
+  
 
  
 
