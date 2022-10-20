@@ -16,7 +16,7 @@ import '../../../builder/nativebase_builder.dart';
 ///
 /// ## Example
 ///
-/// ![An basic example of the Box widget](https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/box/box.1.png)
+/// ![An basic example of the Box widget](https://raw.githubusercontent.com/GeekyAnts/NativeBase_Flutter/main/example/lib/assets/image/box/box.1.png)
 ///
 /// ```dart
 ///  Box(
@@ -34,7 +34,7 @@ import '../../../builder/nativebase_builder.dart';
 /// ```
 /// [Box] with customized border width , border color and border radius
 /// **See the list of properties of [Box] for more example**
-/// ![An example of the Box widget with borders and border radius](https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/box/box.2.png)
+/// ![An example of the Box widget with borders and border radius](https://raw.githubusercontent.com/GeekyAnts/NativeBase_Flutter/main/example/lib/assets/image/box/box.2.png)
 /// ```dart
 ///  Box(
 ///   p: '2',

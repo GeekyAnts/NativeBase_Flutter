@@ -5,7 +5,7 @@ import '/theme/components/heading.dart';
 /// The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints.
 ///
 /// ## Example
-/// ![An basic example of the NBText widget](https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/heading/heading.1.png)
+/// ![An basic example of the NBText widget](https://raw.githubusercontent.com/GeekyAnts/NativeBase_Flutter/main/example/lib/assets/image/heading/heading.1.png)
 ///```dart
 /// Heading(
 ///   text: "Hello There !",

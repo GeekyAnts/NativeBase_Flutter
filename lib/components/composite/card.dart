@@ -7,7 +7,7 @@ import '../primitives/box/box.dart';
 /// A card is a sheet of [Box] used to represent some related information,
 /// for example an album, a geographical location, a meal, contact details, etc.
 ///
-/// ![An basic example of the NBText widget](https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/card/card.1.png)
+/// ![An basic example of the NBText widget](https://raw.githubusercontent.com/GeekyAnts/NativeBase_Flutter/main/example/lib/assets/image/card/card.1.png)
 /// ## Example
 /// ```dart
 ///NBCard(

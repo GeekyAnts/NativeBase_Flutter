@@ -2,7 +2,7 @@
 
 # Introducing NativeBase Design System for Flutter
 
-<img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/logo/nbf.png" width="800">
+<img src="https://raw.githubusercontent.com/GeekyAnts/NativeBase_Flutter/main/example/lib/assets/image/logo/nbf.png" width="800">
 
 ### NativeBase + Flutter = :blue_heart:
 
@@ -64,7 +64,7 @@ The above code snippet will return token value of `md` `fontSize` and `letterSpa
 ---
 
 
-  [<img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/logo/Cover.png" width="750" title="Build with NativeBase">](https://www.figma.com/community/file/1098591432716522150)
+  [<img src="https://raw.githubusercontent.com/GeekyAnts/NativeBase_Flutter/main/example/lib/assets/image/logo/Cover.png" width="750" title="Build with NativeBase">](https://www.figma.com/community/file/1098591432716522150)
 
 [NativeBase](https://www.figma.com/community/file/1098591432716522150) components library with modular and accessible components makes it easier for designers and developers to design and build all components in their React and React Native applications.
 
@@ -72,7 +72,7 @@ The above code snippet will return token value of `md` `fontSize` and `letterSpa
 ---
 ## Build with NativeBase
 
-  <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/composition/composition.png" width="450" title="Build with NativeBase">
+  <img src="https://raw.githubusercontent.com/GeekyAnts/NativeBase_Flutter/main/example/lib/assets/image/composition/composition.png" width="450" title="Build with NativeBase">
 
 
 
