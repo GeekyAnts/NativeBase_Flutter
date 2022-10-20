@@ -1,10 +1,10 @@
-import 'package:nativebase_flutter/nativebase_flutter.dart';
-import 'package:nativebase_flutter/theme/base/border.dart';
-import 'package:nativebase_flutter/theme/base/shadows.dart';
-import 'package:nativebase_flutter/theme/base/sizes.dart';
-import 'package:nativebase_flutter/theme/base/spaces.dart';
+import '/nativebase_flutter.dart';
+import '/theme/base/border.dart';
+import '/theme/base/shadows.dart';
+import '/theme/base/sizes.dart';
+import '/theme/base/spaces.dart';
 
-import '../theme/components/index.dart';
+import '/theme/components/index.dart';
 
 NativeBaseTheme appTheme = NativeBaseTheme(
   fontSize: nbFontSizes,
@@ -18,26 +18,3 @@ NativeBaseTheme appTheme = NativeBaseTheme(
   colors: nbColor,
   shadows: nbShadow,
 );
-
-
-
-
-//  borderWidths,
-// breakpoints,
-// colors,
-// radii,
-// ...typography,
-
-//letterSpacings
-// lineHeights
-//fontConfig
-// fontWeights
-//fonts
-//fontSizes
-
-// sizes,
-// space: spacing,
-// shadows,
-// opacity,
-// components,
-// config,
