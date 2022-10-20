@@ -58,7 +58,7 @@ The above code snippet will return token value of `md` `fontSize` and `letterSpa
 *NOTE : NativeBase Token resolver engine resolves the token from the theme*
 
 
-## NativeBase Design System Figma Kit]
+## NativeBase Design System Figma Kit
 
 
 ---
