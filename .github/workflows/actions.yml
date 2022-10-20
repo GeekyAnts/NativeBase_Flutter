@@ -3,6 +3,7 @@ name: Flutter CI
 # This workflow is triggered on pushes to the repository.
 
 on:
+ 
   push:
     branches:
     - main
@@ -13,8 +14,7 @@ jobs:
   build:
     # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
-    container:
-      image:  google/dart:latest
+    
     steps:
     
     # Setup Java environment in order to build the Android app.
