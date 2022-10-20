@@ -21,6 +21,17 @@ jobs:
           "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
           "expiration":  ${{ secrets.PUB_DEV_PUBLISH_EXPIRATION }}
         }
-        EOF
+        EOF   
+    # Get flutter dependencies.
+    - run: flutter pub get
+    
+    # Check for any formatting issues in the code.
+    - run: flutter format --set-exit-if-changed .
+    
+    # Statically analyze the Dart code for any errors.
+    - run: flutter analyze .
+    
+    # Run widget tests for our flutter project.
+    - run: flutter test
     - name: Publish package
       run: pub publish --dry-run
