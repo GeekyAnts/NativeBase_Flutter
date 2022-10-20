@@ -22,3 +22,5 @@ jobs:
           "expiration":  ${{ secrets.PUB_DEV_PUBLISH_EXPIRATION }}
         }
         EOF
+    - name: Publish package
+      run: pub publish --dry-run
