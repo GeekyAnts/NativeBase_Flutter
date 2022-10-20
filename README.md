@@ -57,9 +57,14 @@ The above code snippet will return token value of `md` `fontSize` and `letterSpa
 
 **NOTE: NativeBase Token resolver engine resolves the token from the theme**
 
+
+## NativeBase Design System Figma Kit
+
+
 ---
 ## Build with NativeBase
 
+  <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/logo/Cover.png" width="450" title="Build with NativeBase">
 
 
   <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/composition/composition.png" width="450" title="Build with NativeBase">
