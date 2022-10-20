@@ -13,11 +13,11 @@ NativeBase design system is build on top of Material design system and uses toke
 This alpha version has minimum NativeBase widget 
 
 * Primitive Widgets
-    * [Box](https://nativebase-flutter-doc.vercel.app/components_primitives_box_box/Box-class.html)
-    * [NBText](https://nativebase-flutter-doc.vercel.app/components_primitives_text_text/NBText-class.html)
+    * [Box](https://naitvebase-flutter-docs.vercel.app/components_primitives_box_box/Box-class.html)
+    * [NBText](https://naitvebase-flutter-docs.vercel.app/components_primitives_text_text/NBText-class.html)
 * Composite Widgets
-    * [NBCard](https://nativebase-flutter-doc.vercel.app/components_composite_card/NBCard-class.html)
-    * [Heading](https://nativebase-flutter-doc.vercel.app/components_composite_heading/Heading-class.html)
+    * [NBCard](https://naitvebase-flutter-docs.vercel.app/components_composite_card/NBCard-class.html)
+    * [Heading](https://naitvebase-flutter-docs.vercel.app/components_composite_heading/Heading-class.html)
 
 ---
 ## Installation Guide
