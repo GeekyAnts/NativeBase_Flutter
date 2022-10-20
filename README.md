@@ -2,7 +2,7 @@
 
 # Introducing NativeBase Design System for Flutter
 
-<img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/logo/logo.png" width="500">
+<img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/logo/nbf.png" width="500">
 
 
 
