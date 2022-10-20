@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 Map<String, dynamic> getBorderRadius(
     String key, Map<String, dynamic> v, value) {
-  print(value);
   var m = value;
   v.addAll({
     key: BorderRadius.only(
