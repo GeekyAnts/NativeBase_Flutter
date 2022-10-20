@@ -48,35 +48,36 @@ class NativeBaseColor {
   NBColor? text;
   NBColor? white;
   NBColor? black;
+  NBColor? primary;
 
   NativeBaseColor(
-    this.amber,
-    this.blue,
-    this.blueGray,
-    this.coolGray,
-    this.cyan,
-    this.dark,
-    this.darkBlue,
-    this.emerald,
-    this.fuchsia,
-    this.gray,
-    this.green,
-    this.indigo,
-    this.lightBlue,
-    this.lime,
-    this.orange,
-    this.pink,
-    this.purple,
-    this.red,
-    this.rose,
-    this.teal,
-    this.text,
-    this.trueGray,
-    this.warmGray,
-    this.yellow,
-    this.white,
-    this.black,
-  );
+      this.amber,
+      this.blue,
+      this.blueGray,
+      this.coolGray,
+      this.cyan,
+      this.dark,
+      this.darkBlue,
+      this.emerald,
+      this.fuchsia,
+      this.gray,
+      this.green,
+      this.indigo,
+      this.lightBlue,
+      this.lime,
+      this.orange,
+      this.pink,
+      this.purple,
+      this.red,
+      this.rose,
+      this.teal,
+      this.text,
+      this.trueGray,
+      this.warmGray,
+      this.yellow,
+      this.white,
+      this.black,
+      this.primary);
 
   Map<String, dynamic> toJson() {
     return {
@@ -104,7 +105,8 @@ class NativeBaseColor {
       ...?dark?.toJson(),
       ...?text?.toJson(),
       ...?white?.toJson(),
-      ...?black?.toJson()
+      ...?black?.toJson(),
+      ...?primary?.toJson()
     };
   }
 }

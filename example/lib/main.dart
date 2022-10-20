@@ -93,6 +93,7 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             NBCard(
+              shadow: '1',
               child: NBText(
                 text: "This Card looks awesome",
               ),
