@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the tokenResolver function from the token_resolver library, for the Dart programming language.">
+  <title>tokenResolver function - token_resolver library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../" data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">nativebase_flutter</a></li>
+    <li><a href="../mixin_token-resolver_token_resolver/mixin_token-resolver_token_resolver-library.html">token_resolver</a></li>
+    <li class="self-crumb">tokenResolver function</li>
+  </ol>
+  <div class="self-name">tokenResolver</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-function">tokenResolver</span> function 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>
+<span class="name ">tokenResolver</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="tokenResolver-param-style"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">style</span>, </span></li>
+<li><span class="parameter" id="tokenResolver-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
+</ol>)
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">Map&lt;String, dynamic&gt; tokenResolver(
+  Map&lt;String, dynamic&gt; style,
+  BuildContext context,
+) {
+  Map&lt;String, dynamic&gt; resolvedProp = {};
+
+  &#47;&#47;&#47; Merge BaseStyles
+  &#47;&#47;&#47;
+  if (style.containsKey(&quot;baseStyle&quot;)) {
+    Map&lt;String, dynamic&gt; map = style[&#39;baseStyle&#39;];
+
+    map.forEach((key, value) {
+      if (style[key] is Map) {
+        Map&lt;String, dynamic&gt; s = style[key] as Map&lt;String, dynamic&gt;;
+        s.forEach((sKey, sValue) {
+          if (sValue == null) {
+            style[key][sKey] = map[key][sKey];
+          }
+        });
+      } else {
+        if (style[key] == null) {
+          style[key] = map[key];
+        }
+      }
+    });
+  }
+
+  &#47;&#47;&#47; Remove Null
+  &#47;&#47;&#47;
+  &#47;&#47;&#47;
+
+  style.removeWhere((key, value) =&gt; (value == null));
+
+  style.forEach((key, value) {
+    var v = &lt;String, dynamic&gt;{};
+
+    if (value is Map) {
+      value.removeWhere((dk, dv) =&gt; (dv == null));
+      value.forEach((k, val) {
+        if (propConfig[k] != null) {
+          &#47;&#47;&#47; Resolves from the Theme
+          v.addAll({...getResolvedValueFromTheme(context, k, v, val)});
+        } else {
+          &#47;&#47;&#47; Converts string to double
+          v.addAll({
+            k: ((val != null &amp;&amp; val.runtimeType == String)
+                ? convertToDouble(val)
+                : val)
+          });
+        }
+      });
+
+      resolvedProp.addAll({key: v});
+    } else {
+      &#47;&#47;&#47; which returns a number or a value as it is
+      &#47;&#47;&#47; For e.g. sm lg
+      var styledSystemValue = propConfig[key];
+      if (styledSystemValue != null) {
+        resolvedProp
+            .addAll({...getResolvedValueFromTheme(context, key, v, value)});
+      } else {
+        &#47;&#47;&#47; Direct Resolver
+        &#47;&#47;&#47; EG colors
+        resolvedProp[key] = ((value != null &amp;&amp; value.runtimeType == String)
+            ? convertToDouble(value)
+            : value);
+      }
+    }
+  });
+
+  print(resolvedProp);
+
+  return resolvedProp;
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">nativebase_flutter</a></li>
+  <li><a href="../mixin_token-resolver_token_resolver/mixin_token-resolver_token_resolver-library.html">token_resolver</a></li>
+  <li class="self-crumb">tokenResolver function</li>
+</ol>
+
+
+    <h5>token_resolver library</h5>
+    <ol>
+
+
+
+
+
+  <li class="section-title"><a href="../mixin_token-resolver_token_resolver/mixin_token-resolver_token_resolver-library.html#functions">Functions</a></li>
+  <li><a href="../mixin_token-resolver_token_resolver/convertToDouble.html">convertToDouble</a></li>
+  <li><a href="../mixin_token-resolver_token_resolver/getResolvedValueFromTheme.html">getResolvedValueFromTheme</a></li>
+  <li><a href="../mixin_token-resolver_token_resolver/tokenResolver.html">tokenResolver</a></li>
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-left-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    nativebase_flutter
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
