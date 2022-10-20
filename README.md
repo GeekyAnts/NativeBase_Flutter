@@ -4,9 +4,9 @@
 
 <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/logo/nbf.png" width="800">
 
+### NativeBase + Flutter = :blue_heart:
 
-
-NativeBase is a design system and universal component library for React and React Native . NativeBase has gained good popularity in the React and React Native community. We at GeekyAnts is experimenting to bring this same design system in Flutter. Hence we are releasing `Alpha` version for flutter where we are asking Flutter Developers to try this package to build UI
+NativeBase is a design system and universal component library for React and React Native . NativeBase has gained good popularity in the React and React Native community. We at GeekyAnts is experimenting to bring this same design system in Flutter. Hence we are releasing `alpha` version for flutter where we are asking Flutter Developers to try this package to build UI
 
 NativeBase design system is build on top of Material design system and uses token base UI development.
 
