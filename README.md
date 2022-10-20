@@ -55,17 +55,22 @@ NativeBaseProvider.of(context).component.heading.md.letterSpacing;
 ```
 The above code snippet will return token value of `md` `fontSize` and `letterSpacing` for `Heading` widget.
 
-**NOTE: NativeBase Token resolver engine resolves the token from the theme**
+*NOTE : NativeBase Token resolver engine resolves the token from the theme*
 
 
-## NativeBase Design System Figma Kit
+## NativeBase Design System Figma Kit]
+
+
+---
+
+
+  [<img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/logo/Cover.png" width="750" title="Build with NativeBase">](https://www.figma.com/community/file/1098591432716522150)
+
+[NativeBase](https://www.figma.com/community/file/1098591432716522150) components library with modular and accessible components makes it easier for designers and developers to design and build all components in their React and React Native applications.
 
 
 ---
 ## Build with NativeBase
-
-  <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/logo/Cover.png" width="450" title="Build with NativeBase">
-
 
   <img src="https://raw.githubusercontent.com/hasnentai/nb/main/example/lib/assets/image/composition/composition.png" width="450" title="Build with NativeBase">
 
