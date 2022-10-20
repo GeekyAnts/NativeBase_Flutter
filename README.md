@@ -24,7 +24,7 @@ This alpha version has minimum NativeBase widget
 
 Add package in your `pubspec.ymal` file as below 
 ```dart
-nativebase_flutter: 0.0.1
+nativebase_flutter: 0.1.0-alpha.0
 ```
 
 Now import the package into your `main.dart` file
