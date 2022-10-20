@@ -32,7 +32,7 @@ Now import the package into your `main.dart` file
 import 'package:nativebase_flutter/nativebase_flutter.dart';
 ```
 
-Now Inject NativeBaseProvider into the Widget tree like below 
+Now Inject `NativeBaseProvider` into the Widget tree like below 
 ```dart
   // This widget is the root of your application.
   @override
@@ -48,12 +48,12 @@ Now Inject NativeBaseProvider into the Widget tree like below
 ```
 **NativeBaseProvider needs to be on top of widget tree in order to resolve the tokens from the theme**
 
-`NativeBase` Tokens can also be access using `NativeBaseProvider` class as shown below.
+NativeBase Tokens can also be access using `NativeBaseProvider` class `of` method as shown below.
 ```dart
 NativeBaseProvider.of(context).component.heading.md.fontSize;
 NativeBaseProvider.of(context).component.heading.md.letterSpacing;
 ```
-The above code snippet will return token value of md `fontSize` and `letterSpacing` for `Heading` widget.
+The above code snippet will return token value of `md` `fontSize` and `letterSpacing` for `Heading` widget.
 
 **NOTE: NativeBase Token resolver engine resolves the token from the theme**
 
