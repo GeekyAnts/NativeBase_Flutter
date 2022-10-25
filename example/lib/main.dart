@@ -30,7 +30,7 @@ class NativeBaseExample extends StatefulWidget {
 
 class _NativeBaseExampleState extends State<NativeBaseExample> {
   Widget card() {
-    NativeBaseProvider.of(context).component.heading.md.letterSpacing;
+    NativeBaseProvider.of(context).component.heading.sm;
     var img = 'https://tinyurl.com/4e7fty6f';
     return NBCard(
       m: '2',
@@ -91,8 +91,9 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            NBCard(
+          children: [
+            card(),
+            const NBCard(
               shadow: '1',
               child: NBText(
                 text: "This Card looks awesome",
