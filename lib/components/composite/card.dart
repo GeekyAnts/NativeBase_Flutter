@@ -1,5 +1,7 @@
-import '/theme/components/card.dart';
-import '../primitives/box/box.dart';
+import 'package:flutter/material.dart';
+import 'package:nativebase_flutter/models/components/card.dart';
+import 'package:nativebase_flutter/models/theme/shadow_model.dart';
+import 'package:nativebase_flutter/nativebase_flutter.dart';
 
 /// A Nativebase Design card: a panel with slightly rounded corners and an
 /// elevation shadow along with padding .
@@ -63,13 +65,19 @@ class NBCard extends Box {
     super.borderRightRadius,
     super.borderTopRadius,
     super.borderBottomRadius,
-    super.color = 'white',
+    super.color,
     super.shadow,
     super.child,
   });
 
   @override
-  Map<String, dynamic> toJson() {
-    return {"baseStyle": cardBaseStyles.toJson(), ...super.toJson()};
+  Widget build(BuildContext context) {
+    NbCardTheme nbCardTheme = NativeBaseProvider.of(context).component.card;
+    print(nbCardTheme.shadow);
+    return Box(
+      p: p ?? nbCardTheme.padding,
+      shadow: shadow ?? NBShadow.dp4,
+      child: child,
+    );
   }
 }

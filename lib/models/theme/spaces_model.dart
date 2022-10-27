@@ -1,312 +1,292 @@
-abstract class Space {
-  /// Returns a space of 0 dp padding or margin
-  static String get dp0 => '0';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
 
-  /// Returns a space of 0 dp padding or margin
-  static String get dp1 => '1';
+enum NbPadding {
+  dp0('dp0'),
+  dp1('dp1'),
+  dp2('dp2'),
+  dp3('dp3'),
+  dp4('dp4'),
+  dp5('dp5'),
+  dp6('dp6'),
+  dp7('dp7'),
+  dp8('dp8'),
+  dp9('dp9'),
+  dp10('dp10'),
+  dp12('dp12'),
+  dp16('dp16'),
+  dp20('dp20'),
+  dp24('dp24'),
+  dp32('dp32'),
+  dp40('dp40'),
+  dp48('dp48'),
+  dp56('dp56'),
+  dp64('dp64'),
+  dp72('dp72'),
+  dp80('dp80'),
+  dp96('dp96'),
+  dp0_5('dp0_5'),
+  dp1_5('dp1_5'),
+  dp2_5('dp2_5'),
+  dp3_5('dp3_5');
 
-  /// Returns a space of 0 dp padding or margin
-  static String get dp2 => '2';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp3 => '3';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp4 => '4';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp5 => '5';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp6 => '6';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp7 => '7';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp8 => '8';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp9 => '9';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp10 => '10';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp12 => '12';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp16 => '16';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp20 => '20';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp24 => '24';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp32 => '32';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp40 => '40';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp48 => '48';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp56 => '56';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp64 => '64';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp72 => '72';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp80 => '80';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp96 => '96';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp0_5 => '0.5';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp1_5 => '1.5';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp2_5 => '2.5';
-
-  /// Returns a space of 0 dp padding or margin
-  static String get dp3_5 => '3.5';
+  final String? dp;
+  const NbPadding(this.dp);
 }
 
 class NBSpaces {
-  double? _d0;
-  double? _d1;
-  double? _d2;
-  double? _d3;
-  double? _d4;
-  double? _d5;
-  double? _d6;
-  double? _d7;
-  double? _d8;
-  double? _d9;
-  double? _d10;
-  double? _d12;
-  double? _d16;
-  double? _d20;
-  double? _d24;
-  double? _d32;
-  double? _d40;
-  double? _d48;
-  double? _d56;
-  double? _d64;
-  double? _d72;
-  double? _d80;
-  double? _d96;
-  double? _d05;
-  double? _d15;
-  double? _d25;
-  double? _d35;
+  double? dp0;
+  double? dp1;
+  double? dp2;
+  double? dp3;
+  double? dp4;
+  double? dp5;
+  double? dp6;
+  double? dp7;
+  double? dp8;
+  double? dp9;
+  double? dp10;
+  double? dp12;
+  double? dp16;
+  double? dp20;
+  double? dp24;
+  double? dp32;
+  double? dp40;
+  double? dp48;
+  double? dp56;
+  double? dp64;
+  double? dp72;
+  double? dp80;
+  double? dp96;
+  double? dp0_5;
+  double? dp1_5;
+  double? dp2_5;
+  double? dp3_5;
+  NBSpaces({
+    this.dp0 = 0,
+    this.dp1 = 4,
+    this.dp2 = 8,
+    this.dp3 = 12,
+    this.dp4 = 16,
+    this.dp5 = 20,
+    this.dp6 = 24,
+    this.dp7 = 28,
+    this.dp8 = 32,
+    this.dp9 = 36,
+    this.dp10 = 40,
+    this.dp12 = 48,
+    this.dp16 = 64,
+    this.dp20 = 80,
+    this.dp24 = 96,
+    this.dp32 = 128,
+    this.dp40 = 160,
+    this.dp48 = 192,
+    this.dp56 = 224,
+    this.dp64 = 256,
+    this.dp72 = 288,
+    this.dp80 = 320,
+    this.dp96 = 384,
+    this.dp0_5 = 2,
+    this.dp1_5 = 6,
+    this.dp2_5 = 10,
+    this.dp3_5 = 14,
+  });
 
-  NBSpaces(
-      {double? d0,
-      double? d1,
-      double? d2,
-      double? d3,
-      double? d4,
-      double? d5,
-      double? d6,
-      double? d7,
-      double? d8,
-      double? d9,
-      double? d10,
-      double? d12,
-      double? d16,
-      double? d20,
-      double? d24,
-      double? d32,
-      double? d40,
-      double? d48,
-      double? d56,
-      double? d64,
-      double? d72,
-      double? d80,
-      double? d96,
-      double? d05,
-      double? d15,
-      double? d25,
-      double? d35}) {
-    if (d0 != null) {
-      _d0 = d0;
-    }
-    if (d1 != null) {
-      _d1 = d1;
-    }
-    if (d2 != null) {
-      _d2 = d2;
-    }
-    if (d3 != null) {
-      _d3 = d3;
-    }
-    if (d4 != null) {
-      _d4 = d4;
-    }
-    if (d5 != null) {
-      _d5 = d5;
-    }
-    if (d6 != null) {
-      _d6 = d6;
-    }
-    if (d7 != null) {
-      _d7 = d7;
-    }
-    if (d8 != null) {
-      _d8 = d8;
-    }
-    if (d9 != null) {
-      _d9 = d9;
-    }
-    if (d10 != null) {
-      _d10 = d10;
-    }
-    if (d12 != null) {
-      _d12 = d12;
-    }
-    if (d16 != null) {
-      _d16 = d16;
-    }
-    if (d20 != null) {
-      _d20 = d20;
-    }
-    if (d24 != null) {
-      _d24 = d24;
-    }
-    if (d32 != null) {
-      _d32 = d32;
-    }
-    if (d40 != null) {
-      _d40 = d40;
-    }
-    if (d48 != null) {
-      _d48 = d48;
-    }
-    if (d56 != null) {
-      _d56 = d56;
-    }
-    if (d64 != null) {
-      _d64 = d64;
-    }
-    if (d72 != null) {
-      _d72 = d72;
-    }
-    if (d80 != null) {
-      _d80 = d80;
-    }
-    if (d96 != null) {
-      _d96 = d96;
-    }
-    if (d05 != null) {
-      _d05 = d05;
-    }
-    if (d15 != null) {
-      _d15 = d15;
-    }
-    if (d25 != null) {
-      _d25 = d25;
-    }
-    if (d35 != null) {
-      _d35 = d35;
-    }
+  NBSpaces copyWith({
+    double? dp0,
+    double? dp1,
+    double? dp2,
+    double? dp3,
+    double? dp4,
+    double? dp5,
+    double? dp6,
+    double? dp7,
+    double? dp8,
+    double? dp9,
+    double? dp10,
+    double? dp12,
+    double? dp16,
+    double? dp20,
+    double? dp24,
+    double? dp32,
+    double? dp40,
+    double? dp48,
+    double? dp56,
+    double? dp64,
+    double? dp72,
+    double? dp80,
+    double? dp96,
+    double? dp0_5,
+    double? dp1_5,
+    double? dp2_5,
+    double? dp3_5,
+  }) {
+    return NBSpaces(
+      dp0: dp0 ?? this.dp0,
+      dp1: dp1 ?? this.dp1,
+      dp2: dp2 ?? this.dp2,
+      dp3: dp3 ?? this.dp3,
+      dp4: dp4 ?? this.dp4,
+      dp5: dp5 ?? this.dp5,
+      dp6: dp6 ?? this.dp6,
+      dp7: dp7 ?? this.dp7,
+      dp8: dp8 ?? this.dp8,
+      dp9: dp9 ?? this.dp9,
+      dp10: dp10 ?? this.dp10,
+      dp12: dp12 ?? this.dp12,
+      dp16: dp16 ?? this.dp16,
+      dp20: dp20 ?? this.dp20,
+      dp24: dp24 ?? this.dp24,
+      dp32: dp32 ?? this.dp32,
+      dp40: dp40 ?? this.dp40,
+      dp48: dp48 ?? this.dp48,
+      dp56: dp56 ?? this.dp56,
+      dp64: dp64 ?? this.dp64,
+      dp72: dp72 ?? this.dp72,
+      dp80: dp80 ?? this.dp80,
+      dp96: dp96 ?? this.dp96,
+      dp0_5: dp0_5 ?? this.dp0_5,
+      dp1_5: dp1_5 ?? this.dp1_5,
+      dp2_5: dp2_5 ?? this.dp2_5,
+      dp3_5: dp3_5 ?? this.dp3_5,
+    );
   }
 
-  double? get d0 => _d0;
-  double? get d1 => _d1;
-  double? get d2 => _d2;
-  double? get d3 => _d3;
-  double? get d4 => _d4;
-  double? get d5 => _d5;
-  double? get d6 => _d6;
-  double? get d7 => _d7;
-  double? get d8 => _d8;
-  double? get d9 => _d9;
-  double? get d10 => _d10;
-  double? get d12 => _d12;
-  double? get d16 => _d16;
-  double? get d20 => _d20;
-  double? get d24 => _d24;
-  double? get d32 => _d32;
-  double? get d40 => _d40;
-  double? get d48 => _d48;
-  double? get d56 => _d56;
-  double? get d64 => _d64;
-  double? get d72 => _d72;
-  double? get d80 => _d80;
-  double? get d96 => _d96;
-  double? get d05 => _d05;
-  double? get d15 => _d15;
-  double? get d25 => _d25;
-  double? get d35 => _d35;
-  NBSpaces.fromJson(Map<String, dynamic> json) {
-    _d0 = json['0'];
-    _d1 = json['1'];
-    _d2 = json['2'];
-    _d3 = json['3'];
-    _d4 = json['4'];
-    _d5 = json['5'];
-    _d6 = json['6'];
-    _d7 = json['7'];
-    _d8 = json['8'];
-    _d9 = json['9'];
-    _d10 = json['10'];
-    _d12 = json['12'];
-    _d16 = json['16'];
-    _d20 = json['20'];
-    _d24 = json['24'];
-    _d32 = json['32'];
-    _d40 = json['40'];
-    _d48 = json['48'];
-    _d56 = json['56'];
-    _d64 = json['64'];
-    _d72 = json['72'];
-    _d80 = json['80'];
-    _d96 = json['96'];
-    _d05 = json['0.5'];
-    _d15 = json['1.5'];
-    _d25 = json['2.5'];
-    _d35 = json['3.5'];
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'dp0': dp0,
+      'dp1': dp1,
+      'dp2': dp2,
+      'dp3': dp3,
+      'dp4': dp4,
+      'dp5': dp5,
+      'dp6': dp6,
+      'dp7': dp7,
+      'dp8': dp8,
+      'dp9': dp9,
+      'dp10': dp10,
+      'dp12': dp12,
+      'dp16': dp16,
+      'dp20': dp20,
+      'dp24': dp24,
+      'dp32': dp32,
+      'dp40': dp40,
+      'dp48': dp48,
+      'dp56': dp56,
+      'dp64': dp64,
+      'dp72': dp72,
+      'dp80': dp80,
+      'dp96': dp96,
+      'dp0_5': dp0_5,
+      'dp1_5': dp1_5,
+      'dp2_5': dp2_5,
+      'dp3_5': dp3_5,
+    };
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['0'] = _d0;
-    data['1'] = _d1;
-    data['2'] = _d2;
-    data['3'] = _d3;
-    data['4'] = _d4;
-    data['5'] = _d5;
-    data['6'] = _d6;
-    data['7'] = _d7;
-    data['8'] = _d8;
-    data['9'] = _d9;
-    data['10'] = _d10;
-    data['12'] = _d12;
-    data['16'] = _d16;
-    data['20'] = _d20;
-    data['24'] = _d24;
-    data['32'] = _d32;
-    data['40'] = _d40;
-    data['48'] = _d48;
-    data['56'] = _d56;
-    data['64'] = _d64;
-    data['72'] = _d72;
-    data['80'] = _d80;
-    data['96'] = _d96;
-    data['0.5'] = _d05;
-    data['1.5'] = _d15;
-    data['2.5'] = _d25;
-    data['3.5'] = _d35;
-    return data;
+  factory NBSpaces.fromMap(Map<String, dynamic> map) {
+    return NBSpaces(
+      dp0: map['dp0'] != null ? map['dp0'] as double : null,
+      dp1: map['dp1'] != null ? map['dp1'] as double : null,
+      dp2: map['dp2'] != null ? map['dp2'] as double : null,
+      dp3: map['dp3'] != null ? map['dp3'] as double : null,
+      dp4: map['dp4'] != null ? map['dp4'] as double : null,
+      dp5: map['dp5'] != null ? map['dp5'] as double : null,
+      dp6: map['dp6'] != null ? map['dp6'] as double : null,
+      dp7: map['dp7'] != null ? map['dp7'] as double : null,
+      dp8: map['dp8'] != null ? map['dp8'] as double : null,
+      dp9: map['dp9'] != null ? map['dp9'] as double : null,
+      dp10: map['dp10'] != null ? map['dp10'] as double : null,
+      dp12: map['dp12'] != null ? map['dp12'] as double : null,
+      dp16: map['dp16'] != null ? map['dp16'] as double : null,
+      dp20: map['dp20'] != null ? map['dp20'] as double : null,
+      dp24: map['dp24'] != null ? map['dp24'] as double : null,
+      dp32: map['dp32'] != null ? map['dp32'] as double : null,
+      dp40: map['dp40'] != null ? map['dp40'] as double : null,
+      dp48: map['dp48'] != null ? map['dp48'] as double : null,
+      dp56: map['dp56'] != null ? map['dp56'] as double : null,
+      dp64: map['dp64'] != null ? map['dp64'] as double : null,
+      dp72: map['dp72'] != null ? map['dp72'] as double : null,
+      dp80: map['dp80'] != null ? map['dp80'] as double : null,
+      dp96: map['dp96'] != null ? map['dp96'] as double : null,
+      dp0_5: map['dp0_5'] != null ? map['dp0_5'] as double : null,
+      dp1_5: map['dp1_5'] != null ? map['dp1_5'] as double : null,
+      dp2_5: map['dp2_5'] != null ? map['dp2_5'] as double : null,
+      dp3_5: map['dp3_5'] != null ? map['dp3_5'] as double : null,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory NBSpaces.fromJson(String source) =>
+      NBSpaces.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() {
+    return 'NBSpaces(dp0: $dp0, dp1: $dp1, dp2: $dp2, dp3: $dp3, dp4: $dp4, dp5: $dp5, dp6: $dp6, dp7: $dp7, dp8: $dp8, dp9: $dp9, dp10: $dp10, dp12: $dp12, dp16: $dp16, dp20: $dp20, dp24: $dp24, dp32: $dp32, dp40: $dp40, dp48: $dp48, dp56: $dp56, dp64: $dp64, dp72: $dp72, dp80: $dp80, dp96: $dp96, dp0_5: $dp0_5, dp1_5: $dp1_5, dp2_5: $dp2_5, dp3_5: $dp3_5)';
+  }
+
+  @override
+  bool operator ==(covariant NBSpaces other) {
+    if (identical(this, other)) return true;
+
+    return other.dp0 == dp0 &&
+        other.dp1 == dp1 &&
+        other.dp2 == dp2 &&
+        other.dp3 == dp3 &&
+        other.dp4 == dp4 &&
+        other.dp5 == dp5 &&
+        other.dp6 == dp6 &&
+        other.dp7 == dp7 &&
+        other.dp8 == dp8 &&
+        other.dp9 == dp9 &&
+        other.dp10 == dp10 &&
+        other.dp12 == dp12 &&
+        other.dp16 == dp16 &&
+        other.dp20 == dp20 &&
+        other.dp24 == dp24 &&
+        other.dp32 == dp32 &&
+        other.dp40 == dp40 &&
+        other.dp48 == dp48 &&
+        other.dp56 == dp56 &&
+        other.dp64 == dp64 &&
+        other.dp72 == dp72 &&
+        other.dp80 == dp80 &&
+        other.dp96 == dp96 &&
+        other.dp0_5 == dp0_5 &&
+        other.dp1_5 == dp1_5 &&
+        other.dp2_5 == dp2_5 &&
+        other.dp3_5 == dp3_5;
+  }
+
+  @override
+  int get hashCode {
+    return dp0.hashCode ^
+        dp1.hashCode ^
+        dp2.hashCode ^
+        dp3.hashCode ^
+        dp4.hashCode ^
+        dp5.hashCode ^
+        dp6.hashCode ^
+        dp7.hashCode ^
+        dp8.hashCode ^
+        dp9.hashCode ^
+        dp10.hashCode ^
+        dp12.hashCode ^
+        dp16.hashCode ^
+        dp20.hashCode ^
+        dp24.hashCode ^
+        dp32.hashCode ^
+        dp40.hashCode ^
+        dp48.hashCode ^
+        dp56.hashCode ^
+        dp64.hashCode ^
+        dp72.hashCode ^
+        dp80.hashCode ^
+        dp96.hashCode ^
+        dp0_5.hashCode ^
+        dp1_5.hashCode ^
+        dp2_5.hashCode ^
+        dp3_5.hashCode;
   }
 }

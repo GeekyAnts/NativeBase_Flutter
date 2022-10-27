@@ -4,7 +4,7 @@ import '../../theme/base/radius.dart';
 import '../../theme/base/shadows.dart';
 import '../../theme/base/sizes.dart';
 import '../../theme/base/typography.dart';
-import '/theme/base/spaces.dart';
+
 import '/theme/components/index.dart';
 import 'borders_model.dart';
 import 'color_model.dart';
@@ -45,7 +45,7 @@ class NativeBaseTheme {
         fontWeight = fontWeight ?? baseNBFontWeights,
         lineHeight = lineHeight ?? baseLineHeights,
         component = component ?? baseComponents,
-        spaces = spaces ?? nbBaseSpaces,
+        spaces = spaces ?? NBSpaces(),
         sizes = sizes ?? nbBaseSizes,
         borders = borders ?? nbBorders,
         radiuses = radiuses ?? nbRadius,

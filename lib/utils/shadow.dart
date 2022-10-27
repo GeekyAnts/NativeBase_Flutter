@@ -6,9 +6,9 @@ Map<String, dynamic> getBoxShadow(String key, Map<String, dynamic> v, value) {
       blurStyle: BlurStyle.normal,
       blurRadius:
           value["shadow"] != null ? value["shadow"]["shadowRadius"] : 0.0,
-      color: value["shadow"] != null
-          ? value["shadow"]["shadowColor"]
-          : Colors.transparent,
+      // color: value["shadow"] != null
+      //     ? value["shadow"]["shadowColor"]
+      //     : Colors.transparent,
       offset: Offset(
         value["shadow"] != null ? value["shadow"]["shadowOffset"]["width"] : 0,
         value["shadow"] != null ? value["shadow"]["shadowOffset"]["height"] : 0,

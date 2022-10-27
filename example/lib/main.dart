@@ -33,7 +33,7 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
     NativeBaseProvider.of(context).component.heading.sm;
     var img = 'https://tinyurl.com/4e7fty6f';
     return NBCard(
-      m: '2',
+      m: context.margin.dp0_5,
       bgImage: img,
       color: 'cyan.700',
       child: Row(
@@ -56,13 +56,13 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
                 text: "Let's talk about avatar!",
                 color: 'white',
               ),
-              const Box(
+              Box(
                 alignment: 'center',
-                mt: '3',
+                mt: context.margin.dp0,
                 color: 'cyan.400',
-                p: '3',
+                p: context.margin.dp0,
                 borderRadius: '6',
-                child: NBText(
+                child: const NBText(
                   text: "Remind Me",
                   textTransform: 'capital',
                   color: 'white',
@@ -70,15 +70,8 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
               ),
             ],
           ),
-          const Box(
-            ml: '3',
-            h: '90',
-            w: '90',
-            p: '10',
-            borderWidth: '3',
-            borderColor: 'white',
-            bgImage: 'https://tinyurl.com/2vfrtp7d',
-            borderRadius: 'full',
+          Box(
+            ml: context.margin.dp12,
           ),
         ],
       ),
@@ -89,19 +82,23 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            card(),
-            const NBCard(
-              shadow: '1',
-              child: NBText(
-                text: "This Card looks awesome",
-              ),
-            )
-          ],
-        ),
-      ),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Box(
+            p: context.margin.dp10,
+          ),
+          Container().pb12(),
+          Container(
+            color: Colors.blue,
+            child: Container(
+                color: Colors.red,
+                child: const NBText(
+                  text: "Hello",
+                )),
+          )
+        ],
+      )),
     );
   }
 }

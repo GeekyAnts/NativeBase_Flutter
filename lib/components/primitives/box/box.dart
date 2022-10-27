@@ -1,14 +1,17 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
+import 'package:nativebase_flutter/models/theme/shadow_model.dart';
+import 'package:nativebase_flutter/models/theme/spaces_model.dart';
+import 'package:nativebase_flutter/models/utility-props-models/style_props.dart';
+import 'package:nativebase_flutter/nativebase_flutter.dart';
+
+import '../../../builder/nativebase_builder.dart';
 import '/models/utility-props-models/border_props.dart';
 import '/models/utility-props-models/color_props.dart';
 import '/models/utility-props-models/flexbox_props.dart';
 import '/models/utility-props-models/layout_props.dart';
 import '/models/utility-props-models/shadow_props.dart';
-
-import 'package:nativebase_flutter/models/utility-props-models/style_props.dart';
-
-import '../../../builder/nativebase_builder.dart';
 
 /// This is a generic widget for low level layout needs. It is similar to a [Container] in Material Widget.
 ///
@@ -95,7 +98,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? m;
+  final double? m;
 
   /// Sets the box margin from top
   /// ``` dart
@@ -104,7 +107,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? mt;
+  final double? mt;
 
   /// Sets the box margin from right
   /// ``` dart
@@ -113,7 +116,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? mr;
+  final double? mr;
 
   /// Sets the box margin from bottom
   /// ``` dart
@@ -122,7 +125,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? mb;
+  final double? mb;
 
   /// Sets the box margin from left
   /// ``` dart
@@ -131,7 +134,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? ml;
+  final double? ml;
 
   /// Sets the box margin on X-Axis
   /// ``` dart
@@ -140,7 +143,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? mx;
+  final double? mx;
 
   /// Sets the box margin on Y-Axis
   /// ``` dart
@@ -149,7 +152,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? my;
+  final double? my;
 
   /// Sets the box padding from all the side
   /// ``` dart
@@ -158,7 +161,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? p;
+  final double? p;
 
   /// Sets the box padding from top
   /// ``` dart
@@ -167,7 +170,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? pt;
+  final double? pt;
 
   /// Sets the box padding from right
   /// ``` dart
@@ -176,7 +179,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? pr;
+  final double? pr;
 
   /// Sets the box padding from bottom
   /// ``` dart
@@ -185,7 +188,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? pb;
+  final double? pb;
 
   /// Sets the box padding from left
   /// ``` dart
@@ -194,7 +197,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? pl;
+  final double? pl;
 
   /// Sets the box padding on X-Axis
   /// ``` dart
@@ -203,7 +206,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? px;
+  final double? px;
 
   /// Sets the box padding on Y-Axis
   /// ``` dart
@@ -212,7 +215,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// )
   /// ```
   @override
-  final String? py;
+  final double? py;
 
   /// Sets the box height
   /// ``` dart
@@ -442,7 +445,7 @@ class Box extends NativeBaseWidgetBuilder<Container>
   /// ```
 
   @override
-  final String? shadow;
+  final NBShadow? shadow;
 
   /// The Box child alignment will be set using alignment.
   /// Use nativebase alignment tokens as string like wise
@@ -578,4 +581,108 @@ class Box extends NativeBaseWidgetBuilder<Container>
       ).toJson()
     };
   }
+}
+
+extension ThemeExt on BuildContext {
+  NBSpaces get margin => NativeBaseProvider.of(this).spaces;
+  NBSpaces get padding => NativeBaseProvider.of(this).spaces;
+  NBFontSizes get fontSize => NativeBaseProvider.of(this).fontSize;
+}
+
+extension ExtendedText on Widget {
+  Widget pt12() {
+    return Builder(builder: (context) {
+      return Padding(
+        key: key,
+        padding:
+            EdgeInsets.only(top: NativeBaseProvider.of(context).spaces.dp12!),
+        child: this,
+      );
+    });
+  }
+
+  Widget pb12() {
+    return Builder(builder: (context) {
+      return Padding(
+        key: key,
+        padding: EdgeInsets.only(
+            bottom: NativeBaseProvider.of(context).spaces.dp12!),
+        child: this,
+      );
+    });
+  }
+
+  Widget pl12() {
+    return Builder(builder: (context) {
+      return Padding(
+        key: key,
+        padding:
+            EdgeInsets.only(left: NativeBaseProvider.of(context).spaces.dp12!),
+        child: this,
+      );
+    });
+  }
+
+  Widget pr12() {
+    return Builder(builder: (context) {
+      return Padding(
+        key: key,
+        padding:
+            EdgeInsets.only(right: NativeBaseProvider.of(context).spaces.dp12!),
+        child: this,
+      );
+    });
+  }
+
+  Widget px12() {
+    return Builder(builder: (context) {
+      return Padding(
+        key: key,
+        padding: EdgeInsets.only(
+            right: NativeBaseProvider.of(context).spaces.dp12!,
+            left: NativeBaseProvider.of(context).spaces.dp12!),
+        child: this,
+      );
+    });
+  }
+
+  Widget py12() {
+    return Builder(builder: (context) {
+      return Padding(
+        key: key,
+        padding: EdgeInsets.only(
+            top: NativeBaseProvider.of(context).spaces.dp12!,
+            bottom: NativeBaseProvider.of(context).spaces.dp12!),
+        child: this,
+      );
+    });
+  }
+
+  toNbToken(num n) {}
+
+  Widget padding({
+    Key? key,
+    double? all,
+    double? horizontal,
+    double? vertical,
+    double? top,
+    double? bottom,
+    double? left,
+    double? right,
+    bool animate = false,
+  }) =>
+      Builder(
+          key: key,
+          builder: (BuildContext context) {
+            return Padding(
+              key: key,
+              padding: EdgeInsets.only(
+                top: top ?? vertical ?? all ?? 0.0,
+                bottom: bottom ?? vertical ?? all ?? 0.0,
+                left: left ?? horizontal ?? all ?? 0.0,
+                right: right ?? horizontal ?? all ?? 0.0,
+              ),
+              child: this,
+            );
+          });
 }

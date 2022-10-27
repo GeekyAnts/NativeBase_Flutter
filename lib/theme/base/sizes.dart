@@ -1,3 +1,5 @@
+import 'package:nativebase_flutter/models/theme/spaces_model.dart';
+
 import '../../models/theme/container_model.dart';
 import '../../models/theme/sizes_model.dart';
 import '../../theme/base/spaces.dart';
@@ -17,5 +19,5 @@ NBSizes nbBaseSizes = NBSizes(
   md: 448.0,
   lg: 512.0,
   xl: 576.0,
-  spaces: nbBaseSpaces,
+  spaces: NBSpaces(),
 );

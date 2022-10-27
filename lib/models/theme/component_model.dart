@@ -5,12 +5,12 @@ import '/models/components/heading.dart';
 class NBComponent {
   NBHeading? _heading;
   NBBox? _box;
-  NbCardModel? _card;
+  NbCardTheme? _card;
 
   NBComponent({
     required NBHeading heading,
     required NBBox box,
-    required NbCardModel card,
+    required NbCardTheme card,
   }) {
     _heading = heading;
     _box = box;
@@ -19,7 +19,7 @@ class NBComponent {
 
   NBHeading get heading => _heading!;
   NBBox get box => _box!;
-  NbCardModel get card => _card!;
+  NbCardTheme get card => _card!;
 
   Map<String, dynamic> toJson() {
     return {

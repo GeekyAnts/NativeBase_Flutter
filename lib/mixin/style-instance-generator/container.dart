@@ -16,7 +16,7 @@ Container getContainer(Map<String, dynamic> rs) {
             )
           : null,
       boxShadow: [
-        rs["shadow"] ?? const BoxShadow(color: Colors.transparent),
+        //  rs["shadow"] ?? const BoxShadow(color: Colors.transparent),
       ],
       gradient: rs["gradient"],
       color: rs["color"],

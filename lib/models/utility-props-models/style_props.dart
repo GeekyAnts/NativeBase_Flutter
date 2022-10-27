@@ -1,20 +1,20 @@
 import 'package:nativebase_flutter/builder/props_builder.dart';
 
 class StyleProps implements PropsBuilder {
-  final String? m;
-  final String? mt;
-  final String? mr;
-  final String? mb;
-  final String? ml;
-  final String? mx;
-  final String? my;
-  final String? p;
-  final String? pt;
-  final String? pr;
-  final String? pb;
-  final String? pl;
-  final String? px;
-  final String? py;
+  final double? m;
+  final double? mt;
+  final double? mr;
+  final double? mb;
+  final double? ml;
+  final double? mx;
+  final double? my;
+  final double? p;
+  final double? pt;
+  final double? pr;
+  final double? pb;
+  final double? pl;
+  final double? px;
+  final double? py;
 
   StyleProps({
     required this.m,

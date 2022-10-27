@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nativebase_flutter/models/theme/spaces_model.dart';
 
 /* 
   * Hight Level Idea of Resolvers
@@ -113,12 +114,12 @@ Map<String, dynamic> tokenResolver(
 }
 
 Map<String, dynamic> getResolvedValueFromTheme(
-    BuildContext context, k, Map<String, dynamic> v, val) {
+    BuildContext context, k, Map<String, dynamic> v, dynamic val) {
   dynamic theme =
       NativeBaseProvider.of(context).toJson()[propConfig[k]["scale"]];
 
   return {
-    k: theme?.toJson()[val] ??
+    k: theme?.toMap()['${val.dp}'] ??
         (val != null ? convertToDouble(val.toString()) : val),
   };
 }

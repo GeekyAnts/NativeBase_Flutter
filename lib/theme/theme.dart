@@ -1,3 +1,5 @@
+import 'package:nativebase_flutter/models/theme/spaces_model.dart';
+
 import '/nativebase_flutter.dart';
 import '/theme/base/border.dart';
 import '/theme/base/shadows.dart';
@@ -12,7 +14,7 @@ NativeBaseTheme appTheme = NativeBaseTheme(
   fontWeight: baseNBFontWeights,
   lineHeight: baseLineHeights,
   component: baseComponents,
-  spaces: nbBaseSpaces,
+  spaces: NBSpaces(),
   sizes: nbBaseSizes,
   borders: nbBorders,
   colors: nbColor,
