@@ -86,7 +86,11 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Box(
-            p: context.margin.dp10,
+            p: context.padding.dp10,
+            pt: context.padding.dp0_5,
+            m: context.margin.dp12,
+            mt: 1,
+            child: const NBText(text: "Hello"),
           ),
           Container().pb12(),
           Container(
