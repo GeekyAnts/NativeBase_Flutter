@@ -36,13 +36,17 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            color: Colors.red,
-            child: Box(
-              sx: BoxStyle().p1().pt2(),
-              child: const Text("Hello"),
-            ),
-          )
+          Box(
+            sx: theme.box
+              ..heightMd()
+              ..alignCenter()
+              ..bgColorRed500()
+              ..bgImage(
+                  "https://images.indianexpress.com/2022/09/avatar1200.jpg")
+              ..shadow1()
+              ..m2(),
+            child: const Text("Text"),
+          ),
         ],
       )),
     );
