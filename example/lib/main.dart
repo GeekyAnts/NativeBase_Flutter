@@ -52,3 +52,5 @@ class _NativeBaseExampleState extends State<NativeBaseExample> {
     );
   }
 }
+
+class MyPainter extends CustomPainter {}
